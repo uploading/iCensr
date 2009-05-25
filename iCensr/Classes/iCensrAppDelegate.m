@@ -12,11 +12,11 @@
 @implementation iCensrAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize viewController, mstTwtName, mstTwtPW, mstEmail;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
+    //NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
 	viewController = [[SplashViewController alloc] init];
     // Override point for customization after app launch    
     [window addSubview:[viewController view]];

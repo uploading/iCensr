@@ -1,0 +1,3 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstTwtName' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstTwtPW' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstEmail' found in the interface

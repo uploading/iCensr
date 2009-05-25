@@ -1,26 +1,15 @@
 //
-//  iCensrViewController.m
+//  MainViewController.m
 //  iCensr
 //
-//  Created by Elizabeth Fuller on 5/20/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by Elizabeth Fuller on 5/22/09.
+//  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "iCensrViewController.h"
+#import "MainViewController.h"
 
-@implementation iCensrViewController
 
-@synthesize twtName, twtPW, email, nextViewController;
-
-- (IBAction) submit:(id) sender {
-	NSLog(@"_______________________%@__________________________",twtName.text);
-	//[self.view removeFromSuperview];
-	nextViewController = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceViewController" bundle:[NSBundle mainBundle]];
-	NSLog(@"__________________VIEW CONTROLLER CREATED____________________");
-	[self.view addSubview:nextViewController.view];
-	NSLog(@"__________________VIEW ADDED________________________");
-	//[self.view removeFromSuperview];
-}
+@implementation MainViewController
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -38,14 +27,12 @@
 }
 */
 
-
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 */
-
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -54,7 +41,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -65,5 +51,6 @@
 - (void)dealloc {
     [super dealloc];
 }
+
 
 @end
