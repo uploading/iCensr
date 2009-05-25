@@ -14,13 +14,14 @@
 	IBOutlet UITextField	*twtPW;		// user's twitter password
 	IBOutlet UITextField	*email;		// user's email address
 	CensrSequenceViewController	*censrSequenceViewController;
+	//UITabBarController *tabBarController;
 }
 
 @property(nonatomic, retain) IBOutlet UITextField	*twtName;
 @property(nonatomic, retain) IBOutlet UITextField	*twtPW;
 @property(nonatomic, retain) IBOutlet UITextField	*email;
 @property(nonatomic, retain) CensrSequenceViewController	*censrSequenceViewController;
-
+//@property(nonatomic, retain) UITabBarController *tabBarController;
 
 - (IBAction) submit:(id) sender;
 

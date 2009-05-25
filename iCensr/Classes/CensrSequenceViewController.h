@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AboutViewController.h"
 
 @interface CensrSequenceViewController : UIViewController {
-
+	AboutViewController *aboutViewController;
 }
+
+@property(nonatomic,retain) AboutViewController *aboutViewController;
+
+- (IBAction) aboutICensr:(id) sender;
 
 @end

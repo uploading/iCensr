@@ -1,21 +1,15 @@
 //
-//  CensrSequenceViewController.m
+//  AboutViewController.m
 //  iCensr
 //
 //  Created by Elizabeth Fuller on 5/25/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "CensrSequenceViewController.h"
+#import "AboutViewController.h"
 
 
-@implementation CensrSequenceViewController
-
-@synthesize aboutViewController;
-
-- (IBAction) aboutICensr:(id) sender {
-	NSLog(@"__________transition to iCensr Info___________");
-}
+@implementation AboutViewController
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.

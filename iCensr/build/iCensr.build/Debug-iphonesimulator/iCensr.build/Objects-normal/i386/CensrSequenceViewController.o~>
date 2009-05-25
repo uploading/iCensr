@@ -1,0 +1,3 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/CensrSequenceViewController.m:14: error: no declaration of property 'aboutViewController' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/CensrSequenceViewController.m:62: warning: property 'window' requires method '-window' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/ephemeralluna/iCensr/iCensr/Classes/CensrSequenceViewController.m:62: warning: property 'window' requires the method 'setWindow:' to be defined - use @synthesize, @dynamic or provide a method implementation
