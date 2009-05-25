@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import <UITabBarController.h>
-#import "iCensrViewController.h"
+#import "RootViewController.h"
 
 //tabBarController
 
@@ -16,11 +16,11 @@
 	NSTimer *timer;
 	UIImageView *splashImageView;
 	
-	iCensrViewController *viewController;
+	RootViewController *viewController;
 }
 
 @property(nonatomic,retain) NSTimer *timer;
 @property(nonatomic,retain) UIImageView *splashImageView;
-@property(nonatomic,retain) iCensrViewController *viewController;
+@property(nonatomic,retain) RootViewController *viewController;
 
 @end
