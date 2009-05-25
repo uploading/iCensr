@@ -1,15 +1,28 @@
 //
-//  CensrSequenceViewController.m
+//  iCensrViewController.m
 //  iCensr
 //
-//  Created by Elizabeth Fuller on 5/25/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Elizabeth Fuller on 5/20/09.
+//  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
-#import "CensrSequenceViewController.h"
+#import "SignUpViewController.h"
 
+@implementation SignUpViewController
 
-@implementation CensrSequenceViewController
+@synthesize twtName, twtPW, email, censrSequenceViewController;
+
+- (IBAction) submit:(id) sender {
+	NSLog(@"_______________________%@ transfered to sequence view__________________________",twtName.text);
+	if(self.censrSequenceViewController == nil) {
+		CensrSequenceViewController *view2 = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceView" bundle:[NSBundle mainBundle]];
+		self.censrSequenceViewController = view2;
+		[view2 release];
+		NSLog(@"_____if statement run___");
+	}
+	[self.view addSubview:censrSequenceViewController.view];
+	//[self.navigationController pushViewController:self.censrSequenceViewController animated:YES];
+}
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -27,12 +40,14 @@
 }
 */
 
+
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 */
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -41,6 +56,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -51,6 +67,5 @@
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import <UITabBarController.h>
-#import "RootViewController.h"
+#import "SignUpViewController.h"
 
 //tabBarController
 
@@ -16,11 +16,11 @@
 	NSTimer *timer;
 	UIImageView *splashImageView;
 	
-	RootViewController *viewController;
+	SignUpViewController *viewController;
 }
 
 @property(nonatomic,retain) NSTimer *timer;
 @property(nonatomic,retain) UIImageView *splashImageView;
-@property(nonatomic,retain) RootViewController *viewController;
+@property(nonatomic,retain) SignUpViewController *viewController;
 
 @end

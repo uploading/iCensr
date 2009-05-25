@@ -37,7 +37,7 @@
 	splashImageView.frame = CGRectMake(0, 0, 320, 480);
 	[self.view addSubview:splashImageView];
 	
-	viewController = [[RootViewController alloc] initWithNibName:@"SignUpView" bundle:[NSBundle mainBundle]];
+	viewController = [[SignUpViewController alloc] initWithNibName:@"SignUpView" bundle:[NSBundle mainBundle]];
 	viewController.view.alpha = 0.0;
 	[self.view addSubview:viewController.view];
 	
