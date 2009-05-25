@@ -30,9 +30,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* SignUpViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {906, 910}}";
+			sepNavIntBoundsRect = "{{0, 0}, {906, 966}}";
 			sepNavSelRange = "{723, 0}";
-			sepNavVisRange = "{222, 845}";
+			sepNavVisRange = "{222, 922}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -224,6 +224,8 @@
 			CBBE34F10FCA7C100056CC3D /* PBXTextBookmark */ = CBBE34F10FCA7C100056CC3D /* PBXTextBookmark */;
 			CBBE34F60FCA7CB10056CC3D /* PBXTextBookmark */ = CBBE34F60FCA7CB10056CC3D /* PBXTextBookmark */;
 			CBBE34F80FCA7CBF0056CC3D /* PBXTextBookmark */ = CBBE34F80FCA7CBF0056CC3D /* PBXTextBookmark */;
+			CBBE34F90FCA7D7F0056CC3D /* PBXTextBookmark */ = CBBE34F90FCA7D7F0056CC3D /* PBXTextBookmark */;
+			CBBE34FA0FCA7DAB0056CC3D /* PBXTextBookmark */ = CBBE34FA0FCA7DAB0056CC3D /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB8E13CC0FC500D3007B1A1C /* Source Control */;
 		userBuildSettings = {
@@ -1802,6 +1804,26 @@
 		rLoc = 723;
 		rType = 0;
 		vrLen = 845;
+		vrLoc = 222;
+	};
+	CBBE34F90FCA7D7F0056CC3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* SignUpViewController.m */;
+		name = "SignUpViewController.m: 23";
+		rLen = 0;
+		rLoc = 723;
+		rType = 0;
+		vrLen = 922;
+		vrLoc = 222;
+	};
+	CBBE34FA0FCA7DAB0056CC3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* SignUpViewController.m */;
+		name = "SignUpViewController.m: 23";
+		rLen = 0;
+		rLoc = 723;
+		rType = 0;
+		vrLen = 922;
 		vrLoc = 222;
 	};
 }
