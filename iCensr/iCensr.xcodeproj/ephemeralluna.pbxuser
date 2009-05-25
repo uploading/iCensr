@@ -23,15 +23,15 @@
 	28D7ACF60DDB3853001CB0EB /* iCensrViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {516, 378}}";
-			sepNavSelRange = "{730, 0}";
-			sepNavVisRange = "{88, 660}";
+			sepNavSelRange = "{673, 0}";
+			sepNavVisRange = "{150, 638}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {738, 882}}";
-			sepNavSelRange = "{647, 0}";
-			sepNavVisRange = "{222, 851}";
+			sepNavIntBoundsRect = "{{0, 0}, {858, 938}}";
+			sepNavSelRange = "{256, 0}";
+			sepNavVisRange = "{223, 996}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -129,7 +129,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */;
 		name = "iCensrViewController.m: 17";
 		rLen = 0;
-		rLoc = 393;
+		rLoc = 373;
 		rType = 0;
 		vrLen = 659;
 		vrLoc = 147;
@@ -169,7 +169,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* iCensrViewController.h */;
 		name = "iCensrViewController.h: 10";
 		rLen = 0;
-		rLoc = 216;
+		rLoc = 218;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 151;
@@ -193,7 +193,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* iCensrViewController.h */;
 		name = "iCensrViewController.h: 22";
 		rLen = 0;
-		rLoc = 731;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 606;
 		vrLoc = 151;
@@ -203,7 +203,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */;
 		name = "iCensrViewController.m: 19";
 		rLen = 0;
-		rLoc = 636;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 614;
 		vrLoc = 147;
@@ -227,7 +227,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* iCensrViewController.h */;
 		name = "iCensrViewController.h: 22";
 		rLen = 0;
-		rLoc = 731;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 606;
 		vrLoc = 151;
@@ -237,7 +237,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */;
 		name = "iCensrViewController.m: 20";
 		rLen = 0;
-		rLoc = 665;
+		rLoc = 651;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 147;
@@ -247,7 +247,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */;
 		name = "iCensrViewController.m: 20";
 		rLen = 0;
-		rLoc = 665;
+		rLoc = 651;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 185;
@@ -267,7 +267,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* iCensrViewController.m */;
 		name = "iCensrViewController.m: 20";
 		rLen = 0;
-		rLoc = 665;
+		rLoc = 651;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 185;
@@ -369,9 +369,9 @@
 	};
 	CB8E13CF0FC50105007B1A1C /* SplashViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {756, 1246}}";
+			sepNavIntBoundsRect = "{{0, 0}, {756, 1354}}";
 			sepNavSelRange = "{1064, 1}";
-			sepNavVisRange = "{147, 454}";
+			sepNavVisRange = "{184, 616}";
 			sepNavWindowFrame = "{{711, 466}, {742, 412}}";
 		};
 	};

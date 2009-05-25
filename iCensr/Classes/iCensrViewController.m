@@ -10,15 +10,15 @@
 
 @implementation iCensrViewController
 
-@synthesize twtName, twtPW, email, nextViewController;
+@synthesize twtName, twtPW, email;
 
 - (IBAction) submit:(id) sender {
 	NSLog(@"_______________________%@__________________________",twtName.text);
 	//[self.view removeFromSuperview];
-	nextViewController = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceViewController" bundle:[NSBundle mainBundle]];
-	NSLog(@"__________________VIEW CONTROLLER CREATED____________________");
-	[self.view addSubview:nextViewController.view];
-	NSLog(@"__________________VIEW ADDED________________________");
+	//nextViewController = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceViewController" bundle:[NSBundle mainBundle]];
+	//NSLog(@"__________________VIEW CONTROLLER CREATED____________________");
+	//[self.view addSubview:nextViewController.view];
+	//NSLog(@"__________________VIEW ADDED________________________");
 	//[self.view removeFromSuperview];
 }
 

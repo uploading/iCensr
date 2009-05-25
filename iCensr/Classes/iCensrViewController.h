@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CensrSequenceViewController.m.h"
+//#import "CensrSequenceViewController.m.h"
 
 @interface iCensrViewController : UIViewController {
 	IBOutlet UITextField	*twtName;	// user's twitter ID
 	IBOutlet UITextField	*twtPW;		// user's twitter password
 	IBOutlet UITextField	*email;		// user's email address
-	CensrSequenceViewController		*nextViewController;
+	//CensrSequenceViewController		*nextViewController;
 }
 
 @property(nonatomic, retain) IBOutlet UITextField	*twtName;
 @property(nonatomic, retain) IBOutlet UITextField	*twtPW;
 @property(nonatomic, retain) IBOutlet UITextField	*email;
-@property(nonatomic, retain) CensrSequenceViewController		*nextViewController;
+//@property(nonatomic, retain) CensrSequenceViewController		*nextViewController;
 
 
 - (IBAction) submit:(id) sender;

@@ -6,7 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "CensrSequenceViewController.h"
 
 
 @implementation MainViewController
