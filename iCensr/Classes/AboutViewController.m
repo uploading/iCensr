@@ -11,6 +11,19 @@
 
 @implementation AboutViewController
 
+@synthesize twtName, twtPW, email;//, cameraViewController;
+
+- (IBAction) back:(id) sender {
+	/**=NSLog(@"__________back called___________");
+	if(self.censrSequenceViewController == nil) {
+		CensrSequenceViewController *newView = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceView" bundle:[NSBundle mainBundle]];
+		self.censrSequenceViewController = newView;
+		[newView release];
+		NSLog(@"_____________if statement run_____________");
+	}
+	[self.view addSubview:censrSequenceViewController.view]; */
+}
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

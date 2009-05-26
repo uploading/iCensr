@@ -1,27 +1,27 @@
 //
-//  iCensrViewController.m
+//  CameraViewController.m
 //  iCensr
 //
-//  Created by Elizabeth Fuller on 5/20/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by Elizabeth Fuller on 5/26/09.
+//  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "SignUpViewController.h"
+#import "CameraViewController.h"
 
-@implementation SignUpViewController
 
-@synthesize twtName, twtPW, email, cameraViewController;
+@implementation CameraViewController
 
-- (IBAction) submit:(id) sender {
-	NSLog(@"_______________________%@ transfered to sequence view__________________________",twtName.text);
-	if(self.cameraViewController == nil) {
-		CameraViewController *view2 = [[CameraViewController alloc] initWithNibName:@"CameraView" bundle:[NSBundle mainBundle]];
-		self.cameraViewController = view2;
-		[view2 release];
-		NSLog(@"_____if statement run___");
-	}
-	[self.view addSubview:cameraViewController.view];
-	//[self.navigationController pushViewController:self.censrSequenceViewController animated:YES];
+@synthesize aboutViewController;
+
+- (IBAction) aboutICensr:(id) sender {
+	NSLog(@"__________transition to iCensr Info___________");
+	 if(self.aboutViewController == nil) {
+	 AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
+	 self.aboutViewController = newView;
+	 [newView release];
+	 NSLog(@"_____________if statement run_____________");
+	 }
+	 [self.view addSubview:aboutViewController.view];
 }
 
 /*
@@ -40,14 +40,12 @@
 }
 */
 
-
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 */
-
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -56,7 +54,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -67,5 +64,6 @@
 - (void)dealloc {
     [super dealloc];
 }
+
 
 @end

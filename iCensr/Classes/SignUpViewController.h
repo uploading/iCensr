@@ -7,20 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CensrSequenceViewController.h"
+#import "CameraViewController.h"
 
 @interface SignUpViewController : UIViewController {
 	IBOutlet UITextField	*twtName;	// user's twitter ID
 	IBOutlet UITextField	*twtPW;		// user's twitter password
 	IBOutlet UITextField	*email;		// user's email address
-	CensrSequenceViewController	*censrSequenceViewController;
+	CameraViewController	*cameraViewController;
 	//UITabBarController *tabBarController;
 }
 
 @property(nonatomic, retain) IBOutlet UITextField	*twtName;
 @property(nonatomic, retain) IBOutlet UITextField	*twtPW;
 @property(nonatomic, retain) IBOutlet UITextField	*email;
-@property(nonatomic, retain) CensrSequenceViewController	*censrSequenceViewController;
+@property(nonatomic, retain) CameraViewController	*cameraViewController;
 //@property(nonatomic, retain) UITabBarController *tabBarController;
 
 - (IBAction) submit:(id) sender;

@@ -1,0 +1,17 @@
+In file included from /Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.h:10,
+                 from /Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.h:10,
+                 from /Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:9:
+/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.h:16: error: syntax error before 'CameraViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.h:22: error: syntax error before 'CameraViewController'
+In file included from /Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:9:
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.h:16: error: syntax error before 'CameraViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.h:23: error: syntax error before 'CameraViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:13: error: no declaration of property 'cameraViewController' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m: In function '-[SignUpViewController submit:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:17: error: request for member 'cameraViewController' in something not a structure or union
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:18: error: 'CameraViewController' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:18: error: (Each undeclared identifier is reported only once
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:18: error: for each function it appears in.)
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:18: error: 'view2' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:19: error: request for member 'cameraViewController' in something not a structure or union
+/Users/ephemeralluna/iCensr/iCensr/Classes/SignUpViewController.m:23: error: 'cameraViewController' undeclared (first use in this function)

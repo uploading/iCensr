@@ -1,0 +1,2 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:69: warning: property 'cameraViewController' requires method '-cameraViewController' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:69: warning: property 'cameraViewController' requires the method 'setCameraViewController:' to be defined - use @synthesize, @dynamic or provide a method implementation
