@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "AboutViewController.h"
+#import "EditorViewController.h"
 
 @interface CameraViewController : UIViewController {
 	AboutViewController *aboutViewController;
+	EditorViewController *editorViewController;
 }
 
 @property(nonatomic,retain) AboutViewController *aboutViewController;
+@property(nonatomic,retain) EditorViewController *editorViewController;
 
 - (IBAction) aboutICensr:(id) sender;
+- (IBAction) takePicture:(id) sender2;
 
 @end

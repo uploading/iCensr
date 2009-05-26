@@ -11,7 +11,7 @@
 
 @implementation CameraViewController
 
-@synthesize aboutViewController;
+@synthesize aboutViewController, editorViewController;
 
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
@@ -22,6 +22,17 @@
 	 NSLog(@"_____________if statement run_____________");
 	 }
 	 [self.view addSubview:aboutViewController.view];
+}
+
+- (IBAction) takePicture:(id)sender2 {
+	NSLog(@"_________click!__________");
+	if(self.editorViewController == nil) {
+		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
+		self.editorViewController = newView;
+		[newView release];
+		NSLog(@"_____________if statement run_____________");
+	}
+	[self.view addSubview:editorViewController.view];
 }
 
 /*

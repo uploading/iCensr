@@ -1,27 +1,18 @@
 //
-//  AboutViewController.m
+//  ShareViewController.m
 //  iCensr
 //
-//  Created by Elizabeth Fuller on 5/25/09.
+//  Created by Elizabeth Fuller on 5/26/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "AboutViewController.h"
+#import "ShareViewController.h"
 
 
-@implementation AboutViewController
+@implementation ShareViewController
 
-@synthesize twtName, twtPW, email;// cameraViewController;
-
-- (IBAction) back:(id) sender {
-	NSLog(@"__________back called___________");
-	/*if(self.censrSequenceViewController == nil) {
-		CensrSequenceViewController *newView = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceView" bundle:[NSBundle mainBundle]];
-		self.censrSequenceViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-	}
-	[self.view addSubview:censrSequenceViewController.view]; */
+- (IBAction) share:(id)sender {
+	NSLog(@"_________________send_______________");
 }
 
 /*

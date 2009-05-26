@@ -18,6 +18,10 @@
 		CB1936250FC7CE16000BF2B1 /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1936240FC7CE16000BF2B1 /* CameraView.xib */; };
 		CB6EF57F0FCBC09E00FFFB53 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */; };
 		CB6EF5840FCBC12100FFFB53 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */; };
+		CB6EF5F00FCBD45F00FFFB53 /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */; };
+		CB6EF5F70FCBD4DD00FFFB53 /* EditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF5F60FCBD4DD00FFFB53 /* EditorView.xib */; };
+		CB6EF6170FCBD99300FFFB53 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */; };
+		CB6EF6340FCBDBB400FFFB53 /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF6330FCBDBB400FFFB53 /* ShareView.xib */; };
 		CB8E13D00FC50105007B1A1C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8E13CF0FC50105007B1A1C /* SplashViewController.m */; };
 		CB8E13D20FC50113007B1A1C /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8E13D10FC50113007B1A1C /* splash.png */; };
 		CB8E14000FC51356007B1A1C /* bg_form_section.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8E13FF0FC51356007B1A1C /* bg_form_section.png */; };
@@ -45,6 +49,12 @@
 		CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		CB6EF5820FCBC12100FFFB53 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewController.h; sourceTree = "<group>"; };
+		CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
+		CB6EF5F60FCBD4DD00FFFB53 /* EditorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditorView.xib; sourceTree = "<group>"; };
+		CB6EF6150FCBD99300FFFB53 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareViewController.h; path = ../ShareViewController.h; sourceTree = "<group>"; };
+		CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareViewController.m; path = ../ShareViewController.m; sourceTree = "<group>"; };
+		CB6EF6330FCBDBB400FFFB53 /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
 		CB8E13CE0FC50105007B1A1C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		CB8E13CF0FC50105007B1A1C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		CB8E13D10FC50113007B1A1C /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
@@ -83,6 +93,10 @@
 				CB9B2AD40FCB2A5300A28011 /* AboutViewController.m */,
 				CB6EF5820FCBC12100FFFB53 /* CameraViewController.h */,
 				CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */,
+				CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */,
+				CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */,
+				CB6EF6150FCBD99300FFFB53 /* ShareViewController.h */,
+				CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -124,6 +138,8 @@
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* SignUpView.xib */,
 				CB1936240FC7CE16000BF2B1 /* CameraView.xib */,
+				CB6EF5F60FCBD4DD00FFFB53 /* EditorView.xib */,
+				CB6EF6330FCBDBB400FFFB53 /* ShareView.xib */,
 				CBFBCED10FCB94ED0055ACA2 /* AboutView.xib */,
 				CB8E13D10FC50113007B1A1C /* splash.png */,
 				CB8E13FF0FC51356007B1A1C /* bg_form_section.png */,
@@ -194,6 +210,8 @@
 				CB1936250FC7CE16000BF2B1 /* CameraView.xib in Resources */,
 				CBFBCED20FCB94ED0055ACA2 /* AboutView.xib in Resources */,
 				CB6EF57F0FCBC09E00FFFB53 /* TestView.xib in Resources */,
+				CB6EF5F70FCBD4DD00FFFB53 /* EditorView.xib in Resources */,
+				CB6EF6340FCBDBB400FFFB53 /* ShareView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +228,8 @@
 				CB8E13D00FC50105007B1A1C /* SplashViewController.m in Sources */,
 				CB9B2AD50FCB2A5300A28011 /* AboutViewController.m in Sources */,
 				CB6EF5840FCBC12100FFFB53 /* CameraViewController.m in Sources */,
+				CB6EF5F00FCBD45F00FFFB53 /* EditorViewController.m in Sources */,
+				CB6EF6170FCBD99300FFFB53 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

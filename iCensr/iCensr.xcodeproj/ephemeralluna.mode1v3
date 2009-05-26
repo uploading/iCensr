@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>CB6EF5A60FCBC30A00FFFB53</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>AboutViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>CB6EF5A70FCBC30A00FFFB53</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>AboutViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>CB6EF5BA0FCBC3B700FFFB53</string>
-						<key>history</key>
-						<array>
-							<string>CB6EF5880FCBC15000FFFB53</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {742, 315}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>38 496 742 356 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -269,6 +228,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -315,13 +276,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>1</integer>
+									<integer>25</integer>
+									<integer>19</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {260, 445}}</string>
+							<string>{{0, 266}, {260, 445}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -351,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CameraViewController.m</string>
+								<string>ShareViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -366,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CameraViewController.m</string>
+										<string>ShareViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB6EF5B90FCBC3B700FFFB53</string>
+										<string>CB6EF63F0FCBE1C000FFFB53</string>
 										<key>history</key>
 										<array>
 											<string>CBBE34A80FCA6FF90056CC3D</string>
@@ -385,10 +344,14 @@
 											<string>CB93E3EB0FCBBEBA00E394BA</string>
 											<string>CB93E3EC0FCBBEBA00E394BA</string>
 											<string>CB6EF5920FCBC30A00FFFB53</string>
-											<string>CB6EF5950FCBC30A00FFFB53</string>
-											<string>CB6EF5B20FCBC33A00FFFB53</string>
-											<string>CB6EF5B30FCBC33A00FFFB53</string>
-											<string>CB6EF5B40FCBC33A00FFFB53</string>
+											<string>CB6EF5DA0FCBCC2F00FFFB53</string>
+											<string>CB6EF5FF0FCBD6C000FFFB53</string>
+											<string>CB6EF61B0FCBDB1900FFFB53</string>
+											<string>CB6EF61C0FCBDB1900FFFB53</string>
+											<string>CB6EF61D0FCBDB1900FFFB53</string>
+											<string>CB6EF6390FCBE1C000FFFB53</string>
+											<string>CB6EF63A0FCBE1C000FFFB53</string>
+											<string>CB6EF63B0FCBE1C000FFFB53</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -420,6 +383,49 @@
 											<string>CB6EF5A20FCBC30A00FFFB53</string>
 											<string>CB6EF5B50FCBC33A00FFFB53</string>
 											<string>CB6EF5B60FCBC33A00FFFB53</string>
+											<string>CB6EF5C80FCBC80F00FFFB53</string>
+											<string>CB6EF5C90FCBC80F00FFFB53</string>
+											<string>CB6EF5CA0FCBC80F00FFFB53</string>
+											<string>CB6EF5CB0FCBC80F00FFFB53</string>
+											<string>CB6EF5CC0FCBC80F00FFFB53</string>
+											<string>CB6EF5CD0FCBC80F00FFFB53</string>
+											<string>CB6EF5CE0FCBC80F00FFFB53</string>
+											<string>CB6EF5D50FCBC83C00FFFB53</string>
+											<string>CB6EF5DD0FCBCC2F00FFFB53</string>
+											<string>CB6EF5DE0FCBCC2F00FFFB53</string>
+											<string>CB6EF5DF0FCBCC2F00FFFB53</string>
+											<string>CB6EF5E80FCBCF8000FFFB53</string>
+											<string>CB6EF5E90FCBCF8000FFFB53</string>
+											<string>CB6EF5F40FCBD48B00FFFB53</string>
+											<string>CB6EF6040FCBD6C000FFFB53</string>
+											<string>CB6EF6050FCBD6C000FFFB53</string>
+											<string>CB6EF6060FCBD6C000FFFB53</string>
+											<string>CB6EF6070FCBD6C000FFFB53</string>
+											<string>CB6EF6080FCBD6C000FFFB53</string>
+											<string>CB6EF6090FCBD6C000FFFB53</string>
+											<string>CB6EF60A0FCBD6C000FFFB53</string>
+											<string>CB6EF60B0FCBD6C000FFFB53</string>
+											<string>CB6EF60C0FCBD6C000FFFB53</string>
+											<string>CB6EF60D0FCBD6C000FFFB53</string>
+											<string>CB6EF60E0FCBD6C000FFFB53</string>
+											<string>CB6EF61F0FCBDB1900FFFB53</string>
+											<string>CB6EF6200FCBDB1900FFFB53</string>
+											<string>CB6EF6210FCBDB1900FFFB53</string>
+											<string>CB6EF6220FCBDB1900FFFB53</string>
+											<string>CB6EF6230FCBDB1900FFFB53</string>
+											<string>CB6EF6240FCBDB1900FFFB53</string>
+											<string>CB6EF6250FCBDB1900FFFB53</string>
+											<string>CB6EF6260FCBDB1900FFFB53</string>
+											<string>CB6EF6270FCBDB1900FFFB53</string>
+											<string>CB6EF6280FCBDB1900FFFB53</string>
+											<string>CB6EF6290FCBDB1900FFFB53</string>
+											<string>CB6EF62A0FCBDB1900FFFB53</string>
+											<string>CB6EF62B0FCBDB1900FFFB53</string>
+											<string>CB6EF62C0FCBDB1900FFFB53</string>
+											<string>CB6EF62D0FCBDB1900FFFB53</string>
+											<string>CB6EF63C0FCBE1C000FFFB53</string>
+											<string>CB6EF63D0FCBE1C000FFFB53</string>
+											<string>CB6EF63E0FCBE1C000FFFB53</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -613,10 +619,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>CB6EF6400FCBE1C000FFFB53</string>
+		<string>CB6EF6410FCBE1C000FFFB53</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>CB6EF5A60FCBC30A00FFFB53</string>
 		<string>CB8E141F0FC52084007B1A1C</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/ephemeralluna/iCensr/iCensr/iCensr.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -636,6 +643,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -658,8 +667,6 @@
 							<string>261pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -710,7 +717,7 @@
 			<key>WindowToolGUID</key>
 			<string>CB8E141F0FC52084007B1A1C</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -952,6 +959,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -997,7 +1006,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
