@@ -16,4 +16,6 @@
 
 - (IBAction) renderImage:(id)sender;
 
+- (IBAction) cancelEdit:(id)sender;
+
 @end
