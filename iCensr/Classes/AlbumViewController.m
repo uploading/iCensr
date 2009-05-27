@@ -1,34 +1,23 @@
 //
-//  CameraViewController.m
+//  AlbumViewController.m
 //  iCensr
 //
-//  Created by Elizabeth Fuller on 5/26/09.
+//  Created by Elizabeth Fuller on 5/27/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "CameraViewController.h"
+#import "AlbumViewController.h"
 
 
-@implementation CameraViewController
+@implementation AlbumViewController
 
-@synthesize aboutViewController, editorViewController, albumViewController;
+@synthesize editorViewController;
 
-- (IBAction) aboutICensr:(id) sender {
-	NSLog(@"__________transition to iCensr Info___________");
-	 if(self.aboutViewController == nil) {
-		 AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
-		 self.aboutViewController = newView;
-		 [newView release];
-		 NSLog(@"_____________if statement run_____________");
-		 [self.view addSubview:aboutViewController.view];
-	 }
-	 else {
-		 aboutViewController.view.hidden = NO;
-	 }
-}
-
-- (IBAction) takePicture:(id)sender2 {
-	NSLog(@"_________click!__________");
+- (IBAction) toEditor:(id)sender {
+	NSLog(@"____________to Editor______________");
+	//send selected image to editor
+	
+	// open editor view
 	if(self.editorViewController == nil) {
 		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
 		self.editorViewController = newView;
@@ -41,18 +30,8 @@
 	}
 }
 
-- (IBAction) selectFromAlblum:(id) sender3 {
-	NSLog(@"_________to album__________");
-	if(self.albumViewController == nil) {
-		AlbumViewController *newView = [[AlbumViewController alloc] initWithNibName:@"AlbumView" bundle:[NSBundle mainBundle]];
-		self.albumViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-		[self.view addSubview:albumViewController.view];
-	}
-	else {
-		albumViewController.view.hidden = NO;
-	}
+- (IBAction) back:(id)sender {
+	self.view.hidden = YES;
 }
 
 /*

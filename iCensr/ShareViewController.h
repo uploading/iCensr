@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//#import "EditorViewController.h"
 
 @interface ShareViewController : UIViewController {
 

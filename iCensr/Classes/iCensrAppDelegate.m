@@ -12,12 +12,28 @@
 @implementation iCensrAppDelegate
 
 @synthesize window;
-@synthesize viewController, mstTwtName, mstTwtPW, mstEmail;
+@synthesize aspectControllers, viewController, mstTwtName, mstTwtPW, mstEmail;
 
+- (void)swapInViewAspectWithIdentifier:(NSString *)key {
+	/*MyViewControllerCommonSuperclass *viewController = [aspectControllers objectForKey:identifier];
+	NSView *view = [viewController view];
+	
+	// now, do stuff with the view, such as making it the current subview of the window
+	 */
+	
+	SEL *viewController = [aspectControllers objectForKey:key];
+	UIResponder *view = [viewController view];
+	
+	// now, do stuff with the view, such as making it the current subview of the window
+}
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     //NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
 	viewController = [[SplashViewController alloc] init];
+	
+	//populate NSDictionary
+	[aspectControllers setValue:@"SignUpViewController" forKey:@"SignUpView"];
+	
     // Override point for customization after app launch    
     [window addSubview:[viewController view]];
     [window makeKeyAndVisible];

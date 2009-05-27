@@ -13,6 +13,14 @@
 
 - (IBAction) share:(id)sender {
 	NSLog(@"_________________send_______________");
+	// submit picture and text to Twitter
+	
+	// if selected, submit picture and text to NCAC
+	
+	// return to camera view
+	[[self parentViewController] view].hidden = YES;
+	self.view.hidden = YES;
+	//EditorViewController.hidden = YES;
 }
 
 /*

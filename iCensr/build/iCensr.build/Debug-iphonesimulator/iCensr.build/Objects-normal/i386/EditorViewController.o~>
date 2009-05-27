@@ -1,14 +1,1 @@
-In file included from /Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:9:
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.h:10:32: error: ShareViewController.h: No such file or directory
-In file included from /Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:9:
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.h:13: error: syntax error before 'ShareViewController'
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.h:15: error: syntax error before 'ShareViewController'
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:14: error: no declaration of property 'shareViewController' found in the interface
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m: In function '-[EditorViewController renderImage:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:18: error: request for member 'shareViewController' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:19: error: 'ShareViewController' undeclared (first use in this function)
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:19: error: (Each undeclared identifier is reported only once
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:19: error: for each function it appears in.)
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:19: error: 'newView' undeclared (first use in this function)
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:20: error: request for member 'shareViewController' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:24: error: 'shareViewController' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:14: error: no declaration of property 'edit' found in the interface

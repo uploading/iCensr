@@ -1,3 +1,11 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstTwtName' found in the interface
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstTwtPW' found in the interface
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: no declaration of property 'mstEmail' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: In function '-[iCensrAppDelegate swapInViewAspectWithIdentifier:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:24: error: 'aspectControllers' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:24: error: (Each undeclared identifier is reported only once
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:24: error: for each function it appears in.)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: local declaration of 'viewController' hides instance variable
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: invalid receiver type 'SEL*'
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: unused variable 'view'
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: In function '-[iCensrAppDelegate applicationDidFinishLaunching:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:35: error: 'aspectControllers' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: At top level:
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:50: error: synthesized property 'aspectControllers' must either be named the same as a compatible ivar or must explicitly name an ivar

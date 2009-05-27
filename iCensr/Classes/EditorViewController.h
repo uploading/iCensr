@@ -11,8 +11,10 @@
 
 @interface EditorViewController : UIViewController {
 	ShareViewController		*shareViewController;
+	IBOutlet	UIView		*edit;
 }
-@property(nonatomic, retain) ShareViewController *shareViewController;
+@property(nonatomic, retain) ShareViewController	*shareViewController;
+@property(nonatomic, retain) IBOutlet	UIView		*edit;
 
 - (IBAction) renderImage:(id)sender;
 

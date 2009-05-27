@@ -11,7 +11,7 @@
 
 @implementation EditorViewController
 
-@synthesize shareViewController;
+@synthesize shareViewController, edit;
 
 - (IBAction) renderImage:(id)sender {
 	NSLog(@"____________render image____________");
@@ -20,12 +20,15 @@
 		self.shareViewController = newView;
 		[newView release];
 		NSLog(@"_____________if statement run_____________");
+		[self.view addSubview:shareViewController.view];
 	}
-	[self.view addSubview:shareViewController.view];
+	shareViewController.view.hidden = NO;
 }
 
 - (IBAction) cancelEdit:(id)sender {
 	NSLog(@"_____________return to camera view________________");
+	
+	self.view.hidden = YES;
 }
 
 /*

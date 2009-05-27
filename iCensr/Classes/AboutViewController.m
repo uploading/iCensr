@@ -22,6 +22,7 @@
 		NSLog(@"_____________if statement run_____________");
 	}
 	[self.view addSubview:censrSequenceViewController.view]; */
+	self.view.hidden = YES;
 }
 
 /*
