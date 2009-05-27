@@ -11,7 +11,7 @@
 
 @implementation EditorViewController
 
-@synthesize shareViewController, edit;
+@synthesize shareViewController;
 
 - (IBAction) renderImage:(id)sender {
 	NSLog(@"____________render image____________");
