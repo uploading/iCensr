@@ -31,7 +31,8 @@
 	[UIView commitAnimations];
 
 	// save point where finger comes down
-	point1  = location;
+	point1 = location;
+	point2 = CGPointMake(location.x +10, location.y);
 	if(point1.x == 0) { NSLog(@"sucks to be you!"); }
 	NSLog(@"Checking up on %f", point1.x);
 	xValue.text = [NSString stringWithFormat:@"%f", point1.x];
@@ -42,14 +43,15 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	//UITouch *touch = [touches anyObject];
-	//CGPoint location = [touch locationInView:self];
-	//redaction.size.width = location.x - point1.x;
 	
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint location = [touch locationInView:self];
+	point2 = location;
 	
+	[self setNeedsDisplay];
 }
 
 
@@ -57,12 +59,23 @@
     // Drawing code
 	NSLog(@"drawRect");
 	
-	CGFloat squareSize = 40;
+	// x length between fingers
+    CGFloat xDist = xDist = point1.x - point2.x;
+    // y length between fingers
+    CGFloat yDist = point1.y-point2.y;
+	// respective midpoints between two points
+	CGFloat xMidpoint = (point1.x+point2.x)/2;
+	CGFloat yMidpoint = (point1.y+point2.y)/2;
 	
-	CGFloat centerx = point1.x;//rect.size.width/2;
-	CGFloat centery = point1.y; //rect.size.height/2;
+	// disance between point1 and point2
+	CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist);
+	// angle of fingers    
+    CGFloat newAngle = atan(yDist/xDist);
+	
+	CGFloat centerx = xMidpoint;//rect.size.width/2;
+	CGFloat centery = yMidpoint; //rect.size.height/2;
 	CGFloat half = squareSize/2;
-	CGRect theRect = CGRectMake(-half, -half, squareSize, squareSize);
+	CGRect theRect = CGRectMake(-half, -half, squareSize, 30);
 	
 	//Grab the drawing content
 	CGContextRef context = UIGraphicsGetCurrentContext();
@@ -70,6 +83,7 @@
 	// like Processing pushMatrix
 	CGContextSaveGState(context);
 	CGContextTranslateCTM(context, centerx, centery);
+	CGContextRotateCTM(context, newAngle);
 	
 	// Uncomment to see the rotated square
 	//CGContextRotateCTM(context, rotation);

@@ -12,6 +12,7 @@
 @interface Redactor : UIView {
 	IBOutlet	UIView		*redaction;
 	CGPoint		point1;
+	CGPoint		point2;
 	IBOutlet	UILabel		*xValue;
 	IBOutlet	UILabel		*yValue;
 }
