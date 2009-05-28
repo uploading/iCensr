@@ -299,7 +299,7 @@
 							<real>260</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>624 152 788 504 0 0 1440 878 </string>
+						<string>644 125 788 504 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBFC12D10FCE740B00336B42</string>
+										<string>CBFC12F10FCE94FA00336B42</string>
 										<key>history</key>
 										<array>
 											<string>CBBE34A80FCA6FF90056CC3D</string>
@@ -398,7 +398,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {506, 285}}</string>
 								<key>RubberWindowFrame</key>
-								<string>624 152 788 504 0 0 1440 878 </string>
+								<string>644 125 788 504 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -418,7 +418,7 @@
 								<key>Frame</key>
 								<string>{{0, 290}, {506, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>624 152 788 504 0 0 1440 878 </string>
+								<string>644 125 788 504 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -584,7 +584,7 @@
 		<string>/Users/ephemeralluna/iCensr/iCensr/iCensr.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>624 152 788 504 0 0 1440 878 </string>
+	<string>644 125 788 504 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

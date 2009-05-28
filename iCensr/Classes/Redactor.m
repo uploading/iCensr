@@ -36,8 +36,9 @@
 	NSLog(@"Checking up on %f", point1.x);
 	xValue.text = [NSString stringWithFormat:@"%f", point1.x];
 	yValue.text = [NSString stringWithFormat:@"%f", point1.y];
-	//yValue.text = @"Never!";
-	//point1 = [touch locationInView:self];
+	
+	
+	[self setNeedsDisplay];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -54,6 +55,42 @@
 
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+	NSLog(@"drawRect");
+	
+	CGFloat squareSize = 40;
+	
+	CGFloat centerx = point1.x;//rect.size.width/2;
+	CGFloat centery = point1.y; //rect.size.height/2;
+	CGFloat half = squareSize/2;
+	CGRect theRect = CGRectMake(-half, -half, squareSize, squareSize);
+	
+	//Grab the drawing content
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	// like Processing pushMatrix
+	CGContextSaveGState(context);
+	CGContextTranslateCTM(context, centerx, centery);
+	
+	// Uncomment to see the rotated square
+	//CGContextRotateCTM(context, rotation);
+	
+	// Set red stroke
+	CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
+	
+	// Set different based on multitouch
+	//if(!twoFingers) {
+		CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
+	/*}
+	else {
+		CGContextSetRGBFillColor(context, 0.0, 1.0, 1.0, 1.0);
+	}*/
+	
+	// Draw a rect with a red stroke
+	CGContextFillRect(context, theRect);
+	CGContextStrokeRect(context, theRect);
+	
+	// like Processing popMatrix
+	CGContextRestoreGState(context);	
 }
 
 
