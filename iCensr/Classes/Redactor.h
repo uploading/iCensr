@@ -11,8 +11,14 @@
 
 @interface Redactor : UIView {
 	IBOutlet	UIView		*redaction;
+	CGPoint		point1;
+	IBOutlet	UILabel		*xValue;
+	IBOutlet	UILabel		*yValue;
 }
 
 @property(nonatomic,retain) IBOutlet	UIView		*redaction;
+//@property(nonatomic) IBOutlet	CGPoint		*point1;
+@property(nonatomic,retain) IBOutlet	UILabel		*xValue;
+@property(nonatomic,retain) IBOutlet	UILabel		*yValue;
 
 @end
