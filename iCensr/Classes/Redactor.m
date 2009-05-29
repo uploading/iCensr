@@ -67,6 +67,9 @@
 	CGFloat xMidpoint = (point1.x+point2.x)/2;
 	CGFloat yMidpoint = (point1.y+point2.y)/2;
 	
+	// width of the rectangle
+	CGFloat rectWeight = 30;
+	
 	// disance between point1 and point2
 	CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist);
 	// angle of fingers    
@@ -75,7 +78,8 @@
 	CGFloat centerx = xMidpoint;//rect.size.width/2;
 	CGFloat centery = yMidpoint; //rect.size.height/2;
 	CGFloat half = squareSize/2;
-	CGRect theRect = CGRectMake(-half, -half, squareSize, 30);
+	CGRect theRect = CGRectMake(-half, -rectWeight/2, squareSize, rectWeight);
+	
 	
 	//Grab the drawing content
 	CGContextRef context = UIGraphicsGetCurrentContext();
@@ -88,16 +92,11 @@
 	// Uncomment to see the rotated square
 	//CGContextRotateCTM(context, rotation);
 	
-	// Set red stroke
+	// Set black stroke
 	CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
 	
-	// Set different based on multitouch
-	//if(!twoFingers) {
-		CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-	/*}
-	else {
-		CGContextSetRGBFillColor(context, 0.0, 1.0, 1.0, 1.0);
-	}*/
+	// Set fill color to black
+	CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
 	
 	// Draw a rect with a red stroke
 	CGContextFillRect(context, theRect);
