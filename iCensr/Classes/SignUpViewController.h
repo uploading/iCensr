@@ -24,5 +24,6 @@
 //@property(nonatomic, retain) UITabBarController *tabBarController;
 
 - (IBAction) submit:(id) sender;
+- (IBAction) hideKeyBoard:(id) sender;
 
 @end

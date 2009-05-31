@@ -11,7 +11,7 @@
 
 @implementation Redactor
 
-@synthesize redactions;
+@synthesize redactions, result;
 
 
 - (id)initWithFrame:(CGRect)frame {
@@ -170,8 +170,25 @@
 	}
 }
 
+- (UIImage *)polygonImageOfSize:(CGSize)size {
+	UIImage *result = nil;
+	
+	UIGraphicsBeginImageContext(size);
+	
+	// call drawing code...
+	
+	result = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	return result;
+	
+	// use NSData *UIImageJPGRepresentation (UIImage * image); to make a jpeg for submission
+}
+
 
 - (void)dealloc {
+	[redactions release];
     [super dealloc];
 }
 

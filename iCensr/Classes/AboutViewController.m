@@ -25,6 +25,29 @@
 	self.view.hidden = YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
+	twtName.text = name;
+	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+	twtPW.text = password;
+	NSString *eM = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
+	email.text = eM;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	NSString *name = twtName.text;
+	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+	NSString *password = twtPW.text;
+	[[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+	NSString *em = email.text;
+	[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
+}
+
+- (IBAction) hideKeyBoard:(id) sender {
+	[twtName resignFirstResponder];
+}
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

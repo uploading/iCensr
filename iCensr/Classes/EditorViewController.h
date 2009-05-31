@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ShareViewController.h"
+//#import "Redactor.h"
 
 @interface EditorViewController : UIViewController {
 	ShareViewController		*shareViewController;
+	//Redactor				*redactor;
 	//IBOutlet	UIView		*photo;
-	NSMutableArray	*redactions; // array of completed rectangles
+	//NSMutableArray	*redactions; // array of completed rectangles
 }
 @property(nonatomic, retain) ShareViewController	*shareViewController;
 //@property(nonatomic, retain) IBOutlet	UIView		*photo;

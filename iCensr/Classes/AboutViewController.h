@@ -10,17 +10,18 @@
 //#import "CameraViewController.h"
 
 @interface AboutViewController : UIViewController {
-	IBOutlet UITextView		*twtName;
-	IBOutlet UITextView		*twtPW;
-	IBOutlet UITextView		*email;
+	IBOutlet UITextField	*twtName;
+	IBOutlet UITextField	*twtPW;
+	IBOutlet UITextField	*email;
 	//CameraViewController	*cameraViewController;
 }
 
-@property(nonatomic, retain) IBOutlet UITextView	*twtName;
-@property(nonatomic, retain) IBOutlet UITextView	*twtPW;
-@property(nonatomic, retain) IBOutlet UITextView	*email;
+@property(nonatomic, retain) IBOutlet UITextField	*twtName;
+@property(nonatomic, retain) IBOutlet UITextField	*twtPW;
+@property(nonatomic, retain) IBOutlet UITextField	*email;
 //@property(nonatomic, retain) CameraViewController *cameraViewController;
 
 - (IBAction) back:(id) sender;
+- (IBAction) hideKeyBoard:(id) sender;
 
 @end

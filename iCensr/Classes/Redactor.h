@@ -14,9 +14,11 @@
 	CGPoint		point2;
 	//Redaction	*redaction;		// the rectangle that is currently being drawn
 	NSMutableArray		*redactions;	// holder for all the redactions
+	IBOutlet	UIImage *result;
 }
 
 //@property (nonatomic,retain) Redaction *redaction;
-@property(nonatomic, retain) NSMutableArray *redactions;
+@property(nonatomic, retain) NSMutableArray		*redactions;
+@property(nonatomic, retain) IBOutlet	UIImage	*result;
 
 @end

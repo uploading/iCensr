@@ -19,9 +19,21 @@
 		self.cameraViewController = view2;
 		[view2 release];
 		NSLog(@"_____if statement run___");
+		
+		NSString *name = twtName.text;
+		[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+		NSString *password = twtPW.text;
+		[[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+		NSString *em = email.text;
+		[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
+
 	}
 	[self.view addSubview:cameraViewController.view];
 	//[self.navigationController pushViewController:self.censrSequenceViewController animated:YES];
+}
+
+- (IBAction) hideKeyBoard:(id) sender {
+	[twtName resignFirstResponder];
 }
 
 /*

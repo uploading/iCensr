@@ -1,1 +1,2 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:14: error: no declaration of property 'edit' found in the interface
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:92: warning: property 'redactions' requires method '-redactions' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:92: warning: property 'redactions' requires the method 'setRedactions:' to be defined - use @synthesize, @dynamic or provide a method implementation

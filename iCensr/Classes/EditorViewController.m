@@ -21,6 +21,16 @@
 		[newView release];
 		NSLog(@"_____________if statement run_____________");
 		[self.view addSubview:shareViewController.view];
+		
+		//place image from picture taken in
+		/*
+		 fetch from app budle
+		 [UIImage imageNamed:(NSString*)name]
+		 read from file on disk
+		 [UIImage initWithContentsOfFile:(NSString *)path]
+		 from data in memory
+		 [UIImage initWithData:(NSData *)data]
+		 */
 	}
 	shareViewController.view.hidden = NO;
 }
@@ -36,15 +46,16 @@
 	NSLog(@"_______touche!______________");
 }
 
-/*
+
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
+		//self.redactor = [[redactor alloc] initWithFrame
     }
     return self;
 }
-*/
+
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
