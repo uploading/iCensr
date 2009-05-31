@@ -17,6 +17,7 @@
 		28D7ACF80DDB3853001CB0EB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* SignUpViewController.m */; };
 		CB1936250FC7CE16000BF2B1 /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1936240FC7CE16000BF2B1 /* CameraView.xib */; };
 		CB2067E30FCE07F600F08708 /* Redactor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2067E20FCE07F600F08708 /* Redactor.m */; };
+		CB54C0230FD1226F00A3FF49 /* Redaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C0220FD1226F00A3FF49 /* Redaction.m */; };
 		CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */; };
 		CB68F9750FCD432900445FE9 /* AlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB68F9740FCD432900445FE9 /* AlbumView.xib */; };
 		CB6EF57F0FCBC09E00FFFB53 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */; };
@@ -51,6 +52,8 @@
 		CB1936240FC7CE16000BF2B1 /* CameraView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraView.xib; sourceTree = "<group>"; };
 		CB2067E10FCE07F600F08708 /* Redactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redactor.h; sourceTree = "<group>"; };
 		CB2067E20FCE07F600F08708 /* Redactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redactor.m; sourceTree = "<group>"; };
+		CB54C0210FD1226F00A3FF49 /* Redaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redaction.h; sourceTree = "<group>"; };
+		CB54C0220FD1226F00A3FF49 /* Redaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redaction.m; sourceTree = "<group>"; };
 		CB68F9530FCD3E9700445FE9 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		CB68F9740FCD432900445FE9 /* AlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumView.xib; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */,
 				CB2067E10FCE07F600F08708 /* Redactor.h */,
 				CB2067E20FCE07F600F08708 /* Redactor.m */,
+				CB54C0210FD1226F00A3FF49 /* Redaction.h */,
+				CB54C0220FD1226F00A3FF49 /* Redaction.m */,
 				CB6EF6150FCBD99300FFFB53 /* ShareViewController.h */,
 				CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */,
 			);
@@ -246,6 +251,7 @@
 				CB6EF6170FCBD99300FFFB53 /* ShareViewController.m in Sources */,
 				CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */,
 				CB2067E30FCE07F600F08708 /* Redactor.m in Sources */,
+				CB54C0230FD1226F00A3FF49 /* Redaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

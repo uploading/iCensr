@@ -31,6 +31,11 @@
 	self.view.hidden = YES;
 }
 
+// handle touches to draw black lines
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"_______touche!______________");
+}
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

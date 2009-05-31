@@ -11,10 +11,12 @@
 
 @interface EditorViewController : UIViewController {
 	ShareViewController		*shareViewController;
-	//IBOutlet	UIView		*redaction;
+	//IBOutlet	UIView		*photo;
+	NSMutableArray	*redactions; // array of completed rectangles
 }
 @property(nonatomic, retain) ShareViewController	*shareViewController;
-//@property(nonatomic, retain) IBOutlet	UIView		*redaction;
+//@property(nonatomic, retain) IBOutlet	UIView		*photo;
+@property(nonatomic, retain) NSMutableArray	*redactions;
 
 - (IBAction) renderImage:(id)sender;
 

@@ -168,7 +168,7 @@
 		fRef = CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */;
 		name = "EditorViewController.h: 17";
 		rLen = 0;
-		rLoc = 412;
+		rLoc = 470;
 		rType = 0;
 		vrLen = 463;
 		vrLoc = 88;
@@ -185,16 +185,16 @@
 	};
 	CB2067E10FCE07F600F08708 /* Redactor.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {445, 364}}";
-			sepNavSelRange = "{260, 0}";
-			sepNavVisRange = "{138, 406}";
+			sepNavIntBoundsRect = "{{0, 0}, {480, 280}}";
+			sepNavSelRange = "{322, 0}";
+			sepNavVisRange = "{0, 331}";
 		};
 	};
 	CB2067E20FCE07F600F08708 /* Redactor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {445, 1400}}";
-			sepNavSelRange = "{1624, 0}";
-			sepNavVisRange = "{1383, 522}";
+			sepNavIntBoundsRect = "{{0, 0}, {450, 1554}}";
+			sepNavSelRange = "{1142, 0}";
+			sepNavVisRange = "{935, 520}";
 		};
 	};
 	CB2067F30FCE091700F08708 /* PBXTextBookmark */ = {
@@ -242,7 +242,7 @@
 		fRef = CB2067E20FCE07F600F08708 /* Redactor.m */;
 		name = "Redactor.m: 14";
 		rLen = 0;
-		rLoc = 226;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 291;
 		vrLoc = 0;
@@ -400,17 +400,17 @@
 	};
 	CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {450, 336}}";
-			sepNavSelRange = "{412, 0}";
-			sepNavVisRange = "{88, 463}";
+			sepNavIntBoundsRect = "{{0, 0}, {450, 364}}";
+			sepNavSelRange = "{580, 0}";
+			sepNavVisRange = "{88, 569}";
 			sepNavWindowFrame = "{{38, 440}, {742, 412}}";
 		};
 	};
 	CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {774, 1050}}";
-			sepNavSelRange = "{286, 0}";
-			sepNavVisRange = "{652, 548}";
+			sepNavIntBoundsRect = "{{0, 0}, {774, 1106}}";
+			sepNavSelRange = "{1025, 0}";
+			sepNavVisRange = "{151, 597}";
 		};
 	};
 	CB6EF6040FCBD6C000FFFB53 /* PBXTextBookmark */ = {
@@ -694,7 +694,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 3;
-		modificationTime = 265182192.497139;
+		modificationTime = 265318349.385863;
 		state = 2;
 	};
 	CBBE34A80FCA6FF90056CC3D /* PBXBookmark */ = {
@@ -741,7 +741,7 @@
 		fRef = CB2067E20FCE07F600F08708 /* Redactor.m */;
 		name = "Redactor.m: 46";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 931;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 793;
@@ -751,7 +751,7 @@
 		fRef = CB2067E10FCE07F600F08708 /* Redactor.h */;
 		name = "Redactor.h: 15";
 		rLen = 0;
-		rLoc = 280;
+		rLoc = 299;
 		rType = 0;
 		vrLen = 391;
 		vrLoc = 135;
@@ -761,7 +761,7 @@
 		fRef = CB2067E10FCE07F600F08708 /* Redactor.h */;
 		name = "Redactor.h: 15";
 		rLen = 0;
-		rLoc = 260;
+		rLoc = 230;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 138;
@@ -771,7 +771,7 @@
 		fRef = CB2067E20FCE07F600F08708 /* Redactor.m */;
 		name = "Redactor.m: 63";
 		rLen = 0;
-		rLoc = 1581;
+		rLoc = 1798;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 1216;
@@ -781,7 +781,7 @@
 		fRef = CB2067E20FCE07F600F08708 /* Redactor.m */;
 		name = "Redactor.m: 63";
 		rLen = 0;
-		rLoc = 1581;
+		rLoc = 1798;
 		rType = 0;
 		vrLen = 428;
 		vrLoc = 1216;
@@ -791,7 +791,7 @@
 		fRef = CB2067E10FCE07F600F08708 /* Redactor.h */;
 		name = "Redactor.h: 15";
 		rLen = 0;
-		rLoc = 260;
+		rLoc = 230;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 138;
@@ -801,7 +801,7 @@
 		fRef = CB2067E20FCE07F600F08708 /* Redactor.m */;
 		name = "Redactor.m: 66";
 		rLen = 0;
-		rLoc = 1624;
+		rLoc = 1837;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 1383;

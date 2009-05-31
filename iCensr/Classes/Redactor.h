@@ -7,19 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Redaction.h"
 
 @interface Redactor : UIView {
-	IBOutlet	UIView		*redaction;
 	CGPoint		point1;
 	CGPoint		point2;
-	IBOutlet	UILabel		*xValue;
-	IBOutlet	UILabel		*yValue;
+	//Redaction	*redaction;		// the rectangle that is currently being drawn
+	NSMutableArray		*redactions;	// holder for all the redactions
 }
 
-@property(nonatomic,retain) IBOutlet	UIView		*redaction;
-//@property(nonatomic) IBOutlet	CGPoint		*point1;
-@property(nonatomic,retain) IBOutlet	UILabel		*xValue;
-@property(nonatomic,retain) IBOutlet	UILabel		*yValue;
+//@property (nonatomic,retain) Redaction *redaction;
+@property(nonatomic, retain) NSMutableArray *redactions;
 
 @end
