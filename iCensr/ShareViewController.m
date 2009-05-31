@@ -18,44 +18,61 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
-		NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
-		twtName.text = name;
-		NSString *pw = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-		twtPW.text = pw;
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
+	twtName.text = name;
+	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+	twtPW.text = password;
 }
 
 #pragma mark share action methods
 
 - (IBAction) share:(id)sender {
-	NSLog(@"_________________send_______________");
+	// hide keyboard
+	//[twtName resignFirstResponder];
+	
 	// submit picture and text to Twitter
-	// Put your Twitter username and password here:
     NSString *username = twtName.text;
     NSString *password = twtPW.text;
     
     // Make sure you entered your login details before running this code... ;)
-    if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
+    if ([username isEqualToString:@"n/a"] || [password isEqualToString:@"n/a"]) {
         NSLog(@"You forgot to specify your username/password in AppController.m!");
-        //[NSApp terminate:self];
+        // send alert asking for name and password
 		UIAlertView *prompt = [UIAlertView alloc];
-		prompt = [prompt initWithTitle:@"Missing Name and/or Password" message:@"iCensr requires your Twitter name and password to submit your picture to Twitter." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay"];
+		prompt = [prompt initWithTitle:@"Missing Information" message:@"iCensr requires your Twitter name and password to tweet your censr." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
 		[prompt show];
 		[prompt release];
     }
-    
-    // Create a TwitterEngine and set our login details.
-    twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
-    [twitterEngine setUsername:username password:password];
-    
-    // Get updates from people the authenticated user follows.
-    [twitterEngine getFollowedTimelineFor:username since:nil startingAtPage:0];
-	
-	// Send test post
-	[twitterEngine sendUpdate:twtMessage.text];
-	
-	// if selected, submit picture and text to NCAC
+    else {
+		// Create a TwitterEngine and set our login details.
+		twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
+		[twitterEngine setUsername:username password:password];
+		
+		// Get updates from people the authenticated user follows.
+		[twitterEngine getFollowedTimelineFor:username since:nil startingAtPage:0];
+		
+		// Send test post
+		[twitterEngine sendUpdate:twtMessage.text];
+		
+		// if selected, submit picture and text to NCAC
+	}
+}
+
+- (IBAction) hideKeyBoard:(id) sender {
+	[twtName resignFirstResponder];
+}
+
+#pragma mark MGTwitterEngineDelegate methods
+
+
+- (void)requestSucceeded:(NSString *)requestIdentifier
+{
+    NSLog(@"Request succeeded (%@)", requestIdentifier);
 	
 	// save settings
 	NSString *name = twtName.text;
@@ -66,23 +83,6 @@
 	// return to camera view
 	[[self parentViewController] view].hidden = YES;
 	self.view.hidden = YES;
-	//EditorViewController.hidden = YES;
-}
-
-- (IBAction) hideKeyBoard:(id) sender {
-	[twtName resignFirstResponder];
-}
-
-- (IBAction) hideViewKeyBoard:(id) sender {
-	[twtMessage resignFirstResponder];
-}
-
-#pragma mark MGTwitterEngineDelegate methods
-
-
-- (void)requestSucceeded:(NSString *)requestIdentifier
-{
-    NSLog(@"Request succeeded (%@)", requestIdentifier);
 }
 
 
@@ -92,6 +92,11 @@
           requestIdentifier, 
           [error localizedDescription], 
           [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+	// send alert asking for name and password
+	UIAlertView *prompt = [UIAlertView alloc];
+	prompt = [prompt initWithTitle:@"Connection Failed" message:@"iCensr could not reach Twitter.  Check your name and password." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[prompt show];
+	[prompt release];
 }
 
 
