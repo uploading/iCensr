@@ -18,6 +18,7 @@
 		CB1936250FC7CE16000BF2B1 /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1936240FC7CE16000BF2B1 /* CameraView.xib */; };
 		CB2067E30FCE07F600F08708 /* Redactor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2067E20FCE07F600F08708 /* Redactor.m */; };
 		CB54C0230FD1226F00A3FF49 /* Redaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C0220FD1226F00A3FF49 /* Redaction.m */; };
+		CB54C1790FD2220900A3FF49 /* untitled.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C1780FD2220900A3FF49 /* untitled.m */; };
 		CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */; };
 		CB68F9750FCD432900445FE9 /* AlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB68F9740FCD432900445FE9 /* AlbumView.xib */; };
 		CB6EF57F0FCBC09E00FFFB53 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */; };
@@ -54,6 +55,8 @@
 		CB2067E20FCE07F600F08708 /* Redactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redactor.m; sourceTree = "<group>"; };
 		CB54C0210FD1226F00A3FF49 /* Redaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redaction.h; sourceTree = "<group>"; };
 		CB54C0220FD1226F00A3FF49 /* Redaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Redaction.m; sourceTree = "<group>"; };
+		CB54C1770FD2220900A3FF49 /* untitled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = untitled.h; sourceTree = "<group>"; };
+		CB54C1780FD2220900A3FF49 /* untitled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = untitled.m; sourceTree = "<group>"; };
 		CB68F9530FCD3E9700445FE9 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		CB68F9740FCD432900445FE9 /* AlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumView.xib; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */,
+				CB54C1770FD2220900A3FF49 /* untitled.h */,
+				CB54C1780FD2220900A3FF49 /* untitled.m */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */,
 				CB2067E30FCE07F600F08708 /* Redactor.m in Sources */,
 				CB54C0230FD1226F00A3FF49 /* Redaction.m in Sources */,
+				CB54C1790FD2220900A3FF49 /* untitled.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
