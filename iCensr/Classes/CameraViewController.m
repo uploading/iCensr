@@ -11,7 +11,7 @@
 
 @implementation CameraViewController
 
-@synthesize aboutViewController, editorViewController, albumViewController;
+@synthesize aboutViewController, editorViewController, albumViewController, imagePicker, imageTaker;
 
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
@@ -27,33 +27,77 @@
 	 }
 }
 
-- (IBAction) takePicture:(id)sender2 {
-	NSLog(@"_________click!__________");
-	if(self.editorViewController == nil) {
-		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
-		self.editorViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-		[self.view addSubview:editorViewController.view];
-	}
-	else {
-		editorViewController.view.hidden = NO;
-	}
+- (void)viewDidLoad {
+	self.imagePicker = [[UIImagePickerController alloc] init];
+	self.imagePicker.allowsImageEditing = YES;
+	self.imagePicker.delegate = self;
+	self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	
+	self.imageTaker = [[UIImagePickerController alloc] init];
+	self.imageTaker.allowsImageEditing = YES;
+	self.imageTaker.delegate = self;
+	self.imageTaker.sourceType = UIImagePickerControllerSourceTypeCamera;
 }
 
-- (IBAction) selectFromAlblum:(id) sender3 {
-	NSLog(@"_________to album__________");
-	if(self.albumViewController == nil) {
-		AlbumViewController *newView = [[AlbumViewController alloc] initWithNibName:@"AlbumView" bundle:[NSBundle mainBundle]];
-		self.albumViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-		[self.view addSubview:albumViewController.view];
-	}
-	else {
-		albumViewController.view.hidden = NO;
-	}
+- (IBAction)grabImage {
+    [self presentModalViewController:self.imagePicker animated:YES];
 }
+
+- (IBAction)takeImage {
+	[self presentModalViewController:self.imageTaker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+	image.image = img;
+	[[picker parentViewController] dismissModalViewControllerAnimated:YES];
+	upload.enabled = YES;
+}
+
+- (IBAction)uploadImage {
+	/*
+	 turning the image into a NSData object
+	 getting the image back out of the UIImageView
+	 setting the quality to 90
+	 */
+	NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
+	// setting up the URL to post to
+	NSString *urlString = @"http://iphone.zcentric.com/test-upload.php";
+	
+	//setting up the request object now
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+	
+	/*
+	 add some header info now
+	 we always need a boundary when we post a file
+	 also we need to set the content type
+	 
+	 You might want to generate a random boundary.. this is just the same 
+	 as my output from wireshark on a valid html post
+	 */
+	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+	
+	// create the body of the post
+	
+	NSMutableData *body = [NSMutableData data];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:imageData]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// setting the body of the post to the request
+	[request setHTTPBody:body];
+	
+	// now lets make the connection to the web
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	
+	NSLog(returnString);
+}
+
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.

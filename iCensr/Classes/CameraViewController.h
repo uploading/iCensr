@@ -15,11 +15,26 @@
 	AboutViewController *aboutViewController;
 	EditorViewController *editorViewController;
 	AlbumViewController *albumViewController;
+	
+	//settings for buttons and views
+	UIImagePickerController *imagePicker; // for use with the album
+	UIImagePickerController *imageTaker; // for use with the camera
+    IBOutlet UIBarItem *album; // button sending user to the album
+	IBOutlet UIBarItem *camera; // button sending user to the camer
+	IBOutlet UIBarItem *upload; // button allowing user to upload the image
+    IBOutlet UIImageView *image; // image of the item
 }
 
 @property(nonatomic,retain) AboutViewController *aboutViewController;
 @property(nonatomic,retain) EditorViewController *editorViewController;
 @property(nonatomic,retain) AlbumViewController *albumViewController;
+
+@property(nonatomic,retain) UIImagePickerController *imagePicker;
+@property(nonatomic,retain) UIImagePickerController *imageTaker;
+
+- (IBAction)grabImage;
+- (IBAction)takeImage;
+- (IBAction)uploadImage;
 
 - (IBAction) aboutICensr:(id) sender;
 - (IBAction) takePicture:(id) sender2;
