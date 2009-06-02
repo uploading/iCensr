@@ -49,7 +49,18 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
-	image.image = img;
+	//open share editor controller
+	if(self.editorViewController == nil) {
+		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
+		self.editorViewController = newView;
+		[newView release];
+		NSLog(@"_____________if statement run_____________");
+		[self.view addSubview:editorViewController.view];
+	}
+	
+	[editorViewController setPic:img];
+	
+	//image.image = img;
 	[[picker parentViewController] dismissModalViewControllerAnimated:YES];
 	upload.enabled = YES;
 }

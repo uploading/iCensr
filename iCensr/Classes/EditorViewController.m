@@ -11,7 +11,12 @@
 
 @implementation EditorViewController
 
-@synthesize shareViewController;
+@synthesize shareViewController, image, redactor;
+
+- (void) setPic:(UIImage *)picture {
+	image.image = picture;
+	//[redactor setBackgroundImage:picture forState:UIControlStateNormal];
+}
 
 - (IBAction) renderImage:(id)sender {
 	NSLog(@"____________render image____________");

@@ -149,7 +149,7 @@
 				CB54C0220FD1226F00A3FF49 /* Redaction.m */,
 				CB6EF6150FCBD99300FFFB53 /* ShareViewController.h */,
 				CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */,
-				CBF2289C0FD5C1870010D74C /* Classes */,
+				CBF2289C0FD5C1870010D74C /* Canary */,
 				CB54C2BA0FD324C900A3FF49 /* MATwitterEngine */,
 			);
 			path = Classes;
@@ -260,12 +260,13 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		CBF2289C0FD5C1870010D74C /* Classes */ = {
+		CBF2289C0FD5C1870010D74C /* Canary */ = {
 			isa = PBXGroup;
 			children = (
 				CBF2289D0FD5C1870010D74C /* ORSTwitPicDispatcher.h */,
 				CBF2289E0FD5C1870010D74C /* ORSTwitPicDispatcher.m */,
 			);
+			name = Canary;
 			path = Classes;
 			sourceTree = "<group>";
 		};

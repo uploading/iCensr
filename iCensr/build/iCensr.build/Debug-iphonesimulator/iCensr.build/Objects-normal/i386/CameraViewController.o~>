@@ -1,26 +1,9 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:14: error: no declaration of property 'imagePicker' found in the interface
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:14: error: no declaration of property 'imageTaker' found in the interface
 /Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController viewDidLoad]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:31: error: request for member 'imagePicker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:32: error: request for member 'imagePicker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:33: error: request for member 'imagePicker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:34: error: request for member 'imagePicker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:36: error: request for member 'imageTaker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:37: error: request for member 'imageTaker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:38: error: request for member 'imageTaker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:39: error: request for member 'imageTaker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController grabImage]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:43: error: request for member 'imagePicker' in something not a structure or union
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController takeImage]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:47: error: request for member 'imageTaker' in something not a structure or union
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:33: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:38: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol
 /Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController imagePickerController:didFinishPickingImage:editingInfo:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:51: error: 'image' undeclared (first use in this function)
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:51: error: (Each undeclared identifier is reported only once
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:51: error: for each function it appears in.)
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:53: error: 'upload' undeclared (first use in this function)
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController uploadImage]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:62: error: 'image' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:61: warning: passing argument 1 of 'setPic:' from distinct Objective-C type
 /Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: At top level:
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:144: warning: incomplete implementation of class 'CameraViewController'
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:144: warning: method definition for '-selectFromAlblum:' not found
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:144: warning: method definition for '-takePicture:' not found
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: incomplete implementation of class 'CameraViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: method definition for '-selectFromAlblum:' not found
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: method definition for '-takePicture:' not found
