@@ -10,6 +10,7 @@
 #import "AboutViewController.h"
 #import "EditorViewController.h"
 #import "AlbumViewController.h"
+#import "ORSTwitPicDispatcher.h"
 
 @interface CameraViewController : UIViewController {
 	AboutViewController *aboutViewController;
@@ -34,7 +35,11 @@
 
 - (IBAction)grabImage;
 - (IBAction)takeImage;
+
+// uploading methods for pictures
 - (IBAction)uploadImage;
+- (void) upload2twitpic:(NSData *)picture;
+- (void) upload2site:(NSData *)picture;
 
 - (IBAction) aboutICensr:(id) sender;
 - (IBAction) takePicture:(id) sender2;

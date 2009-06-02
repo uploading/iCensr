@@ -41,6 +41,7 @@
 
 - (IBAction)grabImage {
     [self presentModalViewController:self.imagePicker animated:YES];
+	NSLog(@"+++++ Image Grabbed ++++++++");
 }
 
 - (IBAction)takeImage {
@@ -60,8 +61,19 @@
 	 setting the quality to 90
 	 */
 	NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
+	[self upload2twitpic:imageData];
+	[self upload2site:imageData];
+}
+
+- (void) upload2twitpic:(NSData *)picture {
+	// upload to twitpic with Canary app
+	ORSTwitPicDispatcher *twitPicDispatcher = [[ORSTwitPicDispatcher alloc] init];
+	[twitPicDispatcher uploadData:picture withUsername:@"iCensr" password:@"pic2process" filename:@"censrd"];
+}
+
+- (void) upload2site:(NSData *)picture {
 	// setting up the URL to post to
-	NSString *urlString = @"http://iphone.zcentric.com/test-upload.php";
+	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
 	
 	//setting up the request object now
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -86,7 +98,7 @@
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:imageData]];
+	[body appendData:[NSData dataWithData:picture]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// setting the body of the post to the request
 	[request setHTTPBody:body];
