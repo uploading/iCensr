@@ -24,8 +24,9 @@
 //@property(nonatomic, retain) IBOutlet	UIView		*photo;
 @property(nonatomic, retain) NSMutableArray	*redactions;
 
-- (IBAction) renderImage:(id)sender;
+- (IBAction) shareImage:(id)sender;
 - (IBAction) cancelEdit:(id)sender;
 - (void) setPic:(UIImage *)picture;
+- (UIImage *) render; // take screenshot
 
 @end

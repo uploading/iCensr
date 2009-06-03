@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MGTwitterEngine.h"
+#import "ORSTwitPicDispatcher.h"
 //#import "EditorViewController.h"
 
 @interface ShareViewController : UIViewController {
+	IBOutlet UIImageView	*twtPic;	// redacted picture to be posted
 	IBOutlet UITextField	*twtName;	// user's twitter ID
 	IBOutlet UITextField	*twtPW;		// user's twitter password
 	IBOutlet UITextView		*twtMessage;		// user's email address
@@ -18,6 +20,7 @@
 	MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
 }
 
+@property(nonatomic,retain) IBOutlet UIImageView	*twtPic;
 @property(nonatomic,retain)	IBOutlet UITextField	*twtName;	// user's twitter ID
 @property(nonatomic,retain) IBOutlet UITextField	*twtPW;		// user's twitter password
 @property(nonatomic,retain) IBOutlet UITextView		*twtMessage;		// user's email address
@@ -26,5 +29,11 @@
 - (IBAction) share:(id)sender;
 - (IBAction) hideKeyBoard:(id) sender;
 - (IBAction) hideViewKeyBoard:(id) sender;
+- (void) setImage:(UIImage *)picture;
+- (void) upload2twitpic:(NSData *)picture;
+- (void) upload2site:(NSData *)picture;
+- (void) setImageURL:(NSString *)url;
+
+- (void) insertStringTokenInNewStatusTextField:(NSString *)stringToken;
 
 @end

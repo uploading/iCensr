@@ -42,6 +42,7 @@
 		CB8E14040FC515FE007B1A1C /* bg_form_section_bdy.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8E14030FC515FE007B1A1C /* bg_form_section_bdy.png */; };
 		CB9B2AD50FCB2A5300A28011 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9B2AD40FCB2A5300A28011 /* AboutViewController.m */; };
 		CBF228A30FD5C1870010D74C /* ORSTwitPicDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF2289E0FD5C1870010D74C /* ORSTwitPicDispatcher.m */; };
+		CBF229FA0FD62CE30010D74C /* ORSTwitPicController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF229F90FD62CE30010D74C /* ORSTwitPicController.m */; };
 		CBFBCED20FCB94ED0055ACA2 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFBCED10FCB94ED0055ACA2 /* AboutView.xib */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		CB9B2AD40FCB2A5300A28011 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		CBF2289D0FD5C1870010D74C /* ORSTwitPicDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSTwitPicDispatcher.h; sourceTree = "<group>"; };
 		CBF2289E0FD5C1870010D74C /* ORSTwitPicDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSTwitPicDispatcher.m; sourceTree = "<group>"; };
+		CBF229F80FD62CE30010D74C /* ORSTwitPicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSTwitPicController.h; sourceTree = "<group>"; };
+		CBF229F90FD62CE30010D74C /* ORSTwitPicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSTwitPicController.m; sourceTree = "<group>"; };
 		CBFBCED10FCB94ED0055ACA2 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,6 +268,8 @@
 			children = (
 				CBF2289D0FD5C1870010D74C /* ORSTwitPicDispatcher.h */,
 				CBF2289E0FD5C1870010D74C /* ORSTwitPicDispatcher.m */,
+				CBF229F80FD62CE30010D74C /* ORSTwitPicController.h */,
+				CBF229F90FD62CE30010D74C /* ORSTwitPicController.m */,
 			);
 			name = Canary;
 			path = Classes;
@@ -355,6 +360,7 @@
 				CB54C2EA0FD324C900A3FF49 /* NSString+UUID.m in Sources */,
 				CB54C2EB0FD324C900A3FF49 /* NSData+Base64.m in Sources */,
 				CBF228A30FD5C1870010D74C /* ORSTwitPicDispatcher.m in Sources */,
+				CBF229FA0FD62CE30010D74C /* ORSTwitPicController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

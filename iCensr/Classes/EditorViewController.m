@@ -13,12 +13,32 @@
 
 @synthesize shareViewController, image, redactor;
 
+// The designated initializer. Override to perform setup that is required before the view is loaded.
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        // Custom initialization
+		//self.redactor = [[redactor alloc] initWithFrame
+    }
+    return self;
+}
+
 - (void) setPic:(UIImage *)picture {
 	image.image = picture;
 	//[redactor setBackgroundImage:picture forState:UIControlStateNormal];
 }
 
-- (IBAction) renderImage:(id)sender {
+// handle touches to draw black lines
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"_______touche!______________");
+}
+
+- (IBAction) cancelEdit:(id)sender {
+	NSLog(@"_____________return to camera view________________");
+	
+	self.view.hidden = YES;
+}
+
+- (IBAction) shareImage:(id)sender {
 	NSLog(@"____________render image____________");
 	if(self.shareViewController == nil) {
 		ShareViewController *newView = [[ShareViewController alloc] initWithNibName:@"ShareView" bundle:[NSBundle mainBundle]];
@@ -38,29 +58,27 @@
 		 */
 	}
 	shareViewController.view.hidden = NO;
-}
-
-- (IBAction) cancelEdit:(id)sender {
-	NSLog(@"_____________return to camera view________________");
 	
-	self.view.hidden = YES;
+	//[self render];
+	//[shareViewController setImage:[self render]];
+	[shareViewController setImage:image.image];
 }
 
-// handle touches to draw black lines
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	NSLog(@"_______touche!______________");
+- (UIImage *) render {
+	UIImage *redactedImage = nil;
+	
+	CGSize size = CGSizeMake(320,480);
+	
+	UIGraphicsBeginImageContext(size);
+	
+	// call drawing code...
+	
+	redactedImage = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	return redactedImage;
 }
-
-
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-		//self.redactor = [[redactor alloc] initWithFrame
-    }
-    return self;
-}
-
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
