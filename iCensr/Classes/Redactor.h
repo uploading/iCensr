@@ -22,4 +22,6 @@
 @property(nonatomic, retain) NSMutableArray		*redactions;
 @property(nonatomic, retain) IBOutlet	UIImage	*result;
 
+- (void)drawEdits:(CGRect)rect;
+
 @end

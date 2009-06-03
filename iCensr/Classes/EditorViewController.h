@@ -14,6 +14,7 @@
 	ShareViewController		*shareViewController;
 	IBOutlet Redactor		*redactor;
 	IBOutlet UIImageView	*image;
+	IBOutlet UIToolbar		*toolbar;
 	//Redactor				*redactor;
 	//IBOutlet	UIView		*photo;
 	//NSMutableArray	*redactions; // array of completed rectangles
@@ -21,6 +22,7 @@
 @property(nonatomic, retain) ShareViewController	*shareViewController;
 @property(nonatomic, retain) Redactor				*redactor;
 @property(nonatomic,retain) IBOutlet UIView			*image;
+@property(nonatomic,retain) IBOutlet UIToolbar		*toolbar;
 //@property(nonatomic, retain) IBOutlet	UIView		*photo;
 @property(nonatomic, retain) NSMutableArray	*redactions;
 

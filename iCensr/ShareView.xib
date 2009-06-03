@@ -135,7 +135,7 @@
 					<object class="IBUITextView" id="816583345">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 186}, {280, 188}}</string>
+						<string key="NSFrame">{{20, 186}, {280, 206}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -149,13 +149,13 @@
 						<bool key="IBUIDelaysContentTouches">NO</bool>
 						<bool key="IBUICanCancelContentTouches">NO</bool>
 						<bool key="IBUIBouncesZoom">NO</bool>
-						<string key="IBUIText">[still not sure what to place as default text here]</string>
+						<string key="IBUIText">[comments]</string>
 						<reference key="IBUITextColor" ref="1058029060"/>
 					</object>
 					<object class="IBUISwitch" id="518092941">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 394}, {94, 27}}</string>
+						<string key="NSFrame">{{20, 410}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -167,7 +167,7 @@
 					<object class="IBUILabel" id="150959894">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{128, 412}, {172, 12}}</string>
+						<string key="NSFrame">{{128, 428}, {172, 12}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -194,7 +194,7 @@
 					<object class="IBUILabel" id="283832228">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{124, 390}, {146, 26}}</string>
+						<string key="NSFrame">{{124, 406}, {146, 26}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -228,19 +228,6 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">1.500000e+01</float>
-					</object>
-					<object class="IBUIPageControl" id="582255419">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">1316</int>
-						<object class="NSPSMatrix" key="NSFrameMatrix"/>
-						<string key="NSFrame">{{141, 424}, {38, 36}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUINumberOfPages">3</int>
 					</object>
 					<object class="IBUITextField" id="173541283">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -398,16 +385,15 @@
 							<reference ref="160834779"/>
 							<reference ref="38153246"/>
 							<reference ref="816583345"/>
-							<reference ref="582255419"/>
-							<reference ref="518092941"/>
-							<reference ref="150959894"/>
-							<reference ref="283832228"/>
 							<reference ref="322281369"/>
 							<reference ref="122829913"/>
 							<reference ref="577068209"/>
 							<reference ref="224927726"/>
 							<reference ref="173541283"/>
 							<reference ref="259095334"/>
+							<reference ref="518092941"/>
+							<reference ref="150959894"/>
+							<reference ref="283832228"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -481,11 +467,6 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">23</int>
-						<reference key="object" ref="582255419"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
 						<reference key="object" ref="173541283"/>
 						<reference key="parent" ref="191373211"/>
@@ -524,7 +505,6 @@
 					<string>20.IBPluginDependency</string>
 					<string>21.IBPluginDependency</string>
 					<string>22.IBPluginDependency</string>
-					<string>23.IBPluginDependency</string>
 					<string>25.IBPluginDependency</string>
 					<string>26.IBPluginDependency</string>
 					<string>37.IBPluginDependency</string>
@@ -535,8 +515,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ShareViewController</string>
 					<string>UIResponder</string>
-					<string>{{487, 71}, {320, 460}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>{{463, 127}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

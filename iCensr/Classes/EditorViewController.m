@@ -11,7 +11,7 @@
 
 @implementation EditorViewController
 
-@synthesize shareViewController, image, redactor;
+@synthesize shareViewController, image, redactor, toolbar;
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -39,6 +39,7 @@
 }
 
 - (IBAction) shareImage:(id)sender {
+	UIImage *screenShot = [self render];
 	NSLog(@"____________render image____________");
 	if(self.shareViewController == nil) {
 		ShareViewController *newView = [[ShareViewController alloc] initWithNibName:@"ShareView" bundle:[NSBundle mainBundle]];
@@ -60,11 +61,20 @@
 	shareViewController.view.hidden = NO;
 	
 	//[self render];
-	//[shareViewController setImage:[self render]];
-	[shareViewController setImage:image.image];
+	[shareViewController setImage:screenShot];
+	//[shareViewController setImage:image.image];
 }
 
 - (UIImage *) render {
+	self.toolbar.hidden = YES;
+	
+	UIGraphicsBeginImageContext(image.bounds.size);
+	[image.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return viewImage;
+/*	
 	UIImage *redactedImage = nil;
 	
 	CGSize size = CGSizeMake(320,480);
@@ -78,7 +88,9 @@
 	UIGraphicsEndImageContext();
 	
 	return redactedImage;
+ */
 }
+
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
