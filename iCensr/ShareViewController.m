@@ -77,6 +77,10 @@
 	}
 }
 
+- (IBAction)back:(id) sender {
+	self.view.hidden = YES;
+}
+
 - (IBAction) hideKeyBoard:(id) sender {
 	[twtName resignFirstResponder];
 }

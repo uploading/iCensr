@@ -27,6 +27,7 @@
 @property(nonatomic,retain) IBOutlet UISwitch		*willShare;
 
 - (IBAction) share:(id)sender;
+- (IBAction) back:(id)sender;
 - (IBAction) hideKeyBoard:(id) sender;
 - (IBAction) hideViewKeyBoard:(id) sender;
 - (void) setImage:(UIImage *)picture;

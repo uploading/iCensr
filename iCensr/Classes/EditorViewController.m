@@ -73,22 +73,9 @@
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	
+	self.toolbar.hidden = NO;
+	
 	return viewImage;
-/*	
-	UIImage *redactedImage = nil;
-	
-	CGSize size = CGSizeMake(320,480);
-	
-	UIGraphicsBeginImageContext(size);
-	
-	// call drawing code...
-	
-	redactedImage = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	
-	return redactedImage;
- */
 }
 
 

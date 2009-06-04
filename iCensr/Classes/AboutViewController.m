@@ -22,9 +22,12 @@
 		NSLog(@"_____________if statement run_____________");
 	}
 	[self.view addSubview:censrSequenceViewController.view]; */
+	[self saveInfo];
 	self.view.hidden = YES;
 }
 
+
+/*
 - (void)viewWillAppear:(BOOL)animated {
 	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
 	twtName.text = name;
@@ -33,7 +36,9 @@
 	NSString *eM = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
 	email.text = eM;
 }
+*/
 
+/*
 - (void)viewWillDisappear:(BOOL)animated
 {
 	NSString *name = twtName.text;
@@ -43,9 +48,14 @@
 	NSString *em = email.text;
 	[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
 }
+ */
 
 - (IBAction) hideKeyBoard:(id) sender {
 	[twtName resignFirstResponder];
+}
+
+- (IBAction) save:(id) sender {
+	[self saveInfo];
 }
 
 /*
@@ -64,12 +74,29 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	NSUserDefaults *login = [NSUserDefaults standardUserDefaults];
+	NSString *name = [login stringForKey:@"name"];
+	twtName.text = name;
+	NSString *password = [login stringForKey:@"password"];
+	twtPW.text = password;
+	NSString *eM = [login stringForKey:@"email"];
+	email.text = eM;
+	
     [super viewDidLoad];
 }
-*/
+
+- (void)saveInfo {
+	NSString *name = twtName.text;
+	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+	NSString *password = twtPW.text;
+	[[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+	NSString *em = email.text;
+	[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
+}
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

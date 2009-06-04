@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AboutViewController.h"
 #import "EditorViewController.h"
-#import "AlbumViewController.h"
 #import "ORSTwitPicDispatcher.h"
 
 @interface CameraViewController : UIViewController {
 	AboutViewController *aboutViewController;
 	EditorViewController *editorViewController;
-	AlbumViewController *albumViewController;
+	IBOutlet UINavigationController *navigationController;
 	
 	//settings for buttons and views
 	UIImagePickerController *imagePicker; // for use with the album
@@ -28,21 +27,15 @@
 
 @property(nonatomic,retain) AboutViewController *aboutViewController;
 @property(nonatomic,retain) EditorViewController *editorViewController;
-@property(nonatomic,retain) AlbumViewController *albumViewController;
 
 @property(nonatomic,retain) UIImagePickerController *imagePicker;
 @property(nonatomic,retain) UIImagePickerController *imageTaker;
 
+@property(nonatomic,retain) IBOutlet UINavigationController *navigationController;
+
 - (IBAction)grabImage;
 - (IBAction)takeImage;
-
-// uploading methods for pictures
-- (IBAction)uploadImage;
-- (void) upload2twitpic:(NSData *)picture;
-- (void) upload2site:(NSData *)picture;
-
 - (IBAction) aboutICensr:(id) sender;
-- (IBAction) takePicture:(id) sender2;
-- (IBAction) selectFromAlblum:(id) sender3;
+
 
 @end

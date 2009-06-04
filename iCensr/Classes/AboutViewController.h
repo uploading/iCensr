@@ -24,4 +24,6 @@
 - (IBAction) back:(id) sender;
 - (IBAction) hideKeyBoard:(id) sender;
 
+- (void) saveInfo;
+
 @end

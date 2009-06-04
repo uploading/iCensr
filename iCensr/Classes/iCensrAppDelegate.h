@@ -18,6 +18,7 @@
 	NSString	*mstTwtName;
 	NSString	*mstTwtPW;
 	NSString	*mstEmail;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

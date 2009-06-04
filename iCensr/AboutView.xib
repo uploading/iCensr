@@ -219,7 +219,6 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 							<double key="NSSize">1.700000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<bool key="IBUIClearsOnBeginEditing">YES</bool>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -241,12 +240,12 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 							<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
 						</object>
 						<reference key="IBUIFont" ref="146083712"/>
-						<bool key="IBUIClearsOnBeginEditing">YES</bool>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocorrectionType">1</int>
 							<int key="IBUIReturnKeyType">9</int>
+							<bool key="IBUISecureTextEntry">YES</bool>
 						</object>
 					</object>
 					<object class="IBUITextField" id="61022150">
@@ -263,7 +262,6 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 							<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
 						</object>
 						<reference key="IBUIFont" ref="146083712"/>
-						<bool key="IBUIClearsOnBeginEditing">YES</bool>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -375,9 +373,9 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 							<reference ref="372885995"/>
 							<reference ref="544515717"/>
 							<reference ref="333176127"/>
-							<reference ref="757798152"/>
 							<reference ref="720628908"/>
 							<reference ref="61022150"/>
+							<reference ref="757798152"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>

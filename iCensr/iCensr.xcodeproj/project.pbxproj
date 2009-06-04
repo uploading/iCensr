@@ -28,7 +28,6 @@
 		CB54C2E90FD324C900A3FF49 /* MGTwitterMiscParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C2D80FD324C900A3FF49 /* MGTwitterMiscParser.m */; };
 		CB54C2EA0FD324C900A3FF49 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C2DB0FD324C900A3FF49 /* NSString+UUID.m */; };
 		CB54C2EB0FD324C900A3FF49 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CB54C2DD0FD324C900A3FF49 /* NSData+Base64.m */; };
-		CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */; };
 		CB6EF57F0FCBC09E00FFFB53 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */; };
 		CB6EF5840FCBC12100FFFB53 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */; };
 		CB6EF5F00FCBD45F00FFFB53 /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */; };
@@ -89,8 +88,6 @@
 		CB54C2DB0FD324C900A3FF49 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
 		CB54C2DC0FD324C900A3FF49 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		CB54C2DD0FD324C900A3FF49 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		CB68F9530FCD3E9700445FE9 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
-		CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		CB6EF57E0FCBC09E00FFFB53 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		CB6EF5820FCBC12100FFFB53 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
@@ -142,8 +139,6 @@
 				CB9B2AD40FCB2A5300A28011 /* AboutViewController.m */,
 				CB6EF5820FCBC12100FFFB53 /* CameraViewController.h */,
 				CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */,
-				CB68F9530FCD3E9700445FE9 /* AlbumViewController.h */,
-				CB68F9540FCD3E9700445FE9 /* AlbumViewController.m */,
 				CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */,
 				CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */,
 				CB2067E10FCE07F600F08708 /* Redactor.h */,
@@ -346,7 +341,6 @@
 				CB6EF5840FCBC12100FFFB53 /* CameraViewController.m in Sources */,
 				CB6EF5F00FCBD45F00FFFB53 /* EditorViewController.m in Sources */,
 				CB6EF6170FCBD99300FFFB53 /* ShareViewController.m in Sources */,
-				CB68F9550FCD3E9700445FE9 /* AlbumViewController.m in Sources */,
 				CB2067E30FCE07F600F08708 /* Redactor.m in Sources */,
 				CB54C0230FD1226F00A3FF49 /* Redaction.m in Sources */,
 				CB54C1790FD2220900A3FF49 /* untitled.m in Sources */,
