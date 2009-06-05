@@ -11,7 +11,7 @@
 
 @implementation CameraViewController
 
-@synthesize aboutViewController, editorViewController, imagePicker, imageTaker, twtName, twtPW, signinAlertView;
+@synthesize aboutViewController, editorViewController, imagePicker, imageTaker; //, alertViewController, twtName, twtPW, signinAlertView;
 
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
@@ -95,9 +95,10 @@
 	
 	// if the user has not yet set up their twitter account, as for that information now
 	
-	if( ![self isSignedIn]) {
-		[self askForLoginInfo];
-	}
+	/*alertViewController = [[AlertViewController alloc] init];
+	if(![alertViewController isSignedIn]) {
+		[alertViewController askForLoginInfo];
+	}*/
 	
     [super viewDidLoad];
 }
@@ -117,11 +118,12 @@
 
 
 - (void)dealloc {
+	//[alertViewController release];
     [super dealloc];
 }
 
 # pragma mark login related functions
-
+/*
 - (BOOL) isSignedIn {
 	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
 	twtName = name;
@@ -252,7 +254,7 @@
 	[twtName release];
 	[twtPW release];
 }
-
+*/
 
 
 @end

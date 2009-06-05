@@ -33,6 +33,7 @@
 		CB6EF5F70FCBD4DD00FFFB53 /* EditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF5F60FCBD4DD00FFFB53 /* EditorView.xib */; };
 		CB6EF6170FCBD99300FFFB53 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */; };
 		CB6EF6340FCBDBB400FFFB53 /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6EF6330FCBDBB400FFFB53 /* ShareView.xib */; };
+		CB753D870FD85279000FAAA5 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB753D860FD85279000FAAA5 /* AlertViewController.m */; };
 		CB8E13D00FC50105007B1A1C /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8E13CF0FC50105007B1A1C /* SplashViewController.m */; };
 		CB8E13D20FC50113007B1A1C /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8E13D10FC50113007B1A1C /* splash.png */; };
 		CB8E14000FC51356007B1A1C /* bg_form_section.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8E13FF0FC51356007B1A1C /* bg_form_section.png */; };
@@ -94,6 +95,8 @@
 		CB6EF6150FCBD99300FFFB53 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareViewController.h; path = ../ShareViewController.h; sourceTree = "<group>"; };
 		CB6EF6160FCBD99300FFFB53 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareViewController.m; path = ../ShareViewController.m; sourceTree = "<group>"; };
 		CB6EF6330FCBDBB400FFFB53 /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
+		CB753D850FD85279000FAAA5 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		CB753D860FD85279000FAAA5 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		CB8E13CE0FC50105007B1A1C /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		CB8E13CF0FC50105007B1A1C /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		CB8E13D10FC50113007B1A1C /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				CB9B2AD40FCB2A5300A28011 /* AboutViewController.m */,
 				CB6EF5820FCBC12100FFFB53 /* CameraViewController.h */,
 				CB6EF5830FCBC12100FFFB53 /* CameraViewController.m */,
+				CB753D850FD85279000FAAA5 /* AlertViewController.h */,
+				CB753D860FD85279000FAAA5 /* AlertViewController.m */,
 				CB6EF5EE0FCBD45F00FFFB53 /* EditorViewController.h */,
 				CB6EF5EF0FCBD45F00FFFB53 /* EditorViewController.m */,
 				CB2067E10FCE07F600F08708 /* Redactor.h */,
@@ -349,6 +354,7 @@
 				CB54C2EB0FD324C900A3FF49 /* NSData+Base64.m in Sources */,
 				CBF228A30FD5C1870010D74C /* ORSTwitPicDispatcher.m in Sources */,
 				CBF229FA0FD62CE30010D74C /* ORSTwitPicController.m in Sources */,
+				CB753D870FD85279000FAAA5 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

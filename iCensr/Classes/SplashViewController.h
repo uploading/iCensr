@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 //#import <UITabBarController.h>
 #import "CameraViewController.h"
+#import "AlertViewController.h"
 
 //tabBarController
 
@@ -17,10 +18,15 @@
 	UIImageView *splashImageView;
 	
 	CameraViewController *viewController;
+	AlertViewController *alertViewController;
+
 }
 
 @property(nonatomic,retain) NSTimer *timer;
 @property(nonatomic,retain) UIImageView *splashImageView;
 @property(nonatomic,retain) CameraViewController *viewController;
+
+@property(nonatomic,retain) AlertViewController *alertViewController;
+
 
 @end

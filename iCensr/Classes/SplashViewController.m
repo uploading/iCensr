@@ -10,7 +10,7 @@
 
 @implementation SplashViewController
 
-@synthesize timer,splashImageView,viewController;
+@synthesize timer,splashImageView,viewController,alertViewController;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -35,10 +35,11 @@
 	
 	splashImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash.png"]];
 	splashImageView.frame = CGRectMake(0, 0, 320, 480);
-	[self.view addSubview:splashImageView];
+	//[splashImageView.backgroundColor alpha:0.0];
 	
 	viewController = [[CameraViewController alloc] initWithNibName:@"CameraView" bundle:[NSBundle mainBundle]];
 	viewController.view.alpha = 0.0;
+	[self.view addSubview:splashImageView];
 	[self.view addSubview:viewController.view];
 	
 	timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fadeScreen) userInfo:nil repeats:NO];
@@ -50,17 +51,25 @@
 	[UIView setAnimationDuration:0.75];			// sets animation duration
 	[UIView setAnimationDelegate:self];			// sets delegate for this block
 	[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
-	self.view.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
+	//self.view.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
+	viewController.view.alpha = 1.0;
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 
 - (void) finishedFading
 {
+	/*
 	[UIView beginAnimations:nil context:nil]; //begins animation block;
 	[UIView setAnimationDuration:0.75];		// sets animation duration
 	self.view.alpha = 1.0;		// fades the view to 1.0 alpha over 0.75 seconds
 	viewController.view.alpha = 1.0;
 	[UIView commitAnimations]; //commits the animation block.  This Block is done.
+	*/
+	// set up alert view sequence if username and password have not previously been entered
+	alertViewController = [[AlertViewController alloc] init];
+	if(![alertViewController isSignedIn]) {
+		[alertViewController askForLoginInfo];
+	}
 	[splashImageView removeFromSuperview];
 }
 
