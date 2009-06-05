@@ -67,6 +67,7 @@
 	*/
 	// set up alert view sequence if username and password have not previously been entered
 	alertViewController = [[AlertViewController alloc] init];
+	[alertViewController isSignedIn];
 	if(![alertViewController isSignedIn]) {
 		[alertViewController askForLoginInfo];
 	}

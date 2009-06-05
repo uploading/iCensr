@@ -18,6 +18,7 @@
 	IBOutlet UITextField	*twtPW;		// user's twitter password
 	IBOutlet UITextView		*twtMessage;		// user's email address
 	IBOutlet UISwitch		*willShare;	// send the edit and text to the NCAC site
+	BOOL			*viewShifted;
 	//MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
 	AlertViewController		*alertViewController;
 }
@@ -39,5 +40,10 @@
 //- (void) setImageURL:(NSString *)url;
 
 //- (void) insertStringTokenInNewStatusTextField:(NSString *)stringToken;
+
+// shifting for the keyboard
+- (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)backgroundClick:(id)sender;
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
 
 @end

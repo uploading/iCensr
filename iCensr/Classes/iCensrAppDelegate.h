@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSString	*mstTwtPW;
 @property (nonatomic, retain) NSString	*mstEmail;
 
-- (void)swapInViewAspectWithIdentifier:(NSString *)key;
+//- (void)swapInViewAspectWithIdentifier:(NSString *)key;
 
 @end
 

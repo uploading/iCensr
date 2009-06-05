@@ -10,9 +10,10 @@
 
 @implementation AlertViewController
 
-@synthesize twtName, twtPW, signinAlertView, isUploading, willShare, image2upload, text2upload;
+@synthesize twtName, twtPW, signinAlertView, isUploading, hasUploaded, willShare, image2upload, text2upload, twtNameField, twtPWField;
 
-- (BOOL) isSignedIn {
+- (BOOL) isSignedIn { 
+	NSLog(@"SIGN IN t/f");
 	// default set uploading images to false
 	self.isUploading = NO;
 	// check to see if there are values set in the user defaults for name and password
@@ -21,10 +22,10 @@
 	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
 	self.twtPW = password;
 	// if value is not blank or default
-	if([name isEqualToString:@""] || [name isEqualToString:@"n/a"] || [password isEqualToString:@""] || [password isEqualToString:@"n/a"]) {
+	NSLog(@"IS SIGNED IN %@ %@", self.twtName, self.twtPW);
+	if([name isEqualToString:@""] || [name isEqualToString:@"n/a"] || [password isEqualToString:@""] || [password isEqualToString:@"n/a"] | [name isEqualToString:@"name"] || [password isEqualToString:@"password"] || name == nil || password == nil) {
 		return NO;
 	}
-	NSLog(@"IS SIGNED IN %@ %@", self.twtName, self.twtPW);
 	return YES;
 }
 
@@ -32,12 +33,12 @@
 - (void) askForLoginInfo {
 	NSLog(@"ASK FOR LOGIN INFO called");
 	signinAlertView = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Enter Twitter user name and password" delegate:self cancelButtonTitle:@"Skip" otherButtonTitles:@"Submit", nil];
-	twtName = [signinAlertView addTextFieldWithValue:nil label:@"name"];
-	[twtName setDelegate:self];
-	[twtName setTextAlignment:UITextAlignmentCenter];
-	[twtName becomeFirstResponder];
-	twtPW = [signinAlertView addTextFieldWithValue:nil label:@"password"];
-	[twtPW setTextAlignment:UITextAlignmentCenter];
+	twtNameField = [signinAlertView addTextFieldWithValue:nil label:@"name"];
+	[[signinAlertView textFieldAtIndex:0] setDelegate:self];
+	[[signinAlertView textFieldAtIndex:0] setTextAlignment:UITextAlignmentCenter];
+	[[signinAlertView textFieldAtIndex:0] becomeFirstResponder];
+	twtPWField = [signinAlertView addTextFieldWithValue:nil label:@"password"];
+	[[signinAlertView textFieldAtIndex:1] setTextAlignment:UITextAlignmentCenter];
 	[signinAlertView show];
 	//[signinAlertView release];
 	//signinAlertView = nil;
@@ -46,7 +47,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex { 
 	NSLog(@"ALERT VIEW button pressed");
 	if(alertView == signinAlertView) {
-		NSLog(@"SIGN IN button pressed");
+		NSLog(@"SIGN IN button pressed %@ %@", twtNameField.text, twtPWField.text);
+		twtName = twtNameField.text;
+		twtPW = twtPWField.text;
 		switch(buttonIndex) {
 				NSLog(@"ALERT VIEW button pressed");
 			case 0:
@@ -57,8 +60,8 @@
 				// check for submission contents
 				NSLog(@"SUBMIT pressed");
 				[self checkContent];
-				[twtName retain];
-				[twtPW retain];
+				[twtNameField retain];
+				[twtPWField retain];
 				break;
 		}
 	}
@@ -67,8 +70,8 @@
 		switch(buttonIndex) {
 			case 0:
 				// ignore resubmission
-				[twtName release];
-				[twtPW release];
+				[twtNameField release];
+				[twtPWField release];
 				break;
 			case 1:
 				[self askForLoginInfo];
@@ -81,9 +84,9 @@
 
 - (void) checkContent {
 	NSLog(@"CHECK CONTENT called, %@ %@", self.twtName, self.twtPW);
-	if ([self.twtName isEqualToString:@"n/a"] || [self.twtPW isEqualToString:@"n/a"] || [self.twtName isEqualToString:@""] || [self.twtPW isEqualToString:@""] || [self.twtName isEqualToString:@"name"] || [self.twtPW isEqualToString:@"password"] || self.twtName == nil || self.twtPW == nil) {
-		[self reaskForLoginInfo];
+	if ( self.twtName == nil || self.twtPW == nil || [self.twtName isEqualToString:@"n/a"] || [self.twtPW isEqualToString:@"n/a"] || [self.twtName isEqualToString:@""] || [self.twtPW isEqualToString:@""] || [self.twtName isEqualToString:@"name"] || [self.twtPW isEqualToString:@"password"]) {
 		NSLog(@"content is empty");
+		[self reaskForLoginInfo];
 	}
 	else {
 		NSLog(@"content is present");
@@ -100,7 +103,7 @@
 
 // creates and instance of the twitter engine and checks is name and password login
 - (void) checkConnection {
-	NSLog(@"CHECK CONNECTION called");
+	NSLog(@"CHECK CONNECTION called %@ %@", twtName, twtPW);
 	// set up connection to Twitter
 	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 	
@@ -109,22 +112,8 @@
 	// Get updates from people the authenticated user follows.
 	[twitterEngine getFollowedTimelineFor:twtName since:nil startingAtPage:0];
 	
-	// if there is a picture to upload...upload!
-	if(self.isUploading) {
-		// set up image for uploading
-		NSData *imageData = UIImageJPEGRepresentation(image2upload, 90);
-		
-		// Send picture to twitpic
-		[self upload2twitpic:imageData];
-		
-		// Send text post
-		[twitterEngine sendUpdate:text2upload];
-		
-		// if selected, submit picture and text to NCAC
-		if(self.willShare.on) {
-			[self upload2site:imageData];
-		}
-	}
+	self.hasUploaded = NO;
+
 	// IF connection succeeds, save the values
 	
 	
@@ -136,7 +125,13 @@
     NSLog(@"Request succeeded (%@)", requestIdentifier);
 	
 	// save settings
-	[self saveValues];
+	//[self saveValues];
+	if(!self.hasUploaded) {
+		[self checkForUploads];
+		[self saveValues];
+	}
+	
+	NSLog(@"REQUEST SUCCEEDED completed");
 }
 
 
@@ -154,13 +149,13 @@
 
 // save values entered in alertbox
 - (void) saveValues {
-	NSString *name = twtName;
-	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
-	NSString *password = twtPW;
-	[[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
+	//NSString *name = twtName.text;
+	[[NSUserDefaults standardUserDefaults] setObject:self.twtName forKey:@"name"];
+	//NSString *password = twtPW.text;
+	[[NSUserDefaults standardUserDefaults] setObject:self.twtPW forKey:@"password"];
 	
-	[twtName release];
-	[twtPW release];
+	[twtNameField release];
+	[twtPWField release];
 }
 
 #pragma mark picture uploading methods 
@@ -171,10 +166,31 @@
 	self.isUploading = YES;
 }
 
+- (void) checkForUploads {
+	// if there is a picture to upload...upload!
+	if(self.isUploading && !self.hasUploaded) {
+		self.hasUploaded = YES;
+		NSLog(@"Upload images to twitter");
+		// set up image for uploading
+		NSData *imageData = UIImageJPEGRepresentation(image2upload, 90);
+		
+		// Send picture to twitpic
+		[self upload2twitpic:imageData];
+		
+		// Send text post
+		[twitterEngine sendUpdate:text2upload];
+		
+		// if selected, submit picture and text to NCAC
+		if(self.willShare.on) {
+			[self upload2site:imageData];
+		}
+	}
+}
+
 - (void) upload2twitpic:(NSData *)picture {
 	// upload to twitpic with Canary app
 	ORSTwitPicDispatcher *twitPicDispatcher = [[ORSTwitPicDispatcher alloc] init];
-	NSString *uploadInfo = [twitPicDispatcher uploadData:picture withUsername:@"iCensr" password:@"pic2process" filename:@"censrd"];
+	NSString *uploadInfo = [twitPicDispatcher uploadData:picture withUsername:self.twtName password:self.twtPW filename:@"censrd"];
 	
 	[self setImageURL:uploadInfo];
 	//[self insertStringTokenInNewStatusTextField:twitPicURLString];

@@ -1,5 +1,0 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: In function '-[iCensrAppDelegate swapInViewAspectWithIdentifier:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:24: warning: initialization from incompatible pointer type
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: local declaration of 'viewController' hides instance variable
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: invalid receiver type 'SEL*'
-/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:25: warning: unused variable 'view'

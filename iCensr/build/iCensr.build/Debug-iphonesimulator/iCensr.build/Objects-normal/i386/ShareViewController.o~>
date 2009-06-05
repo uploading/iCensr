@@ -1,0 +1,5 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/../ShareViewController.m: In function '-[ShareViewController textViewShouldBeginEditing:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/../ShareViewController.m:222: warning: assignment makes pointer from integer without a cast
+/Users/ephemeralluna/iCensr/iCensr/Classes/../ShareViewController.m: At top level:
+/Users/ephemeralluna/iCensr/iCensr/Classes/../ShareViewController.m:242: warning: incomplete implementation of class 'ShareViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/../ShareViewController.m:242: warning: method definition for '-hideViewKeyBoard:' not found

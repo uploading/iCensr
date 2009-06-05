@@ -45,14 +45,24 @@
 	//[twtName resignFirstResponder];
 	
 	// submit picture and text to Twitter
-    NSString *username = twtName.text;
-    NSString *password = twtPW.text;
+    //NSString *username = twtName.text;
+    //NSString *password = twtPW.text;
+	
+	// save settings
+	NSString *name = twtName.text;
+	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+	NSString *pw = twtPW.text;
+	[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
 	
 	alertViewController = [[AlertViewController alloc] init];
 	if([alertViewController isSignedIn]) {
 		[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
 		
 		[alertViewController checkContent];
+	}
+	else {
+		[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
+		[alertViewController askForLoginInfo];
 	}
     /*
     // Make sure you entered your login details before running this code... ;)
@@ -99,9 +109,13 @@
 	[twtName resignFirstResponder];
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView {
+	[twtMessage resignFirstResponder];
+}
+
 #pragma mark MGTwitterEngineDelegate methods
 
-
+/*
 - (void)requestSucceeded:(NSString *)requestIdentifier
 {
     NSLog(@"Request succeeded (%@)", requestIdentifier);
@@ -153,89 +167,64 @@
 - (void)miscInfoReceived:(NSArray *)miscInfo forRequest:(NSString *)identifier
 {
 	NSLog(@"Got misc info:\r%@", miscInfo);
+} */
+
+#pragma mark moving screen for keyboard
+// the amount of vertical shift upwards keep the Notes text view visible as the keyboard appears
+#define kOFFSET_FOR_KEYBOARD					140.0
+
+// the duration of the animation for the view shift
+#define kVerticalOffsetAnimationDuration		0.50
+
+- (IBAction)textFieldDoneEditing:(id)sender {
+	NSLog(@"TEXT FIELD DONE EDITING called");
+	[sender resignFirstResponder];
 }
 
-/*
-// had to edit UIImage from NSIMage, not sure what this will do
-- (void)imageReceived:(UIImage *)image forRequest:(NSString *)identifier
+- (IBAction)backgroundClick:(id)sender
 {
-    NSLog(@"Got an image: %@", image);
-    
-    // Save image to the Desktop.
-    NSString *path = [[NSString stringWithFormat:@"~/Desktop/%@.tiff", identifier] stringByExpandingTildeInPath];
-    [[image TIFFRepresentation] writeToFile:path atomically:NO];
-}
-*/
-#pragma mark TweetPic Code
-/*
-- (void) upload2twitpic:(NSData *)picture {
-	// upload to twitpic with Canary app
-	ORSTwitPicDispatcher *twitPicDispatcher = [[ORSTwitPicDispatcher alloc] init];
-	NSString *uploadInfo = [twitPicDispatcher uploadData:picture withUsername:@"iCensr" password:@"pic2process" filename:@"censrd"];
+	NSLog(@"BACKGROUND CLICK called");
+	//[latitudeField resignFirstResponder];
+	//[longitudeField resignFirstResponder];
+	//[notesField resignFirstResponder];
+	
+	if (viewShifted)
+	{
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:kVerticalOffsetAnimationDuration];
 		
-	[self setImageURL:uploadInfo];
-	//[self insertStringTokenInNewStatusTextField:twitPicURLString];
+		CGRect rect = self.view.frame;
+		rect.origin.y += kOFFSET_FOR_KEYBOARD;
+		rect.size.height -= kOFFSET_FOR_KEYBOARD;
+		self.view.frame = rect;
+		
+		[UIView commitAnimations];
+		
+		viewShifted = FALSE;
+	}		
 }
 
-- (void) setImageURL:(NSString *)url {
-	NSString *originalText = self.twtMessage.text;
-	NSString *combinedText = [NSString stringWithFormat:@"%@ %@", url, originalText];
-	NSLog(@"%@ ", combinedText);
-	self.twtMessage.text = combinedText;
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+	if (!viewShifted) {		// don't shift if it's already shifted
+		NSLog(@"VIEW SHOULD BEGIN EDITING called");
+		
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:kVerticalOffsetAnimationDuration];
+		
+		CGRect rect = self.view.frame;		
+		rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+		rect.size.height += kOFFSET_FOR_KEYBOARD;
+		self.view.frame = rect;
+		
+		[UIView commitAnimations];
+		
+		viewShifted = TRUE;
+	}
+	return YES;
 }
 
-- (void) upload2site:(NSData *)picture {
-	// setting up the URL to post to
-	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
-	
-	//setting up the request object now
-	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
-	[request setURL:[NSURL URLWithString:urlString]];
-	[request setHTTPMethod:@"POST"];
-	
-	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
-	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-	
-	// create the body of the post
-	
-	NSMutableData *body = [NSMutableData data];
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[NSData dataWithData:picture]];
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	// setting the body of the post to the request
-	[request setHTTPBody:body];
-	
-	// now lets make the connection to the web
-	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-	
-	NSLog(returnString);
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+#pragma mark default code
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

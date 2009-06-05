@@ -13,20 +13,16 @@
 
 @synthesize window;
 @synthesize aspectControllers, viewController, mstTwtName, mstTwtPW, mstEmail;
-
+/*
 - (void)swapInViewAspectWithIdentifier:(NSString *)key {
-	/*MyViewControllerCommonSuperclass *viewController = [aspectControllers objectForKey:identifier];
-	NSView *view = [viewController view];
+
 	
-	// now, do stuff with the view, such as making it the current subview of the window
-	 */
-	
-	SEL *viewController = [aspectControllers objectForKey:key];
+	//SEL *viewController = [aspectControllers objectForKey:key];
 	UIResponder *view = [viewController view];
 	
 	// now, do stuff with the view, such as making it the current subview of the window
 }
-
+*/
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     //NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
 	viewController = [[SplashViewController alloc] init];
