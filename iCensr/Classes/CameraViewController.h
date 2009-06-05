@@ -53,6 +53,9 @@
 - (IBAction) takeImage;
 - (IBAction) aboutICensr:(id) sender;
 
+// for debugging purposes
+- (IBAction) toEditor:(id)sender;
+
 /*
 // login related functions
 - (BOOL) isSignedIn;

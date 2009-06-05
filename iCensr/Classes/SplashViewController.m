@@ -95,6 +95,7 @@
 
 
 - (void)dealloc {
+	[splashImageView release];
     [super dealloc];
 }
 

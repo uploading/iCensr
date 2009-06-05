@@ -1,9 +1,3 @@
 /Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController viewDidLoad]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:33: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:38: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: In function '-[CameraViewController imagePickerController:didFinishPickingImage:editingInfo:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:61: warning: passing argument 1 of 'setPic:' from distinct Objective-C type
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m: At top level:
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: incomplete implementation of class 'CameraViewController'
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: method definition for '-selectFromAlblum:' not found
-/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:167: warning: method definition for '-takePicture:' not found
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:88: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol
+/Users/ephemeralluna/iCensr/iCensr/Classes/CameraViewController.m:93: warning: class 'CameraViewController' does not implement the 'UINavigationControllerDelegate' protocol

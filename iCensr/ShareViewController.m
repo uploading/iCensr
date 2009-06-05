@@ -11,9 +11,8 @@
 
 @implementation ShareViewController
 
-@synthesize twtPic, twtName, twtPW, twtMessage, willShare;
-
-
+@synthesize twtPic, twtName, twtPW, twtMessage, alertViewController, willShare;
+/*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -28,9 +27,15 @@
 	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
 	twtPW.text = password;
 }
-
+*/
 - (void) setImage:(UIImage *)picture {
 	twtPic.image = picture;
+	
+	// piggy backing to set user default name and password
+	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
+	twtName.text = name;
+	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+	twtPW.text = password;
 }
 
 #pragma mark share action methods
@@ -42,7 +47,14 @@
 	// submit picture and text to Twitter
     NSString *username = twtName.text;
     NSString *password = twtPW.text;
-    
+	
+	alertViewController = [[AlertViewController alloc] init];
+	if([alertViewController isSignedIn]) {
+		[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
+		
+		[alertViewController checkContent];
+	}
+    /*
     // Make sure you entered your login details before running this code... ;)
     if ([username isEqualToString:@"n/a"] || [password isEqualToString:@"n/a"]) {
         NSLog(@"You forgot to specify your username/password in AppController.m!");
@@ -53,6 +65,7 @@
 		[prompt release];
     }
     else {
+		
 		// Create a TwitterEngine and set our login details.
 		twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 		[twitterEngine setUsername:username password:password];
@@ -73,8 +86,9 @@
 		if(willShare.on) {
 			[self upload2site:imageData];
 		}
+		 
 		
-	}
+	}*/
 }
 
 - (IBAction)back:(id) sender {
@@ -141,7 +155,7 @@
 	NSLog(@"Got misc info:\r%@", miscInfo);
 }
 
-
+/*
 // had to edit UIImage from NSIMage, not sure what this will do
 - (void)imageReceived:(UIImage *)image forRequest:(NSString *)identifier
 {
@@ -151,9 +165,9 @@
     NSString *path = [[NSString stringWithFormat:@"~/Desktop/%@.tiff", identifier] stringByExpandingTildeInPath];
     [[image TIFFRepresentation] writeToFile:path atomically:NO];
 }
-
+*/
 #pragma mark TweetPic Code
-
+/*
 - (void) upload2twitpic:(NSData *)picture {
 	// upload to twitpic with Canary app
 	ORSTwitPicDispatcher *twitPicDispatcher = [[ORSTwitPicDispatcher alloc] init];
@@ -179,14 +193,6 @@
 	[request setURL:[NSURL URLWithString:urlString]];
 	[request setHTTPMethod:@"POST"];
 	
-	/*
-	 add some header info now
-	 we always need a boundary when we post a file
-	 also we need to set the content type
-	 
-	 You might want to generate a random boundary.. this is just the same 
-	 as my output from wireshark on a valid html post
-	 */
 	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
 	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
@@ -208,7 +214,7 @@
 	
 	NSLog(returnString);
 }
-
+*/
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -238,7 +244,8 @@
 
 
 - (void)dealloc {
-	[twitterEngine release];
+	//[twitterEngine release];
+	//[alertViewController release];
     [super dealloc];
 }
 

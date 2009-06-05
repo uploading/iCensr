@@ -256,5 +256,18 @@
 }
 */
 
+// for editing purposes only
+- (IBAction) toEditor:(id)sender {
+	if(self.editorViewController == nil) {
+		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
+		self.editorViewController = newView;
+		[newView release];
+		NSLog(@"_____________if statement run_____________");
+		[self.view addSubview:editorViewController.view];
+	}
+	
+	[editorViewController setPic:nil];
+	
+}
 
 @end
