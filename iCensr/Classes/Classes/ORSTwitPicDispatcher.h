@@ -28,8 +28,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ORSTwitPicDispatcher : NSObject {
-
+	IBOutlet NSMutableString	*twtPicURL;
+	IBOutlet BOOL				isURL;
+	//NSMutableDictionary *currentResult; 
+	//NSString *currentElement; 
+	//NSString *lastElement;
+	//NSMutableArray *results;
 }
+
+@property(nonatomic,retain) IBOutlet NSString		*twtPicURL;
 
 - (NSString *) uploadData:(NSData *)imageData
 			 withUsername:(NSString *)username

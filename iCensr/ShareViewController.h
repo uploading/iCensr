@@ -21,6 +21,7 @@
 	BOOL			*viewShifted;
 	//MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
 	AlertViewController		*alertViewController;
+	//IBOutlet NSString		*twtPicURL; // holds url where twitpic is sent
 }
 
 @property(nonatomic,retain) IBOutlet UIImageView	*twtPic;
@@ -29,6 +30,7 @@
 @property(nonatomic,retain) IBOutlet UITextView		*twtMessage;		// user's email address
 @property(nonatomic,retain) IBOutlet UISwitch		*willShare;
 @property(nonatomic,retain) AlertViewController		*alertViewController;
+//@property(nonatomic,retain) IBOutlet NSString		*twtPicURL;
 
 - (IBAction) share:(id)sender;
 - (IBAction) back:(id)sender;
