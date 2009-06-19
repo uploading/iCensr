@@ -69,7 +69,7 @@
 	self.toolbar.hidden = YES;
 	
 	UIGraphicsBeginImageContext(image.bounds.size);
-	[image.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+	[image.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	

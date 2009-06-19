@@ -8,28 +8,37 @@
 
 #import <UIKit/UIKit.h>
 #import "SplashViewController.h"
+#import "EditorViewController.h"
 
 //@class SplashViewController;
 
-@interface iCensrAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow	*window;
-    SplashViewController *viewController;
-	NSDictionary	*aspectControllers; //links view controllers
-	NSString	*mstTwtName;
-	NSString	*mstTwtPW;
-	NSString	*mstEmail;
+@interface iCensrAppDelegate : NSObject <UIApplicationDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    AboutViewController *aboutViewController;
+	EditorViewController *editorViewController;
 	
+	UIWindow	*window;
+	UIImagePickerController* imagePickerController;
+	UIImagePickerController* imageTakerController;
+	UIImageView* imageView;
+    SplashViewController *viewController;
 }
+
+@property(nonatomic,retain) AboutViewController *aboutViewController;
+@property(nonatomic,retain) EditorViewController *editorViewController;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet SplashViewController *viewController;
-@property (nonatomic, retain) NSDictionary	*aspectControllers;
-// user values
-@property (nonatomic, retain) NSString	*mstTwtName;
-@property (nonatomic, retain) NSString	*mstTwtPW;
-@property (nonatomic, retain) NSString	*mstEmail;
+@property(nonatomic,retain) UIImagePickerController *imagePickerController;
+@property(nonatomic,retain) UIImagePickerController *imageTakerController;
 
 //- (void)swapInViewAspectWithIdentifier:(NSString *)key;
+- (void)applicationDidFinishLaunching:(UIApplication *)application;
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+				  editingInfo:(NSDictionary *)editingInfo;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
+
+- (IBAction)aboutICensr:(id) sender;
+- (IBAction)grabImage:(id)sender;
 
 @end
-

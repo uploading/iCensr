@@ -12,7 +12,7 @@
 @implementation iCensrAppDelegate
 
 @synthesize window;
-@synthesize aspectControllers, viewController, mstTwtName, mstTwtPW, mstEmail;
+@synthesize viewController, aboutViewController, editorViewController, imagePickerController, imageTakerController;
 /*
 - (void)swapInViewAspectWithIdentifier:(NSString *)key {
 
@@ -25,16 +25,109 @@
 */
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     //NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
+	
+	// Create window
+    /*self.window = [[[UIWindow alloc]
+					initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];	
+	
+	UIImagePickerController *picker;
+	picker = [[UIImagePickerController alloc] init];
+	picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	
+	picker.delegate = self;*/
+	//[picker.delegate presentModalViewController:picker animated:NO];
+	//[window addSubview:picker.view];
+	//[picker release];
+	
+	/*
+    self.window = [[[UIWindow alloc]
+					initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+	
+    // Set up the image picker controller and add it to the view
+    imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType = 
+	UIImagePickerControllerSourceTypePhotoLibrary;
+    [window addSubview:imagePickerController.view];
+	
+    // Set up the image view and add it to the view but make it hidden
+    imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
+    imageView.hidden = YES;
+    [window addSubview:imageView];
+	
+    [window makeKeyAndVisible];
+	*/
+	
+	
+	// SPLASH SCREEN LOAD
 	viewController = [[SplashViewController alloc] init];
 	
 	//populate NSDictionary
-	[aspectControllers setValue:@"SignUpViewController" forKey:@"SignUpView"];
+	//[aspectControllers setValue:@"SignUpViewController" forKey:@"SignUpView"];
 	
     // Override point for customization after app launch    
     [window addSubview:[viewController view]];
     [window makeKeyAndVisible];
+	 
 }
 
+- (IBAction)grabImage:(id)sender {
+	NSLog(@"GRAB IMAGE pressed");
+	// Create window
+	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] &&
+		[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary]) {
+		imageTakerController = [[UIImagePickerController alloc] init];
+		 imageTakerController.delegate = self;
+		 imageTakerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		 [window addSubview:imageTakerController.view];
+	
+	/*self.imagePickerController = [[UIImagePickerController alloc] init];
+	 //self.imagePickerController.allowsImageEditing = YES;
+	 self.imagePickerController.delegate = self;
+	 self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	 */
+	//[imagePickerController release];
+	
+	// Set up the image view and add it to the view but make it hidden
+	imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
+	imageView.hidden = YES;
+	[window addSubview:imageView];		
+	}
+    //[self presentModalViewController:self.imagePickerController animated:YES];
+	NSLog(@"+++++ Image Grabbed ++++++++");
+}
+
+// from PickImageAppDelegate.m
+- (void)imagePickerController:(UIImagePickerController *)picker 
+		didFinishPickingImage:(UIImage *)image
+				  editingInfo:(NSDictionary *)editingInfo
+{
+    // Dismiss the image selection, hide the picker and
+    //show the image view with the picked image
+    [picker dismissModalViewControllerAnimated:YES];
+    imagePickerController.view.hidden = YES;
+    imageView.image = image;
+    imageView.hidden = NO;
+    [window bringSubviewToFront:imageView];
+}
+
+- (IBAction) aboutICensr:(id) sender {
+	NSLog(@"__________transition to iCensr Info___________");
+	AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
+	self.aboutViewController = newView;
+	[newView release];
+	NSLog(@"_____________if statement run_____________");
+	[window addSubview:self.aboutViewController.view];
+	//[window pushViewController:aboutViewController animated:YES];
+}
+
+// from PickImageAppDelegate.m
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    // Dismiss the image selection and close the program
+    [picker dismissModalViewControllerAnimated:YES];
+    exit(0);
+}
 
 - (void)dealloc {
     [viewController release];

@@ -10,7 +10,7 @@
 
 @implementation SplashViewController
 
-@synthesize timer,splashImageView,viewController,alertViewController;
+@synthesize timer,splashImageView,alertViewController;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -51,8 +51,8 @@
 	[UIView setAnimationDuration:0.75];			// sets animation duration
 	[UIView setAnimationDelegate:self];			// sets delegate for this block
 	[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
-	//self.view.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
-	viewController.view.alpha = 1.0;
+	self.view.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
+	//viewController.view.alpha = 1.0;
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 
