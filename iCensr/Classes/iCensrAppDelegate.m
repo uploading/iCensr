@@ -24,8 +24,15 @@
 }
 */
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    //NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
+    NSLog(@"________________________________DELEGATE SCREEN LOADED___________________________");
+	/*
+	UIViewController *myContentController = [[UIViewController alloc] init];
+	UINavigationController *presentModalViewController = [[UINavigationController alloc] initWithRootViewController: myContentController];
 	
+	// self is a UIViewController
+	myContentController.cameraViewController = self;
+	[self presentModalViewController: presentModalViewController animated: YES];
+	*/
 	// Create window
     /*self.window = [[[UIWindow alloc]
 					initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];	
@@ -72,7 +79,20 @@
 }
 
 - (IBAction)grabImage:(id)sender {
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsImageEditing = YES;
+    [self presentModalViewController:picker animated:YES];
+	/*
 	NSLog(@"GRAB IMAGE pressed");
+	
+	imagePickerController =[[UIImagePickerController alloc] init];
+	imagePickerController.delegate = self;
+	imagePickerController.sourceType =UIImagePickerControllerSourceTypePhotoLibrary;
+	[self  presentModalViewController: imagePickerController animated: YES];
+	 */
+	/*
 	// Create window
 	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] &&
 		[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary]) {
@@ -80,7 +100,7 @@
 		 imageTakerController.delegate = self;
 		 imageTakerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 		 [window addSubview:imageTakerController.view];
-	
+	*/
 	/*self.imagePickerController = [[UIImagePickerController alloc] init];
 	 //self.imagePickerController.allowsImageEditing = YES;
 	 self.imagePickerController.delegate = self;
@@ -89,14 +109,31 @@
 	//[imagePickerController release];
 	
 	// Set up the image view and add it to the view but make it hidden
-	imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
+	/*imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
 	imageView.hidden = YES;
 	[window addSubview:imageView];		
-	}
+	}*/
     //[self presentModalViewController:self.imagePickerController animated:YES];
 	NSLog(@"+++++ Image Grabbed ++++++++");
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+	 //open share editor controller
+	 if(self.editorViewController == nil) {
+	 EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
+	 self.editorViewController = newView;
+	 [newView release];
+	 NSLog(@"_____________if statement run_____________");
+	 [window addSubview:editorViewController.view];
+	 }
+	 
+	 [editorViewController setPic:img];
+	 
+	 //image.image = img;
+	 [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+	 //upload.enabled = YES;
+}
+/*
 // from PickImageAppDelegate.m
 - (void)imagePickerController:(UIImagePickerController *)picker 
 		didFinishPickingImage:(UIImage *)image
@@ -110,7 +147,7 @@
     imageView.hidden = NO;
     [window bringSubviewToFront:imageView];
 }
-
+*/
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
 	AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
