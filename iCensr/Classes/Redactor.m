@@ -80,10 +80,10 @@
 	CGFloat yMidpoint = (point1.y+point2.y)/2;
 	
 	// width of the rectangle
-	CGFloat rectWeight = 30;
+	CGFloat rectWeight = 40;
 	
 	// disance between point1 and point2
-	CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist);
+	CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist) + rectWeight;
 	// angle of fingers    
     CGFloat newAngle = atan(yDist/xDist);
 	
@@ -132,10 +132,10 @@
 		CGFloat yMidpoint = (nPoint1.y+nPoint2.y)/2;
 		
 		// width of the rectangle
-		CGFloat rectWeight = 30;
+		CGFloat rectWeight = 40;
 		
 		// disance between point1 and point2
-		CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist);
+		CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist) + rectWeight;
 		// angle of fingers    
 		CGFloat newAngle = atan(yDist/xDist);
 		
@@ -169,7 +169,7 @@
 		//[redaction2Draw release];
 	}
 }
-
+/*
 - (void)drawEdits:(CGRect)rect {
     // Drawing code
 	NSLog(@"drawRect");
@@ -271,7 +271,7 @@
 		
 		//[redaction2Draw release];
 	}
-}
+}*/
 
 - (UIImage *)polygonImageOfSize:(CGSize)size {
 	UIImage *result = nil;

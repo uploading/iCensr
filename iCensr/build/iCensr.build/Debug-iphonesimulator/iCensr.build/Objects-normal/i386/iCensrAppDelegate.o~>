@@ -1,0 +1,11 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: In function '-[iCensrAppDelegate applicationDidFinishLaunching:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:74: error: 'cameraViewController' undeclared (first use in this function)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:74: error: (Each undeclared identifier is reported only once
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:74: error: for each function it appears in.)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: In function '-[iCensrAppDelegate grabImage:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:88: warning: 'iCensrAppDelegate' may not respond to '-presentModalViewController:animated:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:88: warning: (Messages without a matching method signature
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:88: warning: will be assumed to return 'id' and accept
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:88: warning: '...' as arguments.)
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m: At top level:
+/Users/ephemeralluna/iCensr/iCensr/Classes/iCensrAppDelegate.m:15: error: synthesized property 'cameraViewController' must either be named the same as a compatible ivar or must explicitly name an ivar

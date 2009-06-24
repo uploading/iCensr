@@ -10,7 +10,7 @@
 
 @implementation AlertViewController
 
-@synthesize twtName, twtPW, signinAlertView, isUploading, hasUploaded, willShare, image2upload, text2upload, twtNameField, twtPWField;
+@synthesize twtName, twtPW, signinAlertView, isUploading, hasUploaded, image2upload, text2upload, twtNameField, twtPWField;
 
 - (BOOL) isSignedIn { 
 	NSLog(@"SIGN IN t/f");
@@ -181,9 +181,9 @@
 		[twitterEngine sendUpdate:text2upload];
 		
 		// if selected, submit picture and text to NCAC
-		if(self.willShare.on) {
+		/*if(self.willShare.on) {
 			[self upload2site:imageData];
-		}
+		}*/
 	}
 }
 
@@ -203,7 +203,7 @@
 	text2upload = combinedText;
 }
 
-- (void) upload2site:(NSData *)picture {
+/*- (void) upload2site:(NSData *)picture {
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
 	
@@ -212,14 +212,6 @@
 	[request setURL:[NSURL URLWithString:urlString]];
 	[request setHTTPMethod:@"POST"];
 	
-	/*
-	 add some header info now
-	 we always need a boundary when we post a file
-	 also we need to set the content type
-	 
-	 You might want to generate a random boundary.. this is just the same 
-	 as my output from wireshark on a valid html post
-	 */
 	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
 	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
@@ -240,7 +232,7 @@
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
 	NSLog(returnString);
-}
+}*/
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.

@@ -34,8 +34,8 @@
 
 - (IBAction) cancelEdit:(id)sender {
 	NSLog(@"_____________return to camera view________________");
-	
 	self.view.hidden = YES;
+	//[self.view release];
 }
 
 - (IBAction) shareImage:(id)sender {
@@ -60,21 +60,27 @@
 	}
 	shareViewController.view.hidden = NO;
 	
-	//[self render];
 	[shareViewController setImage:screenShot];
-	//[shareViewController setImage:image.image];
 }
 
 - (UIImage *) render {
+	// conceal toolbar
 	self.toolbar.hidden = YES;
 	
-	UIGraphicsBeginImageContext(image.bounds.size);
+	// grab full image
+	/*UIGraphicsBeginImageContext(image.bounds.size);
 	[image.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();*/
+	UIGraphicsBeginImageContext(self.view.bounds.size);
+	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	
+	// reveal toolbar
 	self.toolbar.hidden = NO;
 	
+	// return screenshot
 	return viewImage;
 }
 

@@ -10,8 +10,6 @@
 #import "SplashViewController.h"
 #import "EditorViewController.h"
 
-//@class SplashViewController;
-
 @interface iCensrAppDelegate : NSObject <UIApplicationDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     AboutViewController *aboutViewController;
 	EditorViewController *editorViewController;

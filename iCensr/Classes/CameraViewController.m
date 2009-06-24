@@ -15,15 +15,31 @@
 
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
+	if(aboutViewController == nil) {
 		 AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
 		 self.aboutViewController = newView;
 		 [newView release];
 		 NSLog(@"_____________if statement run_____________");
 		 [self.view addSubview:aboutViewController.view];
+	}
+	else {
+		self.aboutViewController.view.hidden = NO;
+	}
 		 //[self.navigationController pushViewController:self.aboutViewController animated:YES];
 }
 
 - (void)viewDidLoad {
+	// setup navigation controller
+	//navigationController = [[UINavigationController alloc] init];
+
+	//[self.view addSubview:navigationController.view];
+	// disable incompatable buttons (no camera button if there is no camera
+	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+		camera.enabled = NO;
+	}
+	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+		album.enabled = NO;
+	}
 	/*
 	self.imagePicker = [[UIImagePickerController alloc] init];
 	self.imagePicker.allowsImageEditing = YES;
@@ -39,34 +55,67 @@
 	 */
 }
 
-- (IBAction)grabImage {
-    //[self presentModalViewController:self.imagePicker animated:YES];
-	NSLog(@"+++++ Image Grabbed ++++++++");
+- (IBAction)pickImage:(id)sender {
+	NSLog(@"PICK IMAGE called");
+	
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+		UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+		picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		picker.delegate = self;
+		
+		[self presentModalViewController:picker animated:YES];
+	}
 }
 
-- (IBAction)takeImage {
-	//[self presentModalViewController:self.imageTaker animated:YES];
+- (IBAction)takeImage:(id)sender {
+	NSLog(@"TAKE IMAGE called");
+	
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+		UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+		picker.delegate = self;
+		
+		[self presentModalViewController:picker animated:YES];
+	}
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+- (void)imagePickerController:(UIImagePickerController*)picker
+		didFinishPickingImage:(UIImage*)image editingInfo:(NSDictionary*)editingInfo {
+	// set up editor
+	
 	/*
-	//open share editor controller
+	// save or use image here
+	NSLog(@"navigating to EDITOR VIEW");
+	// create an instrance of Editor View
+	EditorViewController *nextView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:nil];
+	NSLog(@"navigationController %@", self.navigationController);
+	[self.navigationController pushViewController:nextView animated:NO];
+	// set picture to be edited
+	[nextView setPic:image];
+	// release the controller, navigation contrtoller is retaining it
+	[nextView release];*/
 	if(self.editorViewController == nil) {
 		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
 		self.editorViewController = newView;
 		[newView release];
-		NSLog(@"_____________if statement run_____________");
 		[self.view addSubview:editorViewController.view];
 	}
+	else {
+		self.editorViewController.view.hidden = NO;
+	}
 	
-	[editorViewController setPic:img];
+	[editorViewController setPic:image];
 	
-	//image.image = img;
-	[[picker parentViewController] dismissModalViewControllerAnimated:YES];
-	upload.enabled = YES;
-	 */
+	// Dismiss the image picker
+	[self dismissModalViewControllerAnimated:YES];
+	[picker release];
 }
 
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
+	//Dismiss the imae picker
+	[self dissmissModalViewControllerAnimated:YES];
+	[picker release];
+}
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -114,9 +163,27 @@
 		NSLog(@"_____________if statement run_____________");
 		[self.view addSubview:editorViewController.view];
 	}
+	else {
+		self.editorViewController.view.hidden = NO;
+	}
+	/*
+	// save or use image here
+	NSLog(@"navigating to EDITOR VIEW");
+	// create a navigation controller
+	UINavigationController *navigationController = [[UINavigationController alloc] init];
+	// create an instrance of Editor View
+	EditorViewController *nextView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:nil];
+	NSLog(@"navigationController %@", navigationController);
+	[navigationController pushViewController:nextView animated:YES];
+	// set picture to be edited
+	[nextView setPic:nil];
+	// release the controller, navigation contrtoller is retaining it
+	[nextView release];
+	// Add the navigation controller's view to the view
+	[self.view addSubview:navigationController.view];
 	
-	[editorViewController setPic:nil];
-	
+	//[editorViewController setPic:nil];
+	*/
 }
 
 @end

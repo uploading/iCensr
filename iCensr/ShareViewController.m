@@ -11,16 +11,19 @@
 
 @implementation ShareViewController
 
-@synthesize twtPic, twtName, twtPW, twtMessage, alertViewController, willShare;
-/*
+@synthesize twtPic, twtName, twtPW, twtMessage, alertViewController, willShareOnTwitter, willSaveInAlbum, willSubmitToNCAC;
+
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	NSLog(@"INIT WITH NIB NAME called");
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
+		twtPic.userInteractionEnabled = NO;
+		twtPic.exclusiveTouch = NO;
     }
     return self;
 }
-
+/*
 - (void)viewWillAppear:(BOOL)animated {
 	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
 	twtName.text = name;
@@ -29,6 +32,7 @@
 }
 */
 - (void) setImage:(UIImage *)picture {
+	NSLog(@"SET IMAGE called");
 	twtPic.image = picture;
 	
 	// piggy backing to set user default name and password
@@ -48,21 +52,37 @@
     //NSString *username = twtName.text;
     //NSString *password = twtPW.text;
 	
-	// save settings
-	NSString *name = twtName.text;
-	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
-	NSString *pw = twtPW.text;
-	[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
-	
-	alertViewController = [[AlertViewController alloc] init];
-	if([alertViewController isSignedIn]) {
-		[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
+	// if selected, share on Twitter
+	if(self.willShareOnTwitter.on) {
+		NSLog(@"WILL SHARE ON TWITTER selected");
+		NSString *name = twtName.text;
+		[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+		NSString *pw = twtPW.text;
+		[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
 		
-		[alertViewController checkContent];
+		alertViewController = [[AlertViewController alloc] init];
+		if([alertViewController isSignedIn]) {
+			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
+			
+			[alertViewController checkContent];
+		}
+		else {
+			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
+			[alertViewController askForLoginInfo];
+		}
 	}
-	else {
-		[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
-		[alertViewController askForLoginInfo];
+	
+	// if selected, submit to NCAC
+	if(self.willSubmitToNCAC.on) {
+		NSLog(@"WILL SUBMIT TO NCAC selected");
+		NSData *imageData = UIImageJPEGRepresentation(twtPic.image, 90);
+		[self upload2site:imageData];
+	}
+	
+	if(self.willSaveInAlbum.on) {
+		NSLog(@"WILL SAVE IN ALBUM selected");
+		UIImageWriteToSavedPhotosAlbum(twtPic.image, self, (SEL)@selector(image:didFinshSavingWithError:contextInfo:), nil);
+		//[twtPic.image UIImageWriteToSavedPhotosAlbum];
 	}
     /*
     // Make sure you entered your login details before running this code... ;)
@@ -101,6 +121,45 @@
 	}*/
 }
 
+- (void) upload2site:(NSData *)picture {
+	// setting up the URL to post to
+	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
+	
+	//setting up the request object now
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+	
+	/*
+	 add some header info now
+	 we always need a boundary when we post a file
+	 also we need to set the content type
+	 
+	 You might want to generate a random boundary.. this is just the same 
+	 as my output from wireshark on a valid html post
+	 */
+	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+	
+	// create the body of the post
+	
+	NSMutableData *body = [NSMutableData data];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:picture]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// setting the body of the post to the request
+	[request setHTTPBody:body];
+	
+	// now lets make the connection to the web
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	
+	NSLog(returnString);
+}
+
 - (IBAction)back:(id) sender {
 	self.view.hidden = YES;
 }
@@ -109,9 +168,9 @@
 	[twtName resignFirstResponder];
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView {
+/*- (void)textViewDidEndEditing:(UITextView *)textView {
 	[twtMessage resignFirstResponder];
-}
+}*/
 
 #pragma mark MGTwitterEngineDelegate methods
 
@@ -176,12 +235,12 @@
 // the duration of the animation for the view shift
 #define kVerticalOffsetAnimationDuration		0.50
 
-- (IBAction)textFieldDoneEditing:(id)sender {
+/*- (IBAction)textFieldDoneEditing:(id)sender {
 	NSLog(@"TEXT FIELD DONE EDITING called");
 	[sender resignFirstResponder];
-}
+}*/
 
-- (IBAction)backgroundClick:(id)sender
+/*- (IBAction)backgroundClick:(id)sender
 {
 	NSLog(@"BACKGROUND CLICK called");
 	//[latitudeField resignFirstResponder];
@@ -202,10 +261,12 @@
 		
 		viewShifted = FALSE;
 	}		
-}
+}*/
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+	NSLog(@"TEXT VIEW SHOULD BEGIN EDITING called");
+	/*
 	if (!viewShifted) {		// don't shift if it's already shifted
 		NSLog(@"VIEW SHOULD BEGIN EDITING called");
 		
@@ -220,8 +281,18 @@
 		[UIView commitAnimations];
 		
 		viewShifted = TRUE;
-	}
+	}*/
 	return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+	NSLog(@"TEXT VIEW SHOULD END EDITING called");
+	[twtMessage resignFirstResponder];
+	return YES;
+}
+- (void)textViewDidEndEditing:(UITextView *)textView {
+	NSLog(@"TEXT VIEW DID END EDITING called");
+	[twtMessage resignFirstResponder];
 }
 
 #pragma mark default code

@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">528</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">10A380</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
-		<string key="IBDocument.HIToolboxVersion">353.00</string>
+		<string key="IBDocument.AppKitVersion">1025.2</string>
+		<string key="IBDocument.HIToolboxVersion">427.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="1"/>
@@ -16,7 +16,7 @@
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys">
+			<object class="NSArray" key="dict.sortedKeys" id="0">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
@@ -78,7 +78,7 @@
 						</object>
 						<object class="NSColor" key="IBUITextColor" id="343295842">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC44MDAwMDAwMSAwLjgwMDAwMDAxIDAuODAwMDAwMDEAA</bytes>
+							<bytes key="NSRGB">MC44MDAwMDAwMTE5IDAuODAwMDAwMDExOSAwLjgwMDAwMDAxMTkAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -174,13 +174,14 @@ byBoaWdobGlnaHQgdGhlIGFyYml0cmFyaW5lc3Mgb2YgY2Vuc29yc2hpcCBhbmQgZW5jb3VyYWdlIGRp
 c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC43MDE5NjA4IDAuNzAxOTYwOCAwLjcwMTk2MDgAA</bytes>
+							<bytes key="NSRGB">MC43MDE5NjA4MDIxIDAuNzAxOTYwODAyMSAwLjcwMTk2MDgwMjEAA</bytes>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">1.300000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
 					</object>
 					<object class="IBUINavigationBar" id="333176127">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -212,7 +213,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 						<string key="IBUIText">n/a</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
+							<bytes key="NSRGB">MCAwLjUwMTk2MDgxNCAxAA</bytes>
 						</object>
 						<object class="NSFont" key="IBUIFont" id="146083712">
 							<string key="NSName">Helvetica</string>
@@ -237,7 +238,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 						<string key="IBUIText">n/a</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
+							<bytes key="NSRGB">MCAwLjUwMTk2MDgxNCAxAA</bytes>
 						</object>
 						<reference key="IBUIFont" ref="146083712"/>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
@@ -259,7 +260,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 						<string key="IBUIText">n/a</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwLjUwMTk2MDgxIDEAA</bytes>
+							<bytes key="NSRGB">MCAwLjUwMTk2MDgxNCAxAA</bytes>
 						</object>
 						<reference key="IBUIFont" ref="146083712"/>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
@@ -274,7 +275,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC4yIDAuMiAwLjIAA</bytes>
+					<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
 				</object>
 			</object>
 		</object>
@@ -354,9 +355,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<object class="NSArray" key="object" id="360949347">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-						</object>
+						<reference key="object" ref="0"/>
 						<reference key="children" ref="1000"/>
 						<nil key="parent"/>
 					</object>
@@ -377,18 +376,18 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 							<reference ref="61022150"/>
 							<reference ref="757798152"/>
 						</object>
-						<reference key="parent" ref="360949347"/>
+						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">-1</int>
 						<reference key="object" ref="372490531"/>
-						<reference key="parent" ref="360949347"/>
+						<reference key="parent" ref="0"/>
 						<string type="base64-UTF8" key="objectName">RmlsZSdzIE93bmVyA</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">-2</int>
 						<reference key="object" ref="711762367"/>
-						<reference key="parent" ref="360949347"/>
+						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">3</int>
@@ -467,7 +466,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="NSMutableArray" key="dict.sortedKeys">
+				<object class="NSArray" key="dict.sortedKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
@@ -491,7 +490,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>AboutViewController</string>
 					<string>UIResponder</string>
-					<string>{{512, 376}, {320, 480}}</string>
+					<string>{{482, 376}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -510,9 +509,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="NSArray" key="dict.sortedKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-				</object>
+				<reference key="dict.sortedKeys" ref="0"/>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 				</object>
@@ -520,9 +517,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 			<nil key="activeLocalization"/>
 			<object class="NSMutableDictionary" key="localizations">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="NSArray" key="dict.sortedKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-				</object>
+				<reference key="dict.sortedKeys" ref="0"/>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 				</object>
@@ -538,7 +533,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSMutableArray" key="dict.sortedKeys">
+						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>back:</string>
 							<string>hideKeyBoard:</string>
@@ -551,7 +546,7 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSMutableArray" key="dict.sortedKeys">
+						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>email</string>
 							<string>twtName</string>
@@ -574,5 +569,6 @@ c2N1c3Npb24gb24gdGhlIGVmZmVjdHMgb2YgY2Vuc29yc2hpcC4</string>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">iCensr.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">3.0</string>
 	</data>
 </archive>

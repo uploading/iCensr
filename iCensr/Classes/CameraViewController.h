@@ -15,13 +15,14 @@
 //#import "AlertViewController.h"
 
 
-@interface CameraViewController : UIViewController {
+@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
 	AboutViewController *aboutViewController;
 	EditorViewController *editorViewController;
 	
 	//settings for buttons and views
 	UIImagePickerController *imagePicker; // for use with the album
 	UIImagePickerController *imageTaker; // for use with the camera
+	//IBOutlet UINavigationController *navigationController; // nav bar for navigating to new views
     IBOutlet UIBarItem *album; // button sending user to the album
 	IBOutlet UIBarItem *camera; // button sending user to the camer
 	IBOutlet UIBarItem *upload; // button allowing user to upload the image
@@ -34,8 +35,8 @@
 @property(nonatomic,retain) UIImagePickerController *imagePicker;
 @property(nonatomic,retain) UIImagePickerController *imageTaker;
 
-- (IBAction) grabImage;
-- (IBAction) takeImage;
+- (IBAction) pickImage:(id)sender;
+- (IBAction) takeImage:(id)sender;
 - (IBAction) aboutICensr:(id) sender;
 
 // for debugging purposes

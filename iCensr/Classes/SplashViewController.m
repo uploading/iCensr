@@ -38,9 +38,9 @@
 	//[splashImageView.backgroundColor alpha:0.0];
 	
 	viewController = [[CameraViewController alloc] initWithNibName:@"CameraView" bundle:[NSBundle mainBundle]];
-	viewController.view.alpha = 0.0;
-	[self.view addSubview:splashImageView];
+	//viewController.view.alpha = 0.0;
 	[self.view addSubview:viewController.view];
+	[self.view addSubview:splashImageView];
 	
 	timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fadeScreen) userInfo:nil repeats:NO];
 }
@@ -51,7 +51,7 @@
 	[UIView setAnimationDuration:0.75];			// sets animation duration
 	[UIView setAnimationDelegate:self];			// sets delegate for this block
 	[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
-	self.view.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
+	splashImageView.alpha = 0.0;	//fades the alpha channel of this view to "0.0" over the animation
 	//viewController.view.alpha = 1.0;
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }

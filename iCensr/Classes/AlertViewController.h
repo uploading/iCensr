@@ -38,7 +38,7 @@
 @property(nonatomic) IBOutlet BOOL			*hasUploaded;
 @property(nonatomic,retain) IBOutlet UIImage		*image2upload;
 @property(nonatomic,retain) IBOutlet NSString		*text2upload;
-@property(nonatomic,retain) IBOutlet UISwitch		*willShare;
+//@property(nonatomic,retain) IBOutlet UISwitch		*willShare;
 
 // login related functions
 - (BOOL) isSignedIn;
@@ -58,7 +58,7 @@
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt;
 - (void) checkForUploads;
 - (void) upload2twitpic:(NSData *)picture;
-- (void) upload2site:(NSData *)picture;
+//- (void) upload2site:(NSData *)picture;
 - (void) setImageURL:(NSString *)url;
 
 @end
