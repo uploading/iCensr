@@ -11,7 +11,7 @@
 
 @implementation ShareViewController
 
-@synthesize twtPic, twtName, twtPW, twtMessage, alertViewController, willShareOnTwitter, willSaveInAlbum, willSubmitToNCAC;
+@synthesize back, submit, twtPic, twtName, twtPW, twtMessage, alertViewController, willShareOnTwitter, willSaveInAlbum, willSubmitToNCAC, uploadingView, uploadingSpinner;
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -21,6 +21,7 @@
 		twtPic.userInteractionEnabled = NO;
 		twtPic.exclusiveTouch = NO;
     }
+	
     return self;
 }
 /*
@@ -40,11 +41,19 @@
 	twtName.text = name;
 	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
 	twtPW.text = password;
+	
+	//hiding uploading view
+	[uploadingSpinner stopAnimating];
+	uploadingView.hidden = YES;
 }
 
 #pragma mark share action methods
 
 - (IBAction) share:(id)sender {
+	NSLog(@"SHARE called");
+	
+	[self disableFurtherInput];
+	BOOL uploadedSomething = NO;
 	// hide keyboard
 	//[twtName resignFirstResponder];
 	
@@ -70,6 +79,7 @@
 			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
 			[alertViewController askForLoginInfo];
 		}
+		uploadedSomething = YES;
 	}
 	
 	// if selected, submit to NCAC
@@ -77,51 +87,30 @@
 		NSLog(@"WILL SUBMIT TO NCAC selected");
 		NSData *imageData = UIImageJPEGRepresentation(twtPic.image, 90);
 		[self upload2site:imageData];
+		
+		uploadedSomething = YES;
 	}
 	
 	if(self.willSaveInAlbum.on) {
 		NSLog(@"WILL SAVE IN ALBUM selected");
-		UIImageWriteToSavedPhotosAlbum(twtPic.image, self, (SEL)@selector(image:didFinshSavingWithError:contextInfo:), nil);
-		//[twtPic.image UIImageWriteToSavedPhotosAlbum];
+		UIImageWriteToSavedPhotosAlbum(twtPic.image, nil, nil, nil);//self, (SEL)@selector(image:didFinishSavingWithError:contextInfo:), nil); 
+		
+		uploadedSomething = YES;
 	}
-    /*
-    // Make sure you entered your login details before running this code... ;)
-    if ([username isEqualToString:@"n/a"] || [password isEqualToString:@"n/a"]) {
-        NSLog(@"You forgot to specify your username/password in AppController.m!");
-        // send alert asking for name and password
-		UIAlertView *prompt = [UIAlertView alloc];
-		prompt = [prompt initWithTitle:@"Missing Information" message:@"iCensr requires your Twitter name and password to tweet your censr." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-		[prompt show];
-		[prompt release];
-    }
-    else {
-		
-		// Create a TwitterEngine and set our login details.
-		twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
-		[twitterEngine setUsername:username password:password];
-		
-		// Get updates from people the authenticated user follows.
-		[twitterEngine getFollowedTimelineFor:username since:nil startingAtPage:0];
-		
-		// set up image for uploading
-		NSData *imageData = UIImageJPEGRepresentation(twtPic.image, 90);
-		
-		// Send picture to twitpic
-		[self upload2twitpic:imageData];
-		
-		// Send text post
-		[twitterEngine sendUpdate:twtMessage.text];
-		
-		// if selected, submit picture and text to NCAC
-		if(willShare.on) {
-			[self upload2site:imageData];
-		}
-		 
-		
-	}*/
+    // if nothing was uploaded, free the screen commands
+	//if(!uploadedSomething) {
+		//[self enableFurtherInput];
+	//}
+	NSLog(@"SHARE complete");
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+	// fill in announcement here
+	NSLog(@"DID FINISH SAVING WITH ERROR called: @%", error);
 }
 
 - (void) upload2site:(NSData *)picture {
+	NSLog(@"UPLOAD 2 SITE called");
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
 	
@@ -158,6 +147,7 @@
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
 	NSLog(returnString);
+	NSLog(@"UPLOAD 2 SITE finished");
 }
 
 - (IBAction)back:(id) sender {
@@ -302,6 +292,33 @@
     // Release anything that's not essential, such as cached data
 }
 
+- (void)disableFurtherInput {
+	NSLog(@"DISABLE FURTHER INPUT called");
+	// show uploading animation
+	[uploadingSpinner startAnimating];
+	uploadingView.hidden = NO;
+	// disable buttons
+	willShareOnTwitter.enabled = NO;
+	willSubmitToNCAC.enabled = NO;
+	willSaveInAlbum.enabled = NO;
+	// change text for back button to "Cancle"
+
+	NSLog(@"DISABLE FURTHER INPUT finished");
+}
+
+- (void)enableFurtherInput {
+	NSLog(@"ENABLE FURTHER INPUT called");
+	
+	// return text for back button to "Back"
+	// enable buttons
+	willShareOnTwitter.enabled = YES;
+	willSubmitToNCAC.enabled = YES;
+	willSaveInAlbum.enabled = YES;
+	
+	// hide uploading animation
+	[uploadingSpinner stopAnimating];
+	uploadingView.hidden = YES;
+}
 
 - (void)dealloc {
 	//[twitterEngine release];

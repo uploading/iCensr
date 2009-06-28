@@ -105,6 +105,7 @@
 	}
 	
 	[editorViewController setPic:image];
+	//[editorViewController release];
 	
 	// Dismiss the image picker
 	[self dismissModalViewControllerAnimated:YES];

@@ -10,11 +10,11 @@
 		</data>
 		<key>CameraView.nib</key>
 		<data>
-		FBfA0XLnatGcWL7YMNeVCVZezzk=
+		tWnJMLpI6vlhVHaBDITsF7nU5Vg=
 		</data>
 		<key>EditorView.nib</key>
 		<data>
-		zK0HR3tODZwaLpzQsaed9RrkOcY=
+		M5PpOv6qpVanDmLwdZT3/s/ruV0=
 		</data>
 		<key>MainWindow.nib</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ShareView.nib</key>
 		<data>
-		8tLt98hKxoqTD1z8zmYz4yC3Tls=
+		dFBHBvFUEVTIv2WwWj7oxrdaxZo=
 		</data>
 		<key>SignUpView.nib</key>
 		<data>
@@ -35,6 +35,10 @@
 		<key>TestView.nib</key>
 		<data>
 		mnNQn2HguAzsjTPTlfTkAVVZaGE=
+		</data>
+		<key>background.png</key>
+		<data>
+		dnOMtZP9BOZ6RIj9LWJw5cMcdaU=
 		</data>
 		<key>bg_form_section.png</key>
 		<data>
@@ -56,9 +60,13 @@
 		<data>
 		P9msvFKf4JmXZjt3lnCcp7nqx1A=
 		</data>
+		<key>icon.png</key>
+		<data>
+		uYq2Gy+gp/qZNPWV4nH4RHs+fIA=
+		</data>
 		<key>splash.png</key>
 		<data>
-		3FdvOGxLipR3jRDCr9Bf6NsLOdk=
+		Dts9//2pA1WKqz+lglstCuOZBts=
 		</data>
 	</dict>
 	<key>rules</key>

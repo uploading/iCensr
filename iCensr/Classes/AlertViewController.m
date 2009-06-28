@@ -185,6 +185,7 @@
 			[self upload2site:imageData];
 		}*/
 	}
+	//[super enableFurtherInput];
 }
 
 - (void) upload2twitpic:(NSData *)picture {

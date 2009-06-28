@@ -25,6 +25,7 @@
 
 // handle touches to draw black lines
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	cleared = NO;
 	
 	UITouch *touch = [touches anyObject];
 	CGPoint location = [touch locationInView:self];
@@ -71,48 +72,50 @@
 	// call drawing code...	
 	NSLog(@"drawRect");
 	
-	// x length between fingers
-    CGFloat xDist = point1.x - point2.x;
-    // y length between fingers
-    CGFloat yDist = point1.y-point2.y;
-	// respective midpoints between two points
-	CGFloat xMidpoint = (point1.x+point2.x)/2;
-	CGFloat yMidpoint = (point1.y+point2.y)/2;
-	
-	// width of the rectangle
-	CGFloat rectWeight = 40;
-	
-	// disance between point1 and point2
-	CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist) + rectWeight;
-	// angle of fingers    
-    CGFloat newAngle = atan(yDist/xDist);
-	
-	CGFloat centerx = xMidpoint;//rect.size.width/2;
-	CGFloat centery = yMidpoint; //rect.size.height/2;
-	CGFloat half = squareSize/2;
-	CGRect theRect = CGRectMake(-half, -rectWeight/2, squareSize, rectWeight);
-	
-	
-	//Grab the drawing content
-	CGContextRef context = UIGraphicsGetCurrentContext();
-	
-	// like Processing pushMatrix
-	CGContextSaveGState(context);
-	CGContextTranslateCTM(context, centerx, centery);
-	CGContextRotateCTM(context, newAngle);
-	
-	// Set black stroke
-	CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
-	
-	// Set fill color to black
-	CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-	
-	// Draw a rect with a red stroke
-	CGContextFillRect(context, theRect);
-	CGContextStrokeRect(context, theRect);
-	
-	// like Processing popMatrix
-	CGContextRestoreGState(context);	
+	if(!cleared) {
+		// x length between fingers
+		CGFloat xDist = point1.x - point2.x;
+		// y length between fingers
+		CGFloat yDist = point1.y-point2.y;
+		// respective midpoints between two points
+		CGFloat xMidpoint = (point1.x+point2.x)/2;
+		CGFloat yMidpoint = (point1.y+point2.y)/2;
+		
+		// width of the rectangle
+		CGFloat rectWeight = 40;
+		
+		// disance between point1 and point2
+		CGFloat squareSize = sqrt(xDist*xDist + yDist*yDist) + rectWeight;
+		// angle of fingers    
+		CGFloat newAngle = atan(yDist/xDist);
+		
+		CGFloat centerx = xMidpoint;//rect.size.width/2;
+		CGFloat centery = yMidpoint; //rect.size.height/2;
+		CGFloat half = squareSize/2;
+		CGRect theRect = CGRectMake(-half, -rectWeight/2, squareSize, rectWeight);
+		
+		
+		//Grab the drawing content
+		CGContextRef context = UIGraphicsGetCurrentContext();
+		
+		// like Processing pushMatrix
+		CGContextSaveGState(context);
+		CGContextTranslateCTM(context, centerx, centery);
+		CGContextRotateCTM(context, newAngle);
+		
+		// Set black stroke
+		CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 1.0);
+		
+		// Set fill color to black
+		CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
+		
+		// Draw a rect with a red stroke
+		CGContextFillRect(context, theRect);
+		CGContextStrokeRect(context, theRect);
+		
+		// like Processing popMatrix
+		CGContextRestoreGState(context);
+	}
 	
 	// redraw old rects
 	
@@ -287,6 +290,14 @@
 	return result;
 	
 	// use NSData *UIImageJPGRepresentation (UIImage * image); to make a jpeg for submission
+}
+
+- (IBAction)clearEdits {//:(id)sender {
+	NSLog(@"CLEAR EDITS called");
+	[redactions removeAllObjects];
+	cleared = YES;
+	[self setNeedsDisplay];
+	//super.view.hidden = YES;
 }
 
 - (void)dealloc {

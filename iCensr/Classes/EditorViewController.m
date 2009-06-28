@@ -35,7 +35,11 @@
 - (IBAction) cancelEdit:(id)sender {
 	NSLog(@"_____________return to camera view________________");
 	self.view.hidden = YES;
+	[redactor clearEdits];
+	//[self.image.class clearEdits];
+	//[self.view removeFromSuperview];
 	//[self.view release];
+	//[self.viewCont release];
 }
 
 - (IBAction) shareImage:(id)sender {

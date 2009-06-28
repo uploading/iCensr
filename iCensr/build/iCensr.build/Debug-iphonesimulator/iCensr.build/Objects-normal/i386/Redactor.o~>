@@ -1,3 +1,6 @@
 /Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m: In function '-[Redactor polygonImageOfSize:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:180: warning: local declaration of 'result' hides instance variable
-/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:184: warning: local declaration of 'result' hides instance variable
+/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:283: warning: local declaration of 'result' hides instance variable
+/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:287: warning: local declaration of 'result' hides instance variable
+/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m: At top level:
+/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:303: warning: incomplete implementation of class 'Redactor'
+/Users/ephemeralluna/iCensr/iCensr/Classes/Redactor.m:303: warning: method definition for '-drawEdits:' not found

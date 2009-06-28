@@ -15,6 +15,7 @@
 	//Redaction	*redaction;		// the rectangle that is currently being drawn
 	NSMutableArray		*redactions;	// holder for all the redactions
 	//IBOutlet	UIImage *picture;
+	BOOL		cleared;
 	IBOutlet	UIImage *result;
 }
 
@@ -23,5 +24,6 @@
 @property(nonatomic, retain) IBOutlet	UIImage	*result;
 
 - (void)drawEdits:(CGRect)rect;
+- (IBAction)clearEdits;//:(id)sender;
 
 @end
