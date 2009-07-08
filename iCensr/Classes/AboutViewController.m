@@ -11,44 +11,14 @@
 
 @implementation AboutViewController
 
-@synthesize twtName, twtPW, email;// cameraViewController;
+@synthesize twtName, twtPW, email;
 
 - (IBAction) back:(id) sender {
 	NSLog(@"__________back called___________");
-	/*if(self.censrSequenceViewController == nil) {
-		CensrSequenceViewController *newView = [[CensrSequenceViewController alloc] initWithNibName:@"CensrSequenceView" bundle:[NSBundle mainBundle]];
-		self.censrSequenceViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-	}
-	[self.view addSubview:censrSequenceViewController.view]; */
 	[self saveInfo];
 	self.view.hidden = YES;
 }
 
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
-	twtName.text = name;
-	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-	twtPW.text = password;
-	NSString *eM = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
-	email.text = eM;
-}
-*/
-
-/*
-- (void)viewWillDisappear:(BOOL)animated
-{
-	NSString *name = twtName.text;
-	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
-	NSString *password = twtPW.text;
-	[[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
-	NSString *em = email.text;
-	[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
-}
- */
 
 - (IBAction) hideKeyBoard:(id) sender {
 	[twtName resignFirstResponder];
@@ -57,23 +27,6 @@
 - (IBAction) save:(id) sender {
 	[self saveInfo];
 }
-
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -89,6 +42,13 @@
 }
 
 - (void)saveInfo {
+	// if the email is different from what was saved before, submit email to NCAC
+	NSString *pastEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
+	if ([pastEmail isEqualToString:email.text]) {
+		NSLog(@"email changed");
+		// send email address to NCAC mailing list
+	}
+	// save changed values
 	NSString *name = twtName.text;
 	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
 	NSString *password = twtPW.text;
@@ -97,14 +57,18 @@
 	[[NSUserDefaults standardUserDefaults] setObject:em forKey:@"email"];
 }
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)curlDownView
+{
+	//self.aboutViewController.view.hidden = NO;
+	[UIView beginAnimations:nil context:nil]; //begins animation block
+	[UIView setAnimationDuration:0.75];			// sets animation duration
+	[UIView setAnimationDelegate:self];			// sets delegate for this block
+	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
+	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
+	//NSArray *controllers = self.viewControllers;
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.view cache:YES];
+	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

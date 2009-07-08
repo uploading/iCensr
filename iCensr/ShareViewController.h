@@ -12,6 +12,8 @@
 //#import "EditorViewController.h"
 #import "AlertViewController.h"
 
+@class AlertViewController;
+
 @interface ShareViewController : UIViewController {
 	IBOutlet UIBarButtonItem *back;		// button sends user back to editing view
 	IBOutlet UIButton		*submit;	// button submits redaction to chosen locations
@@ -46,6 +48,7 @@
 @property(nonatomic,retain) AlertViewController		*alertViewController;
 //@property(nonatomic,retain) IBOutlet NSString		*twtPicURL;
 
+- (void) setAlertViewController:(AlertViewController*)newAlertViewController;
 - (IBAction) share:(id)sender;
 - (IBAction) back:(id)sender;
 - (IBAction) hideKeyBoard:(id) sender;
@@ -67,5 +70,6 @@
 
 - (void)disableFurtherInput;
 - (void)enableFurtherInput;
+- (void)curlUpScreen;
 
 @end

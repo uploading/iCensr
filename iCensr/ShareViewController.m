@@ -32,6 +32,11 @@
 	twtPW.text = password;
 }
 */
+
+- (void) setAlertViewController:(AlertViewController*)newAlertViewController {
+	alertViewController = newAlertViewController;
+}
+
 - (void) setImage:(UIImage *)picture {
 	NSLog(@"SET IMAGE called");
 	twtPic.image = picture;
@@ -151,6 +156,7 @@
 }
 
 - (IBAction)back:(id) sender {
+	[self curlUpScreen];
 	self.view.hidden = YES;
 }
 
@@ -318,6 +324,18 @@
 	// hide uploading animation
 	[uploadingSpinner stopAnimating];
 	uploadingView.hidden = YES;
+}
+
+- (void)curlUpScreen
+{
+	//self.shareViewController.view.hidden = NO;
+	[UIView beginAnimations:nil context:nil]; //begins animation block
+	[UIView setAnimationDuration:0.75];			// sets animation duration
+	[UIView setAnimationDelegate:self];			// sets delegate for this block
+	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
+	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 
 - (void)dealloc {

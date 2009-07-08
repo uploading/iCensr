@@ -160,6 +160,10 @@
 
 #pragma mark picture uploading methods 
 
+- (void) setShareViewController:(ShareViewController*)newShareViewController {
+	shareViewController = newShareViewController;
+}
+
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt {
 	self.image2upload = img;
 	self.text2upload	= txt;

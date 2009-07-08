@@ -1,2 +1,0 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/SplashViewController.m:104: warning: property 'viewController' requires method '-viewController' to be defined - use @synthesize, @dynamic or provide a method implementation
-/Users/ephemeralluna/iCensr/iCensr/Classes/SplashViewController.m:104: warning: property 'viewController' requires the method 'setViewController:' to be defined - use @synthesize, @dynamic or provide a method implementation

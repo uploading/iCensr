@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ShareViewController.h"
+//#import "Transition.h"
 #import "Redactor.h"
 
 @interface EditorViewController : UIViewController {
 	ShareViewController		*shareViewController;
+	//Transition				*transition;
+	NSTimer					*timer;
 	IBOutlet Redactor		*redactor;
 	IBOutlet UIImageView	*image;
 	IBOutlet UIToolbar		*toolbar;
@@ -20,6 +23,8 @@
 	//NSMutableArray	*redactions; // array of completed rectangles
 }
 @property(nonatomic, retain) ShareViewController	*shareViewController;
+//@property(nonatomic, retain) Transition				*transition;
+@property(nonatomic, retain) NSTimer				*timer;
 @property(nonatomic, retain) Redactor				*redactor;
 @property(nonatomic,retain) IBOutlet UIView			*image;
 @property(nonatomic,retain) IBOutlet UIToolbar		*toolbar;
@@ -30,5 +35,7 @@
 - (IBAction) cancelEdit:(id)sender;
 - (void) setPic:(UIImage *)picture;
 - (UIImage *) render; // take screenshot
+- (void)curlDownScreen;
+- (void)curlUpScreen;
 
 @end

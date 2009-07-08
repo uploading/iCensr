@@ -10,8 +10,13 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "MGTwitterEngine.h"
 #import "ORSTwitPicDispatcher.h"
+#import "ShareViewController.h"
+
+@class ShareViewController;
 
 @interface AlertViewController : UIViewController {
+	ShareViewController		*shareViewController; // instance to connect and maniplaute the share view
+
 	// fields for login alert box
 	IBOutlet UIAlertView	*signinAlertView;
 	IBOutlet NSString	*twtName;
@@ -55,6 +60,7 @@
 //- (UITextField*)textField;
 
 // for uploading material
+- (void) setShareViewController:(ShareViewController*)newShareViewController;
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt;
 - (void) checkForUploads;
 - (void) upload2twitpic:(NSData *)picture;

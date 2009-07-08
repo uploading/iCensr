@@ -7,23 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "CameraViewController.h"
 
 @interface AboutViewController : UIViewController {
-	IBOutlet UITextField	*twtName;
-	IBOutlet UITextField	*twtPW;
-	IBOutlet UITextField	*email;
-	//CameraViewController	*cameraViewController;
+	IBOutlet UITextField	*twtName;	// user name for Twitter account
+	IBOutlet UITextField	*twtPW;		// user password for Twitter account
+	IBOutlet UITextField	*email;		// user email for recieving NCAC announcements
 }
 
 @property(nonatomic, retain) IBOutlet UITextField	*twtName;
 @property(nonatomic, retain) IBOutlet UITextField	*twtPW;
 @property(nonatomic, retain) IBOutlet UITextField	*email;
-//@property(nonatomic, retain) CameraViewController *cameraViewController;
 
-- (IBAction) back:(id) sender;
-- (IBAction) hideKeyBoard:(id) sender;
-
-- (void) saveInfo;
+- (IBAction) back:(id) sender;			// take user back to camera view
+- (IBAction) hideKeyBoard:(id) sender;	// hide keyboard after done typing
+- (void) saveInfo;						// save name, password, and email
 
 @end

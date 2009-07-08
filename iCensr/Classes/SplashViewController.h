@@ -14,18 +14,18 @@
 //tabBarController
 
 @interface SplashViewController : UIViewController {
-	NSTimer *timer;
-	UIImageView *splashImageView;
+	NSTimer *timer;							// animation timer for splash screen transition to camera view
+	UIImageView *splashImageView;			// view containing splash screen to be shown and fade out
 	
-	CameraViewController *viewController;
-	AlertViewController *alertViewController;
+	CameraViewController *viewController;	// main view of application with links to camera controlls and about information
+	AlertViewController *alertViewController;//  controller that pops up alerts if user information has not been set yet
 
 }
 
 @property(nonatomic,retain) NSTimer *timer;
 @property(nonatomic,retain) UIImageView *splashImageView;
-@property(nonatomic,retain) CameraViewController *viewController;
 
+@property(nonatomic,retain) CameraViewController *viewController;
 @property(nonatomic,retain) AlertViewController *alertViewController;
 
 

@@ -11,7 +11,7 @@
 
 @implementation EditorViewController
 
-@synthesize shareViewController, image, redactor, toolbar;
+@synthesize shareViewController, timer, image, redactor, toolbar;//, transition;
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -34,6 +34,7 @@
 
 - (IBAction) cancelEdit:(id)sender {
 	NSLog(@"_____________return to camera view________________");
+	[self curlUpScreen];
 	self.view.hidden = YES;
 	[redactor clearEdits];
 	//[self.image.class clearEdits];
@@ -52,6 +53,10 @@
 		NSLog(@"_____________if statement run_____________");
 		[self.view addSubview:shareViewController.view];
 		
+		self.shareViewController.view.hidden = YES;
+		timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(curlDownScreen) userInfo:nil repeats:NO];
+
+		
 		//place image from picture taken in
 		/*
 		 fetch from app budle
@@ -62,7 +67,11 @@
 		 [UIImage initWithData:(NSData *)data]
 		 */
 	}
-	shareViewController.view.hidden = NO;
+	//shareViewController.view.hidden = NO;
+	else {
+		//[transition curlDownView:shareViewController.view];
+		[self curlDownScreen];
+	}
 	
 	[shareViewController setImage:screenShot];
 }
@@ -86,6 +95,31 @@
 	
 	// return screenshot
 	return viewImage;
+}
+
+- (void)curlDownScreen
+{
+	//[transition curlDownView:shareViewController.view];
+	self.shareViewController.view.hidden = NO;
+	[UIView beginAnimations:nil context:nil]; //begins animation block
+	[UIView setAnimationDuration:0.75];			// sets animation duration
+	[UIView setAnimationDelegate:self];			// sets delegate for this block
+	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
+	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.shareViewController.view cache:YES];
+	[UIView commitAnimations]; //commicts the animation block.  This block is done.
+}
+
+- (void)curlUpScreen
+{
+	//self.shareViewController.view.hidden = NO;
+	[UIView beginAnimations:nil context:nil]; //begins animation block
+	[UIView setAnimationDuration:0.75];			// sets animation duration
+	[UIView setAnimationDelegate:self];			// sets delegate for this block
+	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
+	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 
 

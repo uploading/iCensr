@@ -11,7 +11,7 @@
 
 @implementation CameraViewController
 
-@synthesize aboutViewController, editorViewController, imagePicker, imageTaker; //, alertViewController, twtName, twtPW, signinAlertView;
+@synthesize aboutViewController, editorViewController, timer, imagePicker, imageTaker; //, alertViewController, twtName, twtPW, signinAlertView;
 
 - (IBAction) aboutICensr:(id) sender {
 	NSLog(@"__________transition to iCensr Info___________");
@@ -20,39 +20,26 @@
 		 self.aboutViewController = newView;
 		 [newView release];
 		 NSLog(@"_____________if statement run_____________");
-		 [self.view addSubview:aboutViewController.view];
+		 [self.view addSubview:self.aboutViewController.view];
+		//[self slideScreen];
+		self.aboutViewController.view.hidden = YES;
+		timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(slideScreen) userInfo:nil repeats:NO];
 	}
 	else {
-		self.aboutViewController.view.hidden = NO;
+		//self.aboutViewController.view.hidden = NO;
+		[self slideScreen];
 	}
-		 //[self.navigationController pushViewController:self.aboutViewController animated:YES];
+	//self.aboutViewController.view.origin.x = 230;
+	//[self slideScreen];
 }
 
 - (void)viewDidLoad {
-	// setup navigation controller
-	//navigationController = [[UINavigationController alloc] init];
-
-	//[self.view addSubview:navigationController.view];
-	// disable incompatable buttons (no camera button if there is no camera
 	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		camera.enabled = NO;
 	}
 	if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
 		album.enabled = NO;
 	}
-	/*
-	self.imagePicker = [[UIImagePickerController alloc] init];
-	self.imagePicker.allowsImageEditing = YES;
-	self.imagePicker.delegate = self;
-	self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-	
-	self.imageTaker = [[UIImagePickerController alloc] init];
-	self.imageTaker.allowsImageEditing = YES;
-	self.imageTaker.delegate = self;
-	self.imageTaker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	
-	[super viewDidLoad];
-	 */
 }
 
 - (IBAction)pickImage:(id)sender {
@@ -82,18 +69,7 @@
 - (void)imagePickerController:(UIImagePickerController*)picker
 		didFinishPickingImage:(UIImage*)image editingInfo:(NSDictionary*)editingInfo {
 	// set up editor
-	
-	/*
-	// save or use image here
-	NSLog(@"navigating to EDITOR VIEW");
-	// create an instrance of Editor View
-	EditorViewController *nextView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:nil];
-	NSLog(@"navigationController %@", self.navigationController);
-	[self.navigationController pushViewController:nextView animated:NO];
-	// set picture to be edited
-	[nextView setPic:image];
-	// release the controller, navigation contrtoller is retaining it
-	[nextView release];*/
+
 	if(self.editorViewController == nil) {
 		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
 		self.editorViewController = newView;
@@ -105,7 +81,6 @@
 	}
 	
 	[editorViewController setPic:image];
-	//[editorViewController release];
 	
 	// Dismiss the image picker
 	[self dismissModalViewControllerAnimated:YES];
@@ -113,78 +88,34 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker {
-	//Dismiss the imae picker
-	[self dissmissModalViewControllerAnimated:YES];
+	//Dismiss the image picker
+	[self dismissModalViewControllerAnimated:YES];
 	[picker release];
 }
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+#pragma mark TRANSITION
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-	
+// call to fade out splash view
+- (void)slideScreen
+{
+	self.aboutViewController.view.hidden = NO;
+	[UIView beginAnimations:nil context:nil]; //begins animation block
+	[UIView setAnimationDuration:0.75];			// sets animation duration
+	[UIView setAnimationDelegate:self];			// sets delegate for this block
+	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
+	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
-*/
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
 
-
 - (void)dealloc {
 	//[alertViewController release];
     [super dealloc];
-}
-
-// for editing purposes only
-- (IBAction) toEditor:(id)sender {
-	if(self.editorViewController == nil) {
-		EditorViewController *newView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:[NSBundle mainBundle]];
-		self.editorViewController = newView;
-		[newView release];
-		NSLog(@"_____________if statement run_____________");
-		[self.view addSubview:editorViewController.view];
-	}
-	else {
-		self.editorViewController.view.hidden = NO;
-	}
-	/*
-	// save or use image here
-	NSLog(@"navigating to EDITOR VIEW");
-	// create a navigation controller
-	UINavigationController *navigationController = [[UINavigationController alloc] init];
-	// create an instrance of Editor View
-	EditorViewController *nextView = [[EditorViewController alloc] initWithNibName:@"EditorView" bundle:nil];
-	NSLog(@"navigationController %@", navigationController);
-	[navigationController pushViewController:nextView animated:YES];
-	// set picture to be edited
-	[nextView setPic:nil];
-	// release the controller, navigation contrtoller is retaining it
-	[nextView release];
-	// Add the navigation controller's view to the view
-	[self.view addSubview:navigationController.view];
-	
-	//[editorViewController setPic:nil];
-	*/
 }
 
 @end
