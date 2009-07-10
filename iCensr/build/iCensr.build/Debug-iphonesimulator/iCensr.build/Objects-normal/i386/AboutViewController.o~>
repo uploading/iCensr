@@ -1,7 +1,0 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m: In function '-[AboutViewController back:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:25: warning: 'AboutViewController' may not respond to '-saveInfo'
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:25: warning: (Messages without a matching method signature
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:25: warning: will be assumed to return 'id' and accept
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:25: warning: '...' as arguments.)
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m: In function '-[AboutViewController save:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/AboutViewController.m:58: warning: 'AboutViewController' may not respond to '-saveInfo'

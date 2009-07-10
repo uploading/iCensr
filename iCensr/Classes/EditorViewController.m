@@ -53,6 +53,10 @@
 		NSLog(@"_____________if statement run_____________");
 		[self.view addSubview:shareViewController.view];
 		
+		AlertViewController *alertViewController = [[AlertViewController alloc] init];
+		[shareViewController setAlertViewController:alertViewController];
+		[alertViewController setShareViewController:shareViewController];
+		
 		self.shareViewController.view.hidden = YES;
 		timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(curlDownScreen) userInfo:nil repeats:NO];
 

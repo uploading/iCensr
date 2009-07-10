@@ -55,6 +55,7 @@
 			case 0:
 				// Ignore submission
 				NSLog(@"SKIP pressed");
+				[shareViewController enableFurtherInput];
 				break;
 			case 1:
 				// check for submission contents
@@ -72,6 +73,7 @@
 				// ignore resubmission
 				[twtNameField release];
 				[twtPWField release];
+				[shareViewController enableFurtherInput];
 				break;
 			case 1:
 				[self askForLoginInfo];
@@ -149,6 +151,7 @@
 
 // save values entered in alertbox
 - (void) saveValues {
+	NSLog("SAVE VALUES called");
 	//NSString *name = twtName.text;
 	[[NSUserDefaults standardUserDefaults] setObject:self.twtName forKey:@"name"];
 	//NSString *password = twtPW.text;
@@ -156,6 +159,8 @@
 	
 	[twtNameField release];
 	[twtPWField release];
+	
+	[shareViewController enableFurtherInput];
 }
 
 #pragma mark picture uploading methods 
@@ -166,7 +171,7 @@
 
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt {
 	self.image2upload = img;
-	self.text2upload	= txt;
+	self.text2upload = txt;
 	self.isUploading = YES;
 }
 

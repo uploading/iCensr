@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ShareViewController.h"
+#import "AlertViewController.h"
 //#import "Transition.h"
 #import "Redactor.h"
 

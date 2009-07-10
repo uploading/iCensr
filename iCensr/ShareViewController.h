@@ -31,6 +31,8 @@
 	//BOOL			*viewShifted;
 	//MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
 	AlertViewController		*alertViewController;
+	
+	NSInteger				*operationsToComplete; // counts the number of saves yet to be completed
 	//IBOutlet NSString		*twtPicURL; // holds url where twitpic is sent
 }
 
@@ -70,6 +72,9 @@
 
 - (void)disableFurtherInput;
 - (void)enableFurtherInput;
+- (void)setOperations:(NSInteger *)operations;
+- (NSInteger)operationsLeft;
+- (void)operationCompleted;
 - (void)curlUpScreen;
 
 @end

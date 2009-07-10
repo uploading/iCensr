@@ -14,14 +14,15 @@
 @synthesize aboutViewController, editorViewController, timer, imagePicker, imageTaker; //, alertViewController, twtName, twtPW, signinAlertView;
 
 - (IBAction) aboutICensr:(id) sender {
-	NSLog(@"__________transition to iCensr Info___________");
+	NSLog(@"ABOUT iCENSR called");
 	if(aboutViewController == nil) {
 		 AboutViewController *newView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
 		 self.aboutViewController = newView;
 		 [newView release];
+		//[aboutViewController setCameraViewController:self];
+		//[aboutViewController initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
 		 NSLog(@"_____________if statement run_____________");
 		 [self.view addSubview:self.aboutViewController.view];
-		//[self slideScreen];
 		self.aboutViewController.view.hidden = YES;
 		timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(slideScreen) userInfo:nil repeats:NO];
 	}
@@ -31,6 +32,7 @@
 	}
 	//self.aboutViewController.view.origin.x = 230;
 	//[self slideScreen];
+	NSLog(@"ABOUT iCENSR complete");
 }
 
 - (void)viewDidLoad {
@@ -107,6 +109,10 @@
 	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
+
+/*- (void) setAboutViewController:(AboutViewController*)newAboutViewController {
+	aboutViewController = newAboutViewController;
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

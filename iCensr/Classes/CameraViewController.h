@@ -38,4 +38,6 @@
 - (IBAction) aboutICensr:(id) sender;
 - (void)slideScreen;
 
+//- (void) setAboutViewController:(AboutViewController*)newAboutViewController;
+
 @end

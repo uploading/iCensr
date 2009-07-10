@@ -10,7 +10,7 @@
 
 @implementation SplashViewController
 
-@synthesize timer,splashImageView,alertViewController, viewController;
+@synthesize timer,splashImageView,alertViewController, cameraViewController;
 
 // Load and set up splashImageView, viewController, and timer
 - (void)loadView {
@@ -25,8 +25,11 @@
 	splashImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash.png"]];
 	splashImageView.frame = CGRectMake(0, 0, 320, 480);
 	
-	viewController = [[CameraViewController alloc] initWithNibName:@"CameraView" bundle:[NSBundle mainBundle]];
-	[self.view addSubview:viewController.view];
+	cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraView" bundle:[NSBundle mainBundle]];
+	//aboutViewController = [AboutViewController alloc];// initWithNibName:@"AboutView" bundle:[NSBundle mainBundle]];
+	//[cameraViewController setAboutViewController:aboutViewController];
+	//[aboutViewController setCameraViewController:cameraViewController];
+	[self.view addSubview:cameraViewController.view];
 	[self.view addSubview:splashImageView];
 	
 	timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(fadeScreen) userInfo:nil repeats:NO];
@@ -64,7 +67,7 @@
 - (void)dealloc {
 	[splashImageView release];
 	[alertViewController release];
-	[viewController release];
+	[cameraViewController release];
     [super dealloc];
 }
 

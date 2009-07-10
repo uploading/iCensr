@@ -1,10 +1,8 @@
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m: In function '-[EditorViewController cancelEdit:]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:39: warning: 'Redactor' may not respond to '-clearEdits'
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:39: warning: (Messages without a matching method signature
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:39: warning: will be assumed to return 'id' and accept
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:39: warning: '...' as arguments.)
 /Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m: In function '-[EditorViewController render]':
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:80: warning: no '-renderInContext:' method found
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:93: warning: no '-renderInContext:' method found
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:93: warning: (Messages without a matching method signature
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:93: warning: will be assumed to return 'id' and accept
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:93: warning: '...' as arguments.)
 /Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m: At top level:
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:124: warning: property 'redactions' requires method '-redactions' to be defined - use @synthesize, @dynamic or provide a method implementation
-/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:124: warning: property 'redactions' requires the method 'setRedactions:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:162: warning: property 'redactions' requires method '-redactions' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/ephemeralluna/iCensr/iCensr/Classes/EditorViewController.m:162: warning: property 'redactions' requires the method 'setRedactions:' to be defined - use @synthesize, @dynamic or provide a method implementation

@@ -30,6 +30,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	NSLog(@"ABOUT VIEW DID LOAD");
 	NSUserDefaults *login = [NSUserDefaults standardUserDefaults];
 	NSString *name = [login stringForKey:@"name"];
 	twtName.text = name;
@@ -75,6 +76,9 @@
     // Release anything that's not essential, such as cached data
 }
 
+/*- (void) setCameraViewController:(CameraViewController*)newCameraViewController {
+	cameraViewController = newCameraViewController;
+}*/
 
 - (void)dealloc {
     [super dealloc];

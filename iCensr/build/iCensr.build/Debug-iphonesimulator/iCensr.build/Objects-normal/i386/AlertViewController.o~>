@@ -1,0 +1,22 @@
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m: In function '-[AlertViewController askForLoginInfo]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:36: warning: 'UIAlertView' may not respond to '-addTextFieldWithValue:label:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:36: warning: (Messages without a matching method signature
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:36: warning: will be assumed to return 'id' and accept
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:36: warning: '...' as arguments.)
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:37: warning: 'UIAlertView' may not respond to '-textFieldAtIndex:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:38: warning: 'UIAlertView' may not respond to '-textFieldAtIndex:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:39: warning: 'UIAlertView' may not respond to '-textFieldAtIndex:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:40: warning: 'UIAlertView' may not respond to '-addTextFieldWithValue:label:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:41: warning: 'UIAlertView' may not respond to '-textFieldAtIndex:'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m: In function '-[AlertViewController alertView:clickedButtonAtIndex:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:58: warning: 'ShareViewController' may not respond to '-operationCompleted'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:76: warning: 'ShareViewController' may not respond to '-operationCompleted'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m: In function '-[AlertViewController uploadPicture:withText:]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:172: warning: passing argument 1 of 'setIsUploading:' makes pointer from integer without a cast
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m: In function '-[AlertViewController checkForUploads]':
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:178: warning: passing argument 1 of 'setHasUploaded:' makes pointer from integer without a cast
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m: At top level:
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:287: warning: incomplete implementation of class 'AlertViewController'
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:287: warning: method definition for '-textFieldAtIndex:' not found
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:287: warning: method definition for '-addTextFieldWithValue:label:' not found
+/Users/ephemeralluna/iCensr/iCensr/Classes/AlertViewController.m:287: warning: method definition for '-alertView:didDismissWithButtonIndex:' not found

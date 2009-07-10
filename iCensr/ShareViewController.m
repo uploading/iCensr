@@ -57,6 +57,8 @@
 - (IBAction) share:(id)sender {
 	NSLog(@"SHARE called");
 	
+	NSInteger *operationsCount = 0;
+	
 	[self disableFurtherInput];
 	BOOL uploadedSomething = NO;
 	// hide keyboard
@@ -68,13 +70,14 @@
 	
 	// if selected, share on Twitter
 	if(self.willShareOnTwitter.on) {
+		operationsCount++;
 		NSLog(@"WILL SHARE ON TWITTER selected");
 		NSString *name = twtName.text;
 		[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
 		NSString *pw = twtPW.text;
 		[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
 		
-		alertViewController = [[AlertViewController alloc] init];
+		//alertViewController = [[AlertViewController alloc] init];
 		if([alertViewController isSignedIn]) {
 			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
 			
@@ -89,23 +92,26 @@
 	
 	// if selected, submit to NCAC
 	if(self.willSubmitToNCAC.on) {
+		//operationsCount++;
 		NSLog(@"WILL SUBMIT TO NCAC selected");
 		NSData *imageData = UIImageJPEGRepresentation(twtPic.image, 90);
 		[self upload2site:imageData];
 		
-		uploadedSomething = YES;
+		//uploadedSomething = YES;
 	}
 	
 	if(self.willSaveInAlbum.on) {
+		//operationsCount++;
 		NSLog(@"WILL SAVE IN ALBUM selected");
 		UIImageWriteToSavedPhotosAlbum(twtPic.image, nil, nil, nil);//self, (SEL)@selector(image:didFinishSavingWithError:contextInfo:), nil); 
 		
-		uploadedSomething = YES;
+		//uploadedSomething = YES;
 	}
     // if nothing was uploaded, free the screen commands
-	//if(!uploadedSomething) {
-		//[self enableFurtherInput];
-	//}
+	if(!uploadedSomething) {
+		[self enableFurtherInput];
+	}
+	[self setOperations:operationsCount];
 	NSLog(@"SHARE complete");
 }
 
@@ -152,6 +158,7 @@
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
 	NSLog(returnString);
+	[self operationCompleted];
 	NSLog(@"UPLOAD 2 SITE finished");
 }
 
@@ -324,6 +331,21 @@
 	// hide uploading animation
 	[uploadingSpinner stopAnimating];
 	uploadingView.hidden = YES;
+}
+
+- (void)setOperations:(NSInteger *)operations {
+	operationsToComplete = operations;
+}
+
+- (NSInteger)operationsLeft {
+	return operationsToComplete;
+}
+
+- (void)operationCompleted {
+	operationsToComplete--;
+	if(operationsToComplete <= 0) {
+		[self enableFurtherInput];
+	}
 }
 
 - (void)curlUpScreen
