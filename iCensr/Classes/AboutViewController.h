@@ -24,6 +24,7 @@
 - (IBAction) back:(id) sender;			// take user back to camera view
 - (IBAction) hideKeyBoard:(id) sender;	// hide keyboard after done typing
 - (void) saveInfo;						// save name, password, and email
+- (void)curlDownView;					// transition to reveal camera view
 // establish communication to Camera View Controller
 //- (void) setCameraViewController:(CameraViewController*)newCameraViewController;
 

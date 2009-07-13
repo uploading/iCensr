@@ -16,6 +16,7 @@
 - (IBAction) back:(id) sender {
 	NSLog(@"__________back called___________");
 	[self saveInfo];
+	[self curlDownView];
 	self.view.hidden = YES;
 }
 
@@ -67,7 +68,7 @@
 	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
 	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
 	//NSArray *controllers = self.viewControllers;
-	[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.view cache:YES];
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 

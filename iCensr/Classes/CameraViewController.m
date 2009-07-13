@@ -106,7 +106,7 @@
 	[UIView setAnimationDelegate:self];			// sets delegate for this block
 	//[UIView	setAnimationDidStopSelector:@selector(finishedFading)];	// calls the finishedFading
 	//self.aboutViewController.view.origin.x = 0;	//fades the alpha channel of this view to "0.0" over the animation
-	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:aboutViewController.view cache:YES];
 	[UIView commitAnimations]; //commicts the animation block.  This block is done.
 }
 
