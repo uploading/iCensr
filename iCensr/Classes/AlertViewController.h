@@ -19,8 +19,8 @@
 
 	// fields for login alert box
 	IBOutlet UIAlertView	*signinAlertView;
-	IBOutlet NSString	*twtName;
-	IBOutlet NSString	*twtPW;
+	IBOutlet NSString		*twtName;
+	IBOutlet NSString		*twtPW;
 	IBOutlet UITextField	*twtNameField;
 	IBOutlet UITextField	*twtPWField;
 	MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
@@ -47,6 +47,7 @@
 
 // login related functions
 - (BOOL) isSignedIn;
+- (BOOL) isSignedInWithName:(NSString *)name andPassword:(NSString *)password;
 - (void) askForLoginInfo;
 - (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
 - (void) checkContent;

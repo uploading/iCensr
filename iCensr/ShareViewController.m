@@ -47,6 +47,11 @@
 	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
 	twtPW.text = password;
 	
+	//switch tweet off if there is not name and password
+	if(![alertViewController isSignedInWithName:twtName.text andPassword:twtPW.text]) {
+		[self.willShareOnTwitter setOn:NO animated:NO]; 
+	}
+	
 	//hiding uploading view
 	[uploadingSpinner stopAnimating];
 	uploadingView.hidden = YES;
@@ -78,12 +83,13 @@
 		[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
 		
 		//alertViewController = [[AlertViewController alloc] init];
-		if([alertViewController isSignedIn]) {
+		if([alertViewController isSignedInWithName:twtName.text andPassword:twtPW.text]) {
+			NSLog(@"IS SIGNED IN succeded");
 			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
-			
 			[alertViewController checkContent];
 		}
 		else {
+			NSLog(@"IS SIGNED IN failed");
 			[alertViewController uploadPicture:twtPic.image withText:twtMessage.text];
 			[alertViewController askForLoginInfo];
 		}
@@ -163,6 +169,11 @@
 }
 
 - (IBAction)back:(id) sender {
+	[self curlUpScreen];
+	self.view.hidden = YES;
+}
+
+- (void) backToEditor {
 	[self curlUpScreen];
 	self.view.hidden = YES;
 }
@@ -331,6 +342,7 @@
 	// hide uploading animation
 	[uploadingSpinner stopAnimating];
 	uploadingView.hidden = YES;
+	//[alertViewController release];
 }
 
 - (void)setOperations:(NSInteger *)operations {

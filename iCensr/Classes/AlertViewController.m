@@ -16,12 +16,35 @@
 	NSLog(@"SIGN IN t/f");
 	// default set uploading images to false
 	self.isUploading = NO;
+	NSLog(@"not Uploading");
 	// check to see if there are values set in the user defaults for name and password
-	NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
-	self.twtName = name;
-	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-	self.twtPW = password;
+	NSString *name = self.twtName;
+	if(name == nil) {
+		NSLog(@"twtName not set yet");
+		name = [[NSUserDefaults standardUserDefaults] stringForKey:@"name"];
+		self.twtName = name;
+	}
+	NSLog(@"name retrieved");
+	NSString *password = self.twtPW;
+	if(password == nil) {
+		NSLog(@"twtPW not set yet");
+		password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+		self.twtPW = password;
+	}
 	// if value is not blank or default
+	NSLog(@"IS SIGNED IN %@ %@", self.twtName, self.twtPW);
+	if([name isEqualToString:@""] || [name isEqualToString:@"n/a"] || [password isEqualToString:@""] || [password isEqualToString:@"n/a"] | [name isEqualToString:@"name"] || [password isEqualToString:@"password"] || name == nil || password == nil) {
+		return NO;
+	}
+	return YES;
+}
+
+// set and check name and password
+- (BOOL) isSignedInWithName:(NSString *)name andPassword:(NSString *)password {
+	NSLog(@"IS SIGNED IN WITH NAME called");
+	self.twtName = name;
+	self.twtPW = password;
+	
 	NSLog(@"IS SIGNED IN %@ %@", self.twtName, self.twtPW);
 	if([name isEqualToString:@""] || [name isEqualToString:@"n/a"] || [password isEqualToString:@""] || [password isEqualToString:@"n/a"] | [name isEqualToString:@"name"] || [password isEqualToString:@"password"] || name == nil || password == nil) {
 		return NO;
@@ -32,6 +55,9 @@
 // create login alert box to take twitter username and password
 - (void) askForLoginInfo {
 	NSLog(@"ASK FOR LOGIN INFO called");
+	if(signinAlertView != nil) {
+		//[signinAlertView release];
+	}
 	signinAlertView = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Enter Twitter user name and password" delegate:self cancelButtonTitle:@"Skip" otherButtonTitles:@"Submit", nil];
 	twtNameField = [signinAlertView addTextFieldWithValue:nil label:@"name"];
 	[[signinAlertView textFieldAtIndex:0] setDelegate:self];
@@ -56,6 +82,9 @@
 				// Ignore submission
 				NSLog(@"SKIP pressed");
 				[shareViewController enableFurtherInput];
+				[shareViewController backToEditor];
+				//if(!hasUploaded) [self saveValues];
+				//if(self.hasUploaded) { [self saveValues];}
 				break;
 			case 1:
 				// check for submission contents

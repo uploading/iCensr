@@ -53,6 +53,7 @@
 - (void) setAlertViewController:(AlertViewController*)newAlertViewController;
 - (IBAction) share:(id)sender;
 - (IBAction) back:(id)sender;
+- (void) backToEditor;
 - (IBAction) hideKeyBoard:(id) sender;
 //- (IBAction) hideViewKeyBoard:(id) sender;
 - (void) setImage:(UIImage *)picture;
