@@ -82,6 +82,8 @@
 		NSString *pw = twtPW.text;
 		[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
 		
+		//[alertViewController retain];
+		
 		//alertViewController = [[AlertViewController alloc] init];
 		if([alertViewController isSignedInWithName:twtName.text andPassword:twtPW.text]) {
 			NSLog(@"IS SIGNED IN succeded");

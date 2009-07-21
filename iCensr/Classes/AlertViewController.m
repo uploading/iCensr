@@ -127,6 +127,7 @@
 
 // creates alert to ask for submission
 - (void) reaskForLoginInfo {
+	NSLog(@"REASK FOR LOGIN INFO called");
 	UIAlertView *prompt = [UIAlertView alloc];
 	prompt = [prompt initWithTitle:@"Missing Information" message:@"One of more of the fields has not been completed." delegate:self cancelButtonTitle:@"Ignore" otherButtonTitles:@"Try Again", nil];
 	[prompt show];
@@ -195,16 +196,19 @@
 #pragma mark picture uploading methods 
 
 - (void) setShareViewController:(ShareViewController*)newShareViewController {
+	NSLog(@"SET SHARE VIEW CONTROLLER called");
 	shareViewController = newShareViewController;
 }
 
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt {
+	NSLog(@"UPLOAD PICTURE called");
 	self.image2upload = img;
 	self.text2upload = txt;
 	self.isUploading = YES;
 }
 
 - (void) checkForUploads {
+	NSLog(@"CHECK FOR UPLOADS called");
 	// if there is a picture to upload...upload!
 	if(self.isUploading && !self.hasUploaded) {
 		self.hasUploaded = YES;
@@ -224,9 +228,11 @@
 		}*/
 	}
 	//[super enableFurtherInput];
+	NSLog(@"CHECK FOR UPLOADS complete");
 }
 
 - (void) upload2twitpic:(NSData *)picture {
+	NSLog(@"UPLOAD 2 TWIT PIC called");
 	// upload to twitpic with Canary app
 	ORSTwitPicDispatcher *twitPicDispatcher = [[ORSTwitPicDispatcher alloc] init];
 	NSString *uploadInfo = [twitPicDispatcher uploadData:picture withUsername:self.twtName password:self.twtPW filename:@"censrd"];
@@ -236,6 +242,7 @@
 }
 
 - (void) setImageURL:(NSString *)url {
+	NSLog(@"SET IMAGE URL called");
 	NSString *originalText = text2upload;
 	NSString *combinedText = [NSString stringWithFormat:@"%@ %@", url, originalText];
 	NSLog(@"%@ ", combinedText);
