@@ -138,6 +138,10 @@
 	NSLog(@"CHECK CONNECTION called %@ %@", twtName, twtPW);
 	// set up connection to Twitter
 	twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
+	// set up OAuth
+	//[twitterEngine setClientName:@"iCensr" version:<#(NSString *)version#> URL:<#(NSString *)url#> token:<#(NSString *)token#>
+	//- (void)setClientName:(NSString *)name version:(NSString *)version URL:(NSString *)url token:(NSString *)token;
+
 	
 	// try to logon with user
 	[twitterEngine setUsername:twtName password:twtPW];
@@ -181,7 +185,7 @@
 
 // save values entered in alertbox
 - (void) saveValues {
-	NSLog("SAVE VALUES called");
+	NSLog(@"SAVE VALUES called");
 	//NSString *name = twtName.text;
 	[[NSUserDefaults standardUserDefaults] setObject:self.twtName forKey:@"name"];
 	//NSString *password = twtPW.text;
