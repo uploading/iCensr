@@ -181,7 +181,7 @@
 
 // save values entered in alertbox
 - (void) saveValues {
-	NSLog("SAVE VALUES called");
+	NSLog(@"SAVE VALUES called");
 	//NSString *name = twtName.text;
 	[[NSUserDefaults standardUserDefaults] setObject:self.twtName forKey:@"name"];
 	//NSString *password = twtPW.text;
