@@ -30,10 +30,10 @@
 #define MAX_MESSAGE_LENGTH      140 // Twitter recommends tweets of max 140 chars
 #define MAX_LOCATION_LENGTH		31
 
-#define DEFAULT_CLIENT_NAME     @"iCensr"
+#define DEFAULT_CLIENT_NAME     @"MGTwitterEngine"
 #define DEFAULT_CLIENT_VERSION  @"1.0"
-#define DEFAULT_CLIENT_URL      @"http://www.icensr.efuller.net/"
-#define DEFAULT_CLIENT_TOKEN	@"NWBlfbpwhRaAzG3ziUHsA"
+#define DEFAULT_CLIENT_URL      @"http://mattgemmell.com/source"
+#define DEFAULT_CLIENT_TOKEN	@"mgtwitterengine"
 
 #define URL_REQUEST_TIMEOUT     25.0 // Twitter usually fails quickly if it's going to fail at all.
 #define DEFAULT_TWEET_COUNT		20
@@ -1267,14 +1267,12 @@
 
 - (NSString *)sendUpdate:(NSString *)status
 {
-	NSLog(@"SEND UPDATE called");
     return [self sendUpdate:status inReplyTo:0];
 }
 
 
 - (NSString *)sendUpdate:(NSString *)status inReplyTo:(int)updateID
 {
-	NSLog(@"SEND UPDATE called with IN REPLY TO");
     if (!status) {
         return nil;
     }
@@ -1297,7 +1295,6 @@
                         queryParameters:params body:body 
                             requestType:MGTwitterStatusSend 
                            responseType:MGTwitterStatus];
-	NSLog(@"update sent");
 }
 
 
