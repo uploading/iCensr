@@ -358,7 +358,7 @@
 }
 
 - (NSInteger)operationsLeft {
-	return operationsToComplete;
+	return *operationsToComplete;
 }
 
 - (void)operationCompleted {

@@ -82,7 +82,7 @@
 				// Ignore submission
 				NSLog(@"SKIP pressed");
 				[shareViewController enableFurtherInput];
-				[shareViewController backToEditor];
+				//[shareViewController backToEditor];
 				//if(!hasUploaded) [self saveValues];
 				//if(self.hasUploaded) { [self saveValues];}
 				break;
@@ -190,7 +190,14 @@
 	[twtNameField release];
 	[twtPWField release];
 	
+	// remove uploading screen
 	[shareViewController enableFurtherInput];
+	// alert successful upload
+	UIAlertView *prompt = [UIAlertView alloc];
+	prompt = [prompt initWithTitle:@"Upload Successful!" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[prompt show];
+	// return to editor page
+	[shareViewController backToEditor];
 }
 
 #pragma mark picture uploading methods 

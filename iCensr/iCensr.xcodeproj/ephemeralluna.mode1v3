@@ -265,8 +265,8 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>CBF2289C0FD5C1870010D74C</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>CB54C2BA0FD324C900A3FF49</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
@@ -279,7 +279,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {183, 690}}</string>
+							<string>{{0, 63}, {183, 397}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -291,14 +291,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {200, 708}}</string>
+						<string>{{0, 0}, {200, 415}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>183</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>635 129 807 749 0 0 1440 878 </string>
+						<string>635 422 807 456 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,19 +328,16 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB5139B410192B56008A8B8D</string>
+										<string>CB513A4510196C24008A8B8D</string>
 										<key>history</key>
 										<array>
 											<string>CBBE34A80FCA6FF90056CC3D</string>
 											<string>CB93E3EC0FCBBEBA00E394BA</string>
-											<string>CB54C4660FD38F4900A3FF49</string>
 											<string>CB54C4670FD38F4900A3FF49</string>
 											<string>CB70F86E0FD59EC100F1B8AA</string>
-											<string>CB70F8720FD59EC100F1B8AA</string>
 											<string>CB70F8730FD59EC100F1B8AA</string>
 											<string>CB6C0D700FD9C88B00B3EAAE</string>
 											<string>CB84859C0FF34CE500FF2CE2</string>
-											<string>CB8486350FF37A5600FF2CE2</string>
 											<string>CB8486360FF37A5600FF2CE2</string>
 											<string>CB8D27470FF43475006DB03B</string>
 											<string>CB8D27660FF4C5E7006DB03B</string>
@@ -356,18 +353,21 @@
 											<string>CBDE039310073A7700F3FB19</string>
 											<string>CBDE039410073A7700F3FB19</string>
 											<string>CBDE039510073A7700F3FB19</string>
-											<string>CB8883E6100B28F30023C62B</string>
 											<string>CB888401100B294F0023C62B</string>
 											<string>CB11C876100C547700B053A0</string>
 											<string>CB11C877100C547700B053A0</string>
 											<string>CB11C878100C547700B053A0</string>
 											<string>CBB72BB21011CF75000FDDC2</string>
 											<string>CBB72BB51011CF75000FDDC2</string>
-											<string>CBB72BD81012A94C000FDDC2</string>
 											<string>CBB72BF11012DC6B000FDDC2</string>
 											<string>CBB72C091012E36C000FDDC2</string>
-											<string>CB5139B210192B56008A8B8D</string>
-											<string>CB5139A310192ABA008A8B8D</string>
+											<string>CB513A23101949DC008A8B8D</string>
+											<string>CB513A24101949DC008A8B8D</string>
+											<string>CB513A25101949DC008A8B8D</string>
+											<string>CB513A26101949DC008A8B8D</string>
+											<string>CB513A3410194E83008A8B8D</string>
+											<string>CB513A3F10196AEF008A8B8D</string>
+											<string>CB513A4010196AEF008A8B8D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -402,13 +402,25 @@
 											<string>CBF22A0F0FD632740010D74C</string>
 											<string>CB753E380FD9116A000FAAA5</string>
 											<string>CB753E400FD9116A000FAAA5</string>
-											<string>CB8486370FF37A5600FF2CE2</string>
 											<string>CB8486380FF37A5600FF2CE2</string>
 											<string>CB8928AA0FF828EE006967FA</string>
 											<string>CB8316570FFD7B62003D42FE</string>
 											<string>CB8316580FFD7B62003D42FE</string>
 											<string>CB5139A410192ABA008A8B8D</string>
 											<string>CB5139B310192B56008A8B8D</string>
+											<string>CB513A28101949DC008A8B8D</string>
+											<string>CB513A29101949DC008A8B8D</string>
+											<string>CB513A2A101949DC008A8B8D</string>
+											<string>CB513A2B101949DC008A8B8D</string>
+											<string>CB513A2C101949DC008A8B8D</string>
+											<string>CB513A2D101949DC008A8B8D</string>
+											<string>CB513A3610194E83008A8B8D</string>
+											<string>CB513A3710194E83008A8B8D</string>
+											<string>CB513A3810194E83008A8B8D</string>
+											<string>CB513A3910194E83008A8B8D</string>
+											<string>CB513A3A10194E83008A8B8D</string>
+											<string>CB513A3B10194E83008A8B8D</string>
+											<string>CB513A4110196AEF008A8B8D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -420,14 +432,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {602, 660}}</string>
+								<string>{{0, 0}, {602, 367}}</string>
 								<key>RubberWindowFrame</key>
-								<string>635 129 807 749 0 0 1440 878 </string>
+								<string>635 422 807 456 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>660pt</string>
+							<string>367pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -440,9 +452,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 665}, {602, 43}}</string>
+								<string>{{0, 372}, {602, 43}}</string>
 								<key>RubberWindowFrame</key>
-								<string>635 129 807 749 0 0 1440 878 </string>
+								<string>635 422 807 456 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -610,7 +622,7 @@
 		<string>/Users/ephemeralluna/iCensr/iCensr/iCensr.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>635 129 807 749 0 0 1440 878 </string>
+	<string>635 422 807 456 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

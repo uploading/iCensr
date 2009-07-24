@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">528</int>
-		<string key="IBDocument.SystemVersion">10A380</string>
+		<string key="IBDocument.SystemVersion">10A402a</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">1025.2</string>
-		<string key="IBDocument.HIToolboxVersion">427.00</string>
+		<string key="IBDocument.AppKitVersion">1030</string>
+		<string key="IBDocument.HIToolboxVersion">431.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="1"/>
@@ -292,7 +292,6 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocorrectionType">1</int>
 							<int key="IBUIReturnKeyType">9</int>
-							<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 							<bool key="IBUISecureTextEntry">YES</bool>
 						</object>
 					</object>
@@ -322,6 +321,9 @@
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIAutocapitalizationType">2</int>
+							<int key="IBUIAutocorrectionType">2</int>
+							<int key="IBUIKeyboardAppearance">1</int>
 							<int key="IBUIReturnKeyType">9</int>
 						</object>
 					</object>
@@ -615,13 +617,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="577068209"/>
-							<reference ref="38153246"/>
 							<reference ref="429333944"/>
 							<reference ref="570028535"/>
 							<reference ref="400123743"/>
 							<reference ref="122829913"/>
-							<reference ref="471484861"/>
-							<reference ref="173541283"/>
 							<reference ref="322281369"/>
 							<reference ref="224927726"/>
 							<reference ref="259095334"/>
@@ -632,6 +631,9 @@
 							<reference ref="533974909"/>
 							<reference ref="562797319"/>
 							<reference ref="160834779"/>
+							<reference ref="173541283"/>
+							<reference ref="38153246"/>
+							<reference ref="471484861"/>
 							<reference ref="718828623"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -806,7 +808,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ShareViewController</string>
 					<string>UIResponder</string>
-					<string>{{204, 106}, {320, 460}}</string>
+					<string>{{525, 117}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

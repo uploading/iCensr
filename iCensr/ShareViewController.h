@@ -65,8 +65,8 @@
 //- (void) insertStringTokenInNewStatusTextField:(NSString *)stringToken;
 
 // shifting for the keyboard
-- (IBAction)textFieldDoneEditing:(id)sender;
-- (IBAction)backgroundClick:(id)sender;
+//- (IBAction)textFieldDoneEditing:(id)sender;
+//- (IBAction)backgroundClick:(id)sender;
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView;
 - (void)textViewDidEndEditing:(UITextView *)textView;
