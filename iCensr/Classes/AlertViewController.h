@@ -25,8 +25,8 @@
 	IBOutlet UITextField	*twtPWField;
 	MGTwitterEngine			*twitterEngine; //class to connect and post to twitter
 	
-	IBOutlet BOOL			*isUploading; // yes if information should be uploaded
-	IBOutlet BOOL			*hasUploaded; // yes if information has been uploaded
+	IBOutlet NSNumber			*isUploading; // yes if information should be uploaded
+	IBOutlet NSNumber			*hasUploaded; // yes if information has been uploaded
 	// if uploading material
 	IBOutlet UIImage		*image2upload;
 	IBOutlet NSString		*text2upload;
@@ -39,8 +39,8 @@
 @property(nonatomic,retain) IBOutlet UITextField	*twtNameField;
 @property(nonatomic,retain) IBOutlet UITextField	*twtPWField;
 // if uploading material
-@property(nonatomic) IBOutlet BOOL			*isUploading;
-@property(nonatomic) IBOutlet BOOL			*hasUploaded;
+@property(nonatomic,retain) IBOutlet NSNumber			*isUploading;
+@property(nonatomic,retain) IBOutlet NSNumber			*hasUploaded;
 @property(nonatomic,retain) IBOutlet UIImage		*image2upload;
 @property(nonatomic,retain) IBOutlet NSString		*text2upload;
 //@property(nonatomic,retain) IBOutlet UISwitch		*willShare;
@@ -49,14 +49,14 @@
 - (BOOL) isSignedIn;
 - (BOOL) isSignedInWithName:(NSString *)name andPassword:(NSString *)password;
 - (void) askForLoginInfo;
-- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
+//- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
 - (void) checkContent;
 - (void) reaskForLoginInfo;
 - (void) checkConnection;
 - (void) saveValues;
 
-- (UITextField*)addTextFieldWithValue:(NSString*)value label:(NSString*)label;
-- (UITextField*)textFieldAtIndex:(NSUInteger)index;
+//- (UITextField*)addTextFieldWithValue:(NSString*)value label:(NSString*)label;
+//- (UITextField*)textFieldAtIndex:(NSUInteger)index;
 //- (NSUInteger)textFieldCount;
 //- (UITextField*)textField;
 

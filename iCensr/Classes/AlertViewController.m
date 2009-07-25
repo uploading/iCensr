@@ -15,7 +15,7 @@
 - (BOOL) isSignedIn { 
 	NSLog(@"SIGN IN t/f");
 	// default set uploading images to false
-	self.isUploading = NO;
+	self.isUploading = [NSNumber numberWithBool:NO];
 	NSLog(@"not Uploading");
 	// check to see if there are values set in the user defaults for name and password
 	NSString *name = self.twtName;
@@ -211,14 +211,14 @@
 	NSLog(@"UPLOAD PICTURE called");
 	self.image2upload = img;
 	self.text2upload = txt;
-	self.isUploading = YES;
+	self.isUploading = [NSNumber numberWithBool:YES];
 }
 
 - (void) checkForUploads {
 	NSLog(@"CHECK FOR UPLOADS called");
 	// if there is a picture to upload...upload!
 	if(self.isUploading && !self.hasUploaded) {
-		self.hasUploaded = YES;
+		self.isUploading = [NSNumber numberWithBool:YES];
 		NSLog(@"Upload images to twitter");
 		// set up image for uploading
 		NSData *imageData = UIImageJPEGRepresentation(image2upload, 90);

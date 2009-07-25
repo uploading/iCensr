@@ -21,6 +21,7 @@
 	IBOutlet UITextField	*twtMessage;// message user will post on twitter or NCAC site
 	IBOutlet UITextField	*twtName;	// user's twitter ID
 	IBOutlet UITextField	*twtPW;		// user's twitter password
+	IBOutlet UITextField	*txtCount;	// number of characters left for tweet
 	//IBOutlet UITextView		*twtMessage;		// user's email address
 	IBOutlet UISwitch		*willShareOnTwitter;	// send the edit and text to twitter
 	IBOutlet UISwitch		*willSubmitToNCAC;	// send the edit and text to the NCAC site
@@ -42,6 +43,7 @@
 @property(nonatomic,retain) IBOutlet UITextField	*twtMessage;		// user's email address
 @property(nonatomic,retain)	IBOutlet UITextField	*twtName;	// user's twitter ID
 @property(nonatomic,retain) IBOutlet UITextField	*twtPW;		// user's twitter password
+@property(nonatomic,retain) IBOutlet UITextField	*txtCount;
 @property(nonatomic,retain) IBOutlet UISwitch		*willShareOnTwitter;
 @property(nonatomic,retain) IBOutlet UISwitch		*willSubmitToNCAC;
 @property(nonatomic,retain) IBOutlet UISwitch		*willSaveInAlbum;
@@ -55,6 +57,7 @@
 - (IBAction) back:(id)sender;
 - (void) backToEditor;
 - (IBAction) hideKeyBoard:(id) sender;
+- (IBAction) updateWordCount:(id)sender;
 //- (IBAction) hideViewKeyBoard:(id) sender;
 - (void) setImage:(UIImage *)picture;
 - (void) upload2site:(NSData *)picture;

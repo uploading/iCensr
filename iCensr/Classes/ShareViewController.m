@@ -11,7 +11,7 @@
 
 @implementation ShareViewController
 
-@synthesize back, submit, twtPic, twtName, twtPW, twtMessage, alertViewController, willShareOnTwitter, willSaveInAlbum, willSubmitToNCAC, uploadingView, uploadingSpinner;
+@synthesize back, submit, twtPic, twtName, twtPW, twtMessage, alertViewController, willShareOnTwitter, willSaveInAlbum, willSubmitToNCAC, uploadingView, uploadingSpinner, txtCount;
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -151,19 +151,26 @@
 	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
 	
 	// get message to send
-	NSString *pic_comment = self.twtMessage.text;
+	//NSString *pic_comment = self.twtMessage.text;
 	
 	// create the body of the post
 	
 	NSMutableData *body = [NSMutableData data];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// add user name
+	[body appendData :[[NSString stringWithFormat :@"Content-Disposition: form-data; name=\"name\"\r\n\r\n%@", [self.twtName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData :[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// add user comment
+	[body appendData :[[NSString stringWithFormat :@"Content-Disposition: form-data; name=\"comment\"\r\n\r\n%@", [self.twtMessage.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData :[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// add image
 	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[NSData dataWithData:picture]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// add text
-	NSString *pic_comment_formatted = [NSString stringWithFormat:@"&pic_comment=%@", pic_comment ];
-	[body appendData:[NSData dataWithBytes: [pic_comment_formatted UTF8String] length:[pic_comment_formatted length]]];
+	//NSString *pic_comment_formatted = [NSString stringWithFormat:@"&pic_comment=%@", pic_comment ];
+	//[body appendData:[NSData dataWithBytes: [pic_comment_formatted UTF8String] length:[pic_comment_formatted length]]];
 	// setting the body of the post to the request
 	[request setHTTPBody:body];
 	
@@ -188,6 +195,16 @@
 
 - (IBAction) hideKeyBoard:(id) sender {
 	[twtName resignFirstResponder];
+}
+
+- (IBAction) updateWordCount:(id)sender {
+	NSLog(@"UPDATE WORD COUNT called");
+	NSUInteger *charactersLeft = 140 - [self.twtMessage.text length];
+	self.txtCount.text = [NSString stringWithFormat:@"%d", charactersLeft];
+	if([self.txtCount.text intValue] <= -1) {
+		NSLog(@"Out of characters");
+		self.twtMessage.text = [self.twtMessage.text substringToIndex:140];
+	}
 }
 
 /*- (void)textViewDidEndEditing:(UITextView *)textView {

@@ -323,7 +323,6 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
 							<int key="IBUIAutocorrectionType">2</int>
-							<int key="IBUIKeyboardAppearance">1</int>
 							<int key="IBUIReturnKeyType">9</int>
 						</object>
 					</object>
@@ -431,6 +430,30 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<float key="IBUIAlpha">2.746479e-01</float>
 					</object>
+					<object class="IBUITextField" id="900683306">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{200, 57}, {97, 31}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUIText">140</string>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwLjUwMTk2MDgxNCAxAA</bytes>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Times-Roman</string>
+							<double key="NSSize">2.400000e+01</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<int key="IBUITextAlignment">2</int>
+						<bool key="IBUIClearsOnBeginEditing">YES</bool>
+						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
+						<float key="IBUIMinimumFontSize">1.700000e+01</float>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
+					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
@@ -500,24 +523,6 @@
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">39</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">backgroundClick:</string>
-						<reference key="source" ref="322281369"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">41</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">textFieldDoneEditing:</string>
-						<reference key="source" ref="322281369"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">43</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -601,6 +606,32 @@
 					</object>
 					<int key="connectionID">70</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">txtCount</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="900683306"/>
+					</object>
+					<int key="connectionID">72</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">updateWordCount:</string>
+						<reference key="source" ref="471484861"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">updateWordCount:</string>
+						<reference key="source" ref="471484861"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">18</int>
+					</object>
+					<int key="connectionID">74</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -616,11 +647,9 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="577068209"/>
 							<reference ref="429333944"/>
 							<reference ref="570028535"/>
 							<reference ref="400123743"/>
-							<reference ref="122829913"/>
 							<reference ref="322281369"/>
 							<reference ref="224927726"/>
 							<reference ref="259095334"/>
@@ -634,6 +663,9 @@
 							<reference ref="173541283"/>
 							<reference ref="38153246"/>
 							<reference ref="471484861"/>
+							<reference ref="577068209"/>
+							<reference ref="900683306"/>
+							<reference ref="122829913"/>
 							<reference ref="718828623"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -771,6 +803,11 @@
 						<reference key="object" ref="226169002"/>
 						<reference key="parent" ref="718828623"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">71</int>
+						<reference key="object" ref="900683306"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -802,13 +839,15 @@
 					<string>67.IBPluginDependency</string>
 					<string>68.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
+					<string>71.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ShareViewController</string>
 					<string>UIResponder</string>
-					<string>{{525, 117}, {320, 460}}</string>
+					<string>{{504, 71}, {320, 460}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -850,7 +889,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">70</int>
+			<int key="maxID">74</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -863,14 +902,12 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>back:</string>
-							<string>backgroundClick:</string>
 							<string>hideKeyBoard:</string>
 							<string>share:</string>
-							<string>textFieldDoneEditing:</string>
+							<string>updateWordCount:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -887,6 +924,7 @@
 							<string>twtName</string>
 							<string>twtPW</string>
 							<string>twtPic</string>
+							<string>txtCount</string>
 							<string>uploadingSpinner</string>
 							<string>uploadingView</string>
 							<string>willSaveInAlbum</string>
@@ -901,6 +939,7 @@
 							<string>UITextField</string>
 							<string>UITextField</string>
 							<string>UIImageView</string>
+							<string>UITextField</string>
 							<string>UIActivityIndicatorView</string>
 							<string>UIView</string>
 							<string>UISwitch</string>
