@@ -144,7 +144,7 @@
 	// Get updates from people the authenticated user follows.
 	[twitterEngine getFollowedTimelineFor:twtName since:nil startingAtPage:0];
 	
-	self.hasUploaded = NO;
+	self.hasUploaded = [NSNumber numberWithBool:NO];
 
 	// IF connection succeeds, save the values
 	
@@ -158,7 +158,7 @@
 	
 	// save settings
 	//[self saveValues];
-	if(!self.hasUploaded) {
+	if(![self.hasUploaded boolValue]) {
 		[self checkForUploads];
 		[self saveValues];
 	}
@@ -217,7 +217,7 @@
 - (void) checkForUploads {
 	NSLog(@"CHECK FOR UPLOADS called");
 	// if there is a picture to upload...upload!
-	if(self.isUploading && !self.hasUploaded) {
+	if([self.isUploading boolValue] && ![self.hasUploaded boolValue]) {
 		self.isUploading = [NSNumber numberWithBool:YES];
 		NSLog(@"Upload images to twitter");
 		// set up image for uploading
@@ -229,6 +229,8 @@
 		// Send text post
 		[twitterEngine sendUpdate:text2upload];
 		
+		// set to indicate information has uploaded
+		self.hasUploaded = [NSNumber numberWithBool:YES];
 		// if selected, submit picture and text to NCAC
 		/*if(self.willShare.on) {
 			[self upload2site:imageData];

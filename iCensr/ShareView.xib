@@ -437,6 +437,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<bool key="IBUIEnabled">NO</bool>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUIText">140</string>
 						<object class="NSColor" key="IBUITextColor">
@@ -659,13 +660,13 @@
 							<reference ref="283832228"/>
 							<reference ref="533974909"/>
 							<reference ref="562797319"/>
-							<reference ref="160834779"/>
 							<reference ref="173541283"/>
 							<reference ref="38153246"/>
 							<reference ref="471484861"/>
 							<reference ref="577068209"/>
-							<reference ref="900683306"/>
 							<reference ref="122829913"/>
+							<reference ref="160834779"/>
+							<reference ref="900683306"/>
 							<reference ref="718828623"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -846,7 +847,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ShareViewController</string>
 					<string>UIResponder</string>
-					<string>{{504, 71}, {320, 460}}</string>
+					<string>{{504, 73}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

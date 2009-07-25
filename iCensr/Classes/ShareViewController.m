@@ -131,7 +131,7 @@
 - (void) upload2site:(NSData *)picture {
 	NSLog(@"UPLOAD 2 SITE called");
 	// setting up the URL to post to
-	NSString *urlString = @"http://www.itp.efuller.net/09summer/icensr/support/uploader.php";
+	NSString *urlString = @"http://www.icensr.org/operations/upload/uploader.php";
 	
 	//setting up the request object now
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -143,7 +143,7 @@
 	 we always need a boundary when we post a file
 	 also we need to set the content type
 	 
-	 You might want to generate a random boundary.. this is just the same 
+	 You might want to generate a random boundary. this is just the same 
 	 as my output from wireshark on a valid html post
 	 */
 	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
@@ -164,7 +164,7 @@
 	[body appendData :[[NSString stringWithFormat :@"Content-Disposition: form-data; name=\"comment\"\r\n\r\n%@", [self.twtMessage.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData :[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// add image
-	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"ipodfile.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"image.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[NSData dataWithData:picture]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -206,101 +206,6 @@
 		self.twtMessage.text = [self.twtMessage.text substringToIndex:140];
 	}
 }
-
-/*- (void)textViewDidEndEditing:(UITextView *)textView {
-	[twtMessage resignFirstResponder];
-}*/
-
-#pragma mark MGTwitterEngineDelegate methods
-
-/*
-- (void)requestSucceeded:(NSString *)requestIdentifier
-{
-    NSLog(@"Request succeeded (%@)", requestIdentifier);
-	
-	// save settings
-	NSString *name = twtName.text;
-	[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
-	NSString *pw = twtPW.text;
-	[[NSUserDefaults standardUserDefaults] setObject:pw forKey:@"password"];
-	
-	// return to camera view
-	[[self parentViewController] view].hidden = YES;
-	self.view.hidden = YES;
-}
-
-
-- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error
-{
-    NSLog(@"Twitter request failed! (%@) Error: %@ (%@)", 
-          requestIdentifier, 
-          [error localizedDescription], 
-          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
-	// send alert asking for name and password
-	UIAlertView *prompt = [UIAlertView alloc];
-	prompt = [prompt initWithTitle:@"Connection Failed" message:@"iCensr could not reach Twitter.  Check your name and password." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	[prompt show];
-	[prompt release];
-}
-
-
-- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)identifier
-{
-    NSLog(@"Got statuses:\r%@", statuses);
-}
-
-
-- (void)directMessagesReceived:(NSArray *)messages forRequest:(NSString *)identifier
-{
-    NSLog(@"Got direct messages:\r%@", messages);
-}
-
-
-- (void)userInfoReceived:(NSArray *)userInfo forRequest:(NSString *)identifier
-{
-    NSLog(@"Got user info:\r%@", userInfo);
-}
-
-
-- (void)miscInfoReceived:(NSArray *)miscInfo forRequest:(NSString *)identifier
-{
-	NSLog(@"Got misc info:\r%@", miscInfo);
-} */
-
-#pragma mark moving screen for keyboard
-// the amount of vertical shift upwards keep the Notes text view visible as the keyboard appears
-#define kOFFSET_FOR_KEYBOARD					140.0
-
-// the duration of the animation for the view shift
-#define kVerticalOffsetAnimationDuration		0.50
-
-/*- (IBAction)textFieldDoneEditing:(id)sender {
-	NSLog(@"TEXT FIELD DONE EDITING called");
-	[sender resignFirstResponder];
-}*/
-
-/*- (IBAction)backgroundClick:(id)sender
-{
-	NSLog(@"BACKGROUND CLICK called");
-	//[latitudeField resignFirstResponder];
-	//[longitudeField resignFirstResponder];
-	//[notesField resignFirstResponder];
-	
-	if (viewShifted)
-	{
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:kVerticalOffsetAnimationDuration];
-		
-		CGRect rect = self.view.frame;
-		rect.origin.y += kOFFSET_FOR_KEYBOARD;
-		rect.size.height -= kOFFSET_FOR_KEYBOARD;
-		self.view.frame = rect;
-		
-		[UIView commitAnimations];
-		
-		viewShifted = FALSE;
-	}		
-}*/
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
