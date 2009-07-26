@@ -190,6 +190,11 @@
 	[twtNameField release];
 	[twtPWField release];
 	
+	/*if([self.isUploading boolValue]) {
+		[self.image2upload release];
+		[self.text2upload release];
+	}*/
+	
 	// remove uploading screen
 	[shareViewController enableFurtherInput];
 	// alert successful upload
@@ -210,8 +215,11 @@
 - (void) uploadPicture:(UIImage *)img withText:(NSString *) txt {
 	NSLog(@"UPLOAD PICTURE called");
 	self.image2upload = img;
-	self.text2upload = txt;
+	NSLog(@"linked picture %@", self.image2upload);
+	[self.text2upload setString:txt];
+	NSLog(@"linked text %@", self.text2upload);
 	self.isUploading = [NSNumber numberWithBool:YES];
+	NSLog(@"UPLOAD PICTURE finished");
 }
 
 - (void) checkForUploads {
@@ -227,7 +235,7 @@
 		[self upload2twitpic:imageData];
 		
 		// Send text post
-		[twitterEngine sendUpdate:text2upload];
+		[twitterEngine sendUpdate:[NSString stringWithFormat:@"%@", text2upload]];
 		
 		// set to indicate information has uploaded
 		self.hasUploaded = [NSNumber numberWithBool:YES];
@@ -252,10 +260,10 @@
 
 - (void) setImageURL:(NSString *)url {
 	NSLog(@"SET IMAGE URL called");
-	NSString *originalText = text2upload;
+	NSString *originalText = [NSString stringWithFormat:@"%@", text2upload];
 	NSString *combinedText = [NSString stringWithFormat:@"%@ %@", url, originalText];
 	NSLog(@"%@ ", combinedText);
-	text2upload = combinedText;
+	[text2upload setString:combinedText];
 }
 
 /*- (void) upload2site:(NSData *)picture {

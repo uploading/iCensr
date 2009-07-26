@@ -29,7 +29,7 @@
 	IBOutlet NSNumber			*hasUploaded; // yes if information has been uploaded
 	// if uploading material
 	IBOutlet UIImage		*image2upload;
-	IBOutlet NSString		*text2upload;
+	IBOutlet NSMutableString		*text2upload;
 	IBOutlet UISwitch		*willShare;	// send the edit and text to the NCAC site
 }
 
@@ -42,7 +42,7 @@
 @property(nonatomic,retain) IBOutlet NSNumber			*isUploading;
 @property(nonatomic,retain) IBOutlet NSNumber			*hasUploaded;
 @property(nonatomic,retain) IBOutlet UIImage		*image2upload;
-@property(nonatomic,retain) IBOutlet NSString		*text2upload;
+@property(nonatomic,retain) IBOutlet NSMutableString		*text2upload;
 //@property(nonatomic,retain) IBOutlet UISwitch		*willShare;
 
 // login related functions

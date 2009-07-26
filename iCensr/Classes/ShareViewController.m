@@ -184,11 +184,13 @@
 }
 
 - (IBAction)back:(id) sender {
-	[self curlUpScreen];
-	self.view.hidden = YES;
+	[self backToEditor];
 }
 
 - (void) backToEditor {
+	self.twtMessage.text = @"";
+	//[self.twtPic release];
+	//UIImage *twtPic;
 	[self curlUpScreen];
 	self.view.hidden = YES;
 }

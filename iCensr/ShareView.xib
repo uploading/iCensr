@@ -317,7 +317,6 @@
 							<double key="NSSize">1.400000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<bool key="IBUIClearsOnBeginEditing">YES</bool>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
@@ -421,7 +420,7 @@
 								<int key="IBUIStyle">0</int>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
+						<string key="NSFrame">{{-2, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -662,11 +661,11 @@
 							<reference ref="562797319"/>
 							<reference ref="173541283"/>
 							<reference ref="38153246"/>
-							<reference ref="471484861"/>
 							<reference ref="577068209"/>
 							<reference ref="122829913"/>
 							<reference ref="160834779"/>
 							<reference ref="900683306"/>
+							<reference ref="471484861"/>
 							<reference ref="718828623"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -958,6 +957,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">iCensr.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">3.0</string>
+		<string key="IBCocoaTouchPluginVersion">3.1</string>
 	</data>
 </archive>
